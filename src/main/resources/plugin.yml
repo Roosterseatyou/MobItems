@@ -1,0 +1,6 @@
+name: MobItems
+version: '${project.version}'
+main: xyz.roosterseatyou.mobitems.MobItems
+api-version: 1.18
+authors: [ Roosterseatyou ]
+description: Adds Tools and Armor based off of the mobs in Minecraft, each with their own unique ability.
