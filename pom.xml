@@ -56,6 +56,14 @@
 
     <repositories>
         <repository>
+            <url>https://github.com/Roosterseatyou/JavaLibrary/blob/repository/JavaHelperLibrary.jar?raw=true</url>
+            <id>JavaHelperLibrary</id>
+        </repository>
+        <repository>
+            <id>PluginLibrary</id>
+            <url>https://github.com/Roosterseatyou/PluginLib/blob/repo/PluginLib.jar?raw=true</url>
+        </repository>
+        <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
         </repository>
@@ -67,10 +75,22 @@
 
     <dependencies>
         <dependency>
+            <groupId>xyz.roosterseatyou</groupId>
+            <artifactId>JavaLibrary</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
             <version>1.18.1-R0.1-SNAPSHOT</version>
             <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>xyz.roosterseatyou</groupId>
+            <artifactId>PluginLibrary</artifactId>
+            <version>1.1</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 </project>
