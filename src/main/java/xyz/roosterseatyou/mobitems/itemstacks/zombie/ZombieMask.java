@@ -29,7 +29,8 @@ public class ZombieMask {
         meta.setColor(Color.GREEN);
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
         lore.add(Component.text("Made from the flesh of Zombies..."));
-        lore.add(Component.text("SERVER ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        //see UndeadArmorUtils
+        lore.add(Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
         ZOMBIE_MASK = item;
