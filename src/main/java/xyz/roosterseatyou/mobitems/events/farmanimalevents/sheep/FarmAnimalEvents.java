@@ -12,7 +12,6 @@ public class FarmAnimalEvents implements Listener {
     @EventHandler
     public static void onPlayerLeftClick(PlayerInteractEvent e){
         Player p = e.getPlayer();
-        p.sendMessage("hi");
         if(e.getAction().equals(Action.RIGHT_CLICK_BLOCK) && e.getClickedBlock() != null && e.getClickedBlock().getType() == Material.GRASS_BLOCK
                 && FarmAnimalArmorUtils.hasFullSet(p)){
             e.getClickedBlock().setType(Material.DIRT);
