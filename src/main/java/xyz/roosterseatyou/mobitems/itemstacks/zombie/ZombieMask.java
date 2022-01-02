@@ -31,6 +31,7 @@ public class ZombieMask {
         lore.add(Component.text("Made from the flesh of Zombies..."));
         //see UndeadArmorUtils
         lore.add(Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        lore.add(Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
         ZOMBIE_MASK = item;
