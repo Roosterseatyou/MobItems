@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.events.undeadEvents;
+package xyz.roosterseatyou.mobitems.events.undeadevents;
 import org.bukkit.entity.Entity;
 import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
@@ -36,7 +36,7 @@ public class UndeadEvents implements Listener{
         if (ent instanceof Player){
             Player p = (Player)ent;
 
-            if (e.getDamage() > p.getHealth()){
+            if (e.getDamage() > p.getHealth() && UndeadArmorUtils.hasFullSet(p)){
                 p.setHealth(p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
                 p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION , 125, 2));
                 p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE , 125, 1));
