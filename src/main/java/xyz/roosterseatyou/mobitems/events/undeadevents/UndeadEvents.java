@@ -9,6 +9,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.event.entity.EntityDamageEvent;
+import xyz.roosterseatyou.mobitems.utils.ItemUtils;
+import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UndeadArmorUtils;
 
@@ -40,6 +42,10 @@ public class UndeadEvents implements Listener{
                 p.setHealth(p.getAttribute(Attribute.GENERIC_MAX_HEALTH).getDefaultValue());
                 p.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION , 125, 2));
                 p.addPotionEffect(new PotionEffect(PotionEffectType.FIRE_RESISTANCE , 125, 1));
+                ItemUtils.ApplyDamage(p.getInventory().getHelmet(), (p.getInventory().getHelmet().getType().getMaxDurability())/4);
+                ItemUtils.ApplyDamage(p.getInventory().getChestplate(), (p.getInventory().getChestplate().getType().getMaxDurability())/4);
+                ItemUtils.ApplyDamage(p.getInventory().getLeggings(), (p.getInventory().getLeggings().getType().getMaxDurability())/4);
+                ItemUtils.ApplyDamage(p.getInventory().getBoots(), (p.getInventory().getBoots().getType().getMaxDurability())/4);
             }
         }
 
