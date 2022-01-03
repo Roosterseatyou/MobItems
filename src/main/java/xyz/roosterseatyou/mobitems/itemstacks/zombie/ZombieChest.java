@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstack.zombie
+package xyz.roosterseatyou.mobitems.itemstacks.zombie;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ZombieChest {
-    public static Component NAME = Component.text("Zombie ChestPlate");
+    public static Component NAME = Component.text("Zombie ChestPlate").color(TextColor.fromHexString("#05540d"));
     public static ItemStack ZOMBIE_CHEST;
 
     public static ItemStack init(){
@@ -23,17 +23,17 @@ public class ZombieChest {
 
     public static void zombieChest(){
         ItemStack item = new ItemStack(Material.LEATHER_CHESTPLATE);
-        LeatherAmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
+        LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         meta.setColor(Color.GREEN);
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
-        lore.add(Component.text("Made from the flesh of Zombies...")
+        lore.add(Component.text("Made from the flesh of Zombies..."));
         //see UndeadArmorUtils
-        lore.add(Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233").decorate(TextDecoration.ITALIC));
-        lore.add(Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233").decorate(TextDecoration.ITALIC));
+        lore.add(Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        lore.add(Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
-        item.setITemMeta(meta);
+        item.setItemMeta(meta);
         ZOMBIE_CHEST = item;
     }
 }
