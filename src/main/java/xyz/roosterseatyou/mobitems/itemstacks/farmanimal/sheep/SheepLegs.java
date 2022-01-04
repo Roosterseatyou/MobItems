@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstacks.sheep;
+package xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -12,17 +12,17 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class SheepHooves {
-    public static Component NAME = Component.text("Sheep Hooves");
-    public static ItemStack SHEEP_HOOVES;
+public class SheepLegs {
+    public static Component NAME = Component.text("Sheep Leggings");
+    public static ItemStack SHEEP_LEGS;
 
     public static ItemStack init(){
-        sheepHooves();
+        sheepLeggings();
         return null;
     }
 
-    public static void sheepHooves(){
-        ItemStack item = new ItemStack(Material.LEATHER_BOOTS);
+    public static void sheepLeggings(){
+        ItemStack item = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
@@ -34,6 +34,6 @@ public class SheepHooves {
         lore.add(Component.text("CLASS ID: FARM").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
-        SHEEP_HOOVES = item;
+        SHEEP_LEGS = item;
     }
 }

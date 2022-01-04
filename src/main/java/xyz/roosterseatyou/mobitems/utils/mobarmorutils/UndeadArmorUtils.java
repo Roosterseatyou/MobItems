@@ -18,11 +18,16 @@ public class UndeadArmorUtils {
                 && isUndeadArmor(p.getInventory().getLeggings()) && isUndeadArmor(p.getInventory().getBoots());
     }
 
+
+
+
     public static boolean inSunlight(Player p){
         Block block = p.getLocation().getBlock().getRelative(0, 1, 0);
-        int sunlight_level = block.getLightFromSky();
-        return sunlight_level == 15;
+        int sunlightLevel = block.getLightFromSky();
+        return sunlightLevel == 15 && day(p);
     }
-
-
+    public static boolean day(Player p) {
+        long time = p.getWorld().getTime();
+        return time > 0 && time < 12300;
+    }
 }

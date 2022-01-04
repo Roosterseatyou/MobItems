@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstacks.sheep;
+package xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
