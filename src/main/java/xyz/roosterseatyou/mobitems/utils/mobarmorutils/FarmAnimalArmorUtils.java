@@ -2,7 +2,7 @@ package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import xyz.roosterseatyou.mobitems.itemstacks.sheep.SheepMask;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class FarmAnimalArmorUtils {
