@@ -34,7 +34,7 @@ public class UndeadEvents implements Listener{
     }
     @EventHandler
     public static void onDeath(EntityDamageEvent e){
-        Entity ent= e.getEntity();
+        Entity ent = e.getEntity();
         if (ent instanceof Player){
             Player p = (Player)ent;
 
