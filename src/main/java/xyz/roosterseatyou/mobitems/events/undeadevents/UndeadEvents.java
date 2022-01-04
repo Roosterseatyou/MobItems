@@ -28,7 +28,6 @@ public class UndeadEvents implements Listener{
 
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
-            System.out.println("lol");
             for (Player p : Bukkit.getOnlinePlayers()){
                 if (p.getInventory().getHelmet() != null &&  p.getInventory().getChestplate() != null &&
                         p.getInventory().getLeggings() != null &&  p.getInventory().getBoots() != null &&
