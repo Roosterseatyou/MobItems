@@ -25,13 +25,10 @@ public class UndeadEvents implements Listener{
     }
 
     public static void playerBurn(){
-
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
             for (Player p : Bukkit.getOnlinePlayers()){
-                if (p.getInventory().getHelmet() != null &&  p.getInventory().getChestplate() != null &&
-                        p.getInventory().getLeggings() != null &&  p.getInventory().getBoots() != null &&
-                        UndeadArmorUtils.hasFullSet(p) && UndeadArmorUtils.inSunlight(p)){
+                if (UndeadArmorUtils.hasFullSet(p) && UndeadArmorUtils.inSunlight(p)){
                     p.setFireTicks(200);
                 }
             }

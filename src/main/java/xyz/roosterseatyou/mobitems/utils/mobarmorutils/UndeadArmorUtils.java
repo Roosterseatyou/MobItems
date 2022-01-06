@@ -14,7 +14,8 @@ public class UndeadArmorUtils {
     }
 
     public static boolean hasFullSet(Player p) {
-        return isUndeadArmor(p.getInventory().getHelmet()) && isUndeadArmor(p.getInventory().getChestplate())
+        return p.getInventory().getHelmet() != null &&  p.getInventory().getChestplate() != null &&
+                p.getInventory().getLeggings() != null &&  p.getInventory().getBoots() != null && isUndeadArmor(p.getInventory().getHelmet()) && isUndeadArmor(p.getInventory().getChestplate())
                 && isUndeadArmor(p.getInventory().getLeggings()) && isUndeadArmor(p.getInventory().getBoots());
     }
 
