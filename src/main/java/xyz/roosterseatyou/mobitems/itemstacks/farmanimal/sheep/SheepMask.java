@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstacks.sheep;
+package xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -9,7 +9,6 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
-import javax.swing.*;
 import java.util.ArrayList;
 import java.util.List;
 
