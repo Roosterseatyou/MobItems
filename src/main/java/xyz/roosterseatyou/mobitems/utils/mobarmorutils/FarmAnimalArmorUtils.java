@@ -1,5 +1,8 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
@@ -9,6 +12,10 @@ public class FarmAnimalArmorUtils {
 
     public static boolean isFarmAnimalArmor(ItemStack i) {
         return PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);
+    }
+
+    public static boolean isSheepArmor(ItemStack i){
+        return PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: SHEEP").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
 
     public static boolean hasFullSet(Player p) {

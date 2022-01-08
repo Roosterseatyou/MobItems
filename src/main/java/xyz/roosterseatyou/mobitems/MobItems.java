@@ -3,7 +3,7 @@ package xyz.roosterseatyou.mobitems;
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.events.TestingListener;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.FarmAnimalEvents;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
@@ -19,7 +19,6 @@ public final class MobItems extends JavaPlugin {
 
     @Override
     public void onEnable() {
-
         items();
         new UndeadEvents(this);
         UndeadEvents.playerBurn();
