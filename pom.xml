@@ -56,20 +56,8 @@
 
     <repositories>
         <repository>
-            <url>https://github.com/Roosterseatyou/JavaLibrary/blob/repository/JavaHelperLibrary.jar?raw=true</url>
-            <id>JavaHelperLibrary</id>
-        </repository>
-        <repository>
-            <id>PluginLibrary</id>
-            <url>https://github.com/Roosterseatyou/PluginLib/blob/repo/PluginLib.jar?raw=true</url>
-        </repository>
-        <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
     </repositories>
 

@@ -1,5 +1,6 @@
 package xyz.roosterseatyou.mobitems.events.farmanimalevents.cow;
 
+import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,10 +13,4 @@ public class CowListeners implements Listener {
     public CowListeners(MobItems plugin){
         CowListeners.plugin = plugin;
     }
-
-    @EventHandler
-    public void onPlayerLeftClick(PlayerInteractEvent e){
-        Bukkit.getScheduler().runTaskLater(plugin, () -> e.getPlayer().sendMessage("hi"), 2);
-    }
-
 }
