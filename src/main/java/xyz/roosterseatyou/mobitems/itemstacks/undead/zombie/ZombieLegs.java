@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstacks.zombie;
+package xyz.roosterseatyou.mobitems.itemstacks.undead.zombie;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
