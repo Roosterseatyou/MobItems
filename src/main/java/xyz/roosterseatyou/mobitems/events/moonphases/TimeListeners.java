@@ -49,7 +49,7 @@ public class TimeListeners implements Listener {
                 } else if(MathUtils.rngHelper(waterMoonChance) && !isBloodMoon && !isSpecial){
                     isWaterMoon = true;
                     waterMoonChance = 0;
-                    Bukkit.broadcast(Component.text("You feel a sprinkle of salt water as a Watermoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#315fb5")));
+                    Bukkit.broadcast(Component.text("You feel a sprinkle of salt water hit your face as a Watermoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#315fb5")));
                 } else if(!isSpecial){
                     bloodMoonChance++;
                     blueMoonChance++;
