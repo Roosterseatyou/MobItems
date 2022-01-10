@@ -41,22 +41,22 @@ public class TimeListeners implements Listener {
                 } else if(MathUtils.rngHelper(blueMoonChance) && !isSpecial){
                     isBlueMoon = true;
                     blueMoonChance = 0;
-                    Bukkit.broadcast(Component.text("You feel a gust of cold wind as a Bluemoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#040aba")));
+                    Bukkit.broadcast(Component.text("You sense a feeling of dread as a Bluemoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#040aba")));
                 } else if(MathUtils.rngHelper(goldenMoonChance) && !isBloodMoon && !isSpecial){
                     isGoldenMoon = true;
                     goldenMoonChance = 0;
-                    Bukkit.broadcast(Component.text("You feel a gust of cold wind as a Goldmoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#dea821")));
+                    Bukkit.broadcast(Component.text("You see the moon shine brighter than it ever has as a Goldmoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#dea821")));
                 } else if(MathUtils.rngHelper(waterMoonChance) && !isBloodMoon && !isSpecial){
                     isWaterMoon = true;
                     waterMoonChance = 0;
-                    Bukkit.broadcast(Component.text("You feel a gust of cold wind as a Watermoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#315fb5")));
+                    Bukkit.broadcast(Component.text("You feel a sprinkle of salt water as a Watermoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#315fb5")));
                 } else if(!isSpecial){
                     bloodMoonChance++;
                     blueMoonChance++;
                     goldenMoonChance++;
                     waterMoonChance++;
                 }
-            } else if(23000 < Bukkit.getWorld("world").getTime() && Bukkit.getWorld("world").getTime() < 23100){
+            } else if (Bukkit.getWorld("world") != null && 23000 < Bukkit.getWorld("world").getTime() && Bukkit.getWorld("world").getTime() < 23100) {
                 if (isSpecial){
                     Bukkit.broadcast(Component.text("The moon has set. You may go back to your pathetic lives.."));
                 }
