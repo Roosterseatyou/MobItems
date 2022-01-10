@@ -12,17 +12,17 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class DrownedMask {
-    public static Component NAME = Component.text("Drowned Mask").color(TextColor.fromHexString("#89E2C7"));
-    public static ItemStack DROWNED_MASK;
+public class DrownedFeet {
+    public static Component NAME = Component.text("Drowned Feet").color(TextColor.fromHexString("#89E2C7"));
+    public static ItemStack DROWNED_FEET;
 
     public static ItemStack init(){
-        drownedMask();
+        drownedFeet();
         return null;
     }
 
-    public static void drownedMask(){
-        ItemStack item = new ItemStack(Material.LEATHER_HELMET);
+    public static void drownedFeet(){
+        ItemStack item = new ItemStack(Material.LEATHER_BOOTS);
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
@@ -35,6 +35,6 @@ public class DrownedMask {
         lore.add(Component.text("CLASS ID: UNDERWATER").color(TextColor.fromHexString("#92D2E2")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
-        DROWNED_MASK = item;
+        DROWNED_FEET= item;
     }
 }
