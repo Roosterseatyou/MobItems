@@ -28,7 +28,6 @@ public class TimeListeners implements Listener {
         TimeListeners.plugin = plugin;
     }
 
-    @EventHandler
     public static void moonStarter() {
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
