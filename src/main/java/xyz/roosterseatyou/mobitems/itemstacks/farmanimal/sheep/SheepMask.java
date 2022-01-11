@@ -16,10 +16,15 @@ public class SheepMask {
     public static Component ENTITY_ID = Component.text("ENTITY ID: SHEEP").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
     public static Component CLASS_ID = Component.text("CLASS ID: FARM").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
     public static Component NAME = Component.text("Sheep Mask");
+    public static List<ItemStack> list;
     public static ItemStack SHEEP_MASK;
 
     public static ItemStack init(){
         sheepMask();
+        list.add(SHEEP_MASK);
+        list.add(SheepChest.SHEEP_CHEST);
+        list.add(SheepLegs.SHEEP_LEGS);
+        list.add(SheepHooves.SHEEP_HOOVES);
         return null;
     }
 

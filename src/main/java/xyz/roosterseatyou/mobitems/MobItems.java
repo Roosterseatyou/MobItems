@@ -10,6 +10,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
@@ -35,6 +39,10 @@ public final class MobItems extends JavaPlugin {
     }
 
     public static void items(){
+        DrownedMask.init();
+        DrownedChest.init();
+        DrownedLegs.init();
+        DrownedFeet.init();
         ZombieMask.init();
         ZombieChest.init();
         ZombieLegs.init();

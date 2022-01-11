@@ -14,10 +14,15 @@ import java.util.List;
 
 public class DrownedMask {
     public static Component NAME = Component.text("Drowned Mask").color(TextColor.fromHexString("#89E2C7"));
+    public static List<ItemStack> list;
     public static ItemStack DROWNED_MASK;
 
     public static ItemStack init(){
         drownedMask();
+        list.add(DrownedMask.DROWNED_MASK);
+        list.add(DrownedChest.DROWNED_CHEST);
+        list.add(DrownedLegs.DROWNED_LEGS);
+        list.add(DrownedFeet.DROWNED_FEET);
         return null;
     }
 
