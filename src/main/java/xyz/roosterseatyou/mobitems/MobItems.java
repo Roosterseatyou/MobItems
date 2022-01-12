@@ -1,8 +1,10 @@
 package xyz.roosterseatyou.mobitems;
 
+import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.TimeListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
@@ -25,12 +27,14 @@ public final class MobItems extends JavaPlugin {
     public void onEnable() {
         items();
         new UndeadEvents(this);
+        new CowListeners(this);
         UndeadEvents.playerBurn();
         new TimeListeners(this);
         TimeListeners.moonStarter();
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new TestingListener(), this);
+        Bukkit.getConsoleSender().sendMessage("Good Job!");
     }
 
     @Override
@@ -39,10 +43,6 @@ public final class MobItems extends JavaPlugin {
     }
 
     public static void items(){
-        DrownedMask.init();
-        DrownedChest.init();
-        DrownedLegs.init();
-        DrownedFeet.init();
         ZombieMask.init();
         ZombieChest.init();
         ZombieLegs.init();
