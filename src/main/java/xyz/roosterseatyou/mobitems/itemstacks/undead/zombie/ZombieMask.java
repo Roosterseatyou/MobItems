@@ -14,10 +14,15 @@ import java.util.List;
 
 public class ZombieMask {
     public static Component NAME = Component.text("Zombie Mask").color(TextColor.fromHexString("#05540d"));
+    public static List<ItemStack> itemsList = new ArrayList<>();
     public static ItemStack ZOMBIE_MASK;
 
     public static ItemStack init(){
         zombieMask();
+        itemsList.add(ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
         return null;
     }
 

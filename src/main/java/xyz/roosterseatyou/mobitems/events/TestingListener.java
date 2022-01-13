@@ -3,6 +3,10 @@ package xyz.roosterseatyou.mobitems.events;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.player.PlayerJoinEvent;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
@@ -23,5 +27,9 @@ public class TestingListener implements Listener {
         e.getPlayer().getInventory().addItem(SheepChest.SHEEP_CHEST);
         e.getPlayer().getInventory().addItem(SheepLegs.SHEEP_LEGS);
         e.getPlayer().getInventory().addItem(SheepHooves.SHEEP_HOOVES);
+        e.getPlayer().getInventory().addItem(CowMask.COW_MASK);
+        e.getPlayer().getInventory().addItem(CowChest.COW_CHEST);
+        e.getPlayer().getInventory().addItem(CowLegs.COW_LEGS);
+        e.getPlayer().getInventory().addItem(CowHooves.COW_HOOVES);
     }
 }

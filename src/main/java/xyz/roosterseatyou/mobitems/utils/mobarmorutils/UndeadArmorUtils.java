@@ -20,9 +20,6 @@ public class UndeadArmorUtils {
                 && isUndeadArmor(p.getInventory().getLeggings()) && isUndeadArmor(p.getInventory().getBoots());
     }
 
-
-
-
     public static boolean inSunlight(Player p){
         Block block = p.getLocation().getBlock().getRelative(0, 1, 0);
         int sunlightLevel = block.getLightFromSky();
