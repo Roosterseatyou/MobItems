@@ -8,6 +8,10 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.TimeListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
@@ -20,6 +24,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 
 public final class MobItems extends JavaPlugin {
 
@@ -43,13 +48,25 @@ public final class MobItems extends JavaPlugin {
     }
 
     public static void items(){
+        //Hostiles
         ZombieMask.init();
         ZombieChest.init();
         ZombieLegs.init();
         ZombieFeet.init();
+        DrownedMask.init();
+        DrownedChest.init();
+        DrownedLegs.init();
+        DrownedFeet.init();
+
+        //Passives, Neutrals
         SheepMask.init();
         SheepChest.init();
         SheepLegs.init();
         SheepHooves.init();
+        CowMask.init();
+        CowChest.init();
+        CowLegs.init();
+        CowHooves.init();
+        RabbitMask.init();
     }
 }
