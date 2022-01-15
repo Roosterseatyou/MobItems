@@ -6,7 +6,6 @@ import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
-import xyz.roosterseatyou.mobitems.events.moonphases.TimeListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
@@ -25,6 +24,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
+import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 
 public final class MobItems extends JavaPlugin {
 
@@ -34,8 +34,8 @@ public final class MobItems extends JavaPlugin {
         new UndeadEvents(this);
         new CowListeners(this);
         UndeadEvents.playerBurn();
-        new TimeListeners(this);
-        TimeListeners.moonStarter();
+        new MoonPhase(this);
+        MoonPhase.moonStarter();
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new TestingListener(), this);

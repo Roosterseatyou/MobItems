@@ -12,6 +12,8 @@ import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.moonphases.BloodMoon;
+import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
@@ -35,7 +37,7 @@ public class BloodMoonListeners implements Listener {
     @EventHandler
     public void onEntitySpawn(EntitySpawnEvent e){
         long time = e.getEntity().getWorld().getTime();
-        if(TimeListeners.isBloodMoon && hostiles.contains(e.getEntityType())){
+        if(BloodMoon.isActive() && hostiles.contains(e.getEntityType())){
             LivingEntity entity = (LivingEntity) e.getEntity();
             entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, 0));
             entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 12000, 0));
@@ -46,7 +48,7 @@ public class BloodMoonListeners implements Listener {
     @EventHandler
     public void onEntityDeath(EntityDeathEvent e) {
         LivingEntity entity = e.getEntity();
-        if(hostiles.contains(entity.getType()) && TimeListeners.isBloodMoon){
+        if(hostiles.contains(entity.getType()) && BloodMoon.isActive()){
             if(MathUtils.rngHelper(3)){
                 if(e.getEntityType() == EntityType.ZOMBIE){
                     ItemStack item = ItemUtils.randomItemStackFromList(ZombieMask.itemsList);
