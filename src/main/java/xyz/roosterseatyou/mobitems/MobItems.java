@@ -1,13 +1,17 @@
 package xyz.roosterseatyou.mobitems;
 
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Cow;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.TimeListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
+import xyz.roosterseatyou.mobitems.events.undetermined.KillerRabbitListeners;
+import xyz.roosterseatyou.mobitems.events.undetermined.RabbitListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
@@ -24,7 +28,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 
 public final class MobItems extends JavaPlugin {
 
@@ -36,6 +40,11 @@ public final class MobItems extends JavaPlugin {
         UndeadEvents.playerBurn();
         new TimeListeners(this);
         TimeListeners.moonStarter();
+        new BloodMoonListeners(this);
+        BloodMoonListeners.rabbitChecks();
+        getServer().getPluginManager().registerEvents(new CowListeners(this), this);
+        getServer().getPluginManager().registerEvents(new KillerRabbitListeners(), this);
+        getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new TestingListener(), this);
@@ -68,5 +77,12 @@ public final class MobItems extends JavaPlugin {
         CowLegs.init();
         CowHooves.init();
         RabbitMask.init();
+        RabbitChest.init();
+        RabbitLegs.init();
+        RabbitFeet.init();
+        KillerRabbitMask.init();
+        KillerRabbitChest.init();
+        KillerRabbitLegs.init();
+        KillerRabbitFeet.init();
     }
 }

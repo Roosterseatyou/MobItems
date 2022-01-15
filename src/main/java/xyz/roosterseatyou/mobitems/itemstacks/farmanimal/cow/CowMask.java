@@ -8,7 +8,6 @@ import org.bukkit.Material;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -16,7 +15,7 @@ import java.util.List;
 public class CowMask {
     public static Component NAME = Component.text("Cow Mask");
     public static Component ENTITY_ID = Component.text("ENTITY ID: COW").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
-    public static List<ItemStack> list;
+    public static List<ItemStack> list = new ArrayList<>();
     public static ItemStack COW_MASK;
 
     public static ItemStack init(){

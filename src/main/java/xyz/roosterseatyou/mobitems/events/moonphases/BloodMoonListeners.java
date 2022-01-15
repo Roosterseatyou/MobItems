@@ -1,8 +1,10 @@
 package xyz.roosterseatyou.mobitems.events.moonphases;
 
+import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
@@ -11,15 +13,21 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
+import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class BloodMoonListeners implements Listener {
-    private Plugin plugin;
+    private static Plugin plugin;
     public static List<EntityType> hostiles = new ArrayList<>();
 
     public BloodMoonListeners(Plugin plugin){
@@ -79,5 +87,20 @@ public class BloodMoonListeners implements Listener {
                 }
             }
         }
+    }
+
+    public static void rabbitChecks(){
+        BukkitScheduler scheduler = Bukkit.getScheduler();
+        scheduler.scheduleSyncRepeatingTask(plugin, () -> {
+            if(TimeListeners.isBloodMoon) {
+                ItemStack[] killerArmor = {KillerRabbitFeet.RABBIT_FEET, KillerRabbitLegs.RABBIT_LEGS,
+                        KillerRabbitChest.RABBIT_CHEST, KillerRabbitMask.RABBIT_MASK};
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    if (PlayerInventoryUtils.hasRabbitSet(p)) {
+                        p.getInventory().setArmorContents(killerArmor);
+                    }
+                }
+            }
+        }, 0, 100L);
     }
 }

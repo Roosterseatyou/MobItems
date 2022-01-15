@@ -4,7 +4,6 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
-import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
@@ -64,6 +63,6 @@ public class TimeListeners implements Listener {
                 isBlueMoon = false;
                 isBloodMoon = false;
             }
-        }, 0L, 100L);
+        }, 0L, 99L);
     }
 }
