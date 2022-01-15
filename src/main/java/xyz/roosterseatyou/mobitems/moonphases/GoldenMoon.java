@@ -2,12 +2,16 @@ package xyz.roosterseatyou.mobitems.moonphases;
 
 import org.bukkit.plugin.Plugin;
 
-public class BlueMoon extends MoonPhase{
+public class GoldenMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public BlueMoon(Plugin plugin, int stage, boolean stopping) {
+    public GoldenMoon(Plugin plugin, int stage, boolean stopping) {
         super(plugin, stage, stopping);
+    }
+
+    public GoldenMoon(Plugin plugin, int stage){
+        super(plugin, stage);
     }
 
     public static int getServerChance() {
@@ -15,7 +19,7 @@ public class BlueMoon extends MoonPhase{
     }
 
     public static void setServerChance(int chance) {
-        BlueMoon.chance = chance;
+        GoldenMoon.chance = chance;
     }
 
     public static boolean isServerActive() {
@@ -23,6 +27,6 @@ public class BlueMoon extends MoonPhase{
     }
 
     public static void setServerActive(boolean active) {
-        BlueMoon.active = active;
+        GoldenMoon.active = active;
     }
 }

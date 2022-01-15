@@ -37,7 +37,7 @@ public class BloodMoonListeners implements Listener {
     @EventHandler
     public void onEntitySpawn(EntitySpawnEvent e){
         long time = e.getEntity().getWorld().getTime();
-        if(BloodMoon.isActive() && hostiles.contains(e.getEntityType())){
+        if(BloodMoon.isServerActive() && hostiles.contains(e.getEntityType())){
             LivingEntity entity = (LivingEntity) e.getEntity();
             entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, 0));
             entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 12000, 0));
@@ -48,7 +48,7 @@ public class BloodMoonListeners implements Listener {
     @EventHandler
     public void onEntityDeath(EntityDeathEvent e) {
         LivingEntity entity = e.getEntity();
-        if(hostiles.contains(entity.getType()) && BloodMoon.isActive()){
+        if(hostiles.contains(entity.getType()) && BloodMoon.isServerActive()){
             if(MathUtils.rngHelper(3)){
                 if(e.getEntityType() == EntityType.ZOMBIE){
                     ItemStack item = ItemUtils.randomItemStackFromList(ZombieMask.itemsList);

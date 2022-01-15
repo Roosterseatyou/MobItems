@@ -37,4 +37,13 @@ public class MoonPhaseChangeEvent extends WorldEvent implements Cancellable {
     public void setCancelled(boolean b) {
         
     }
+
+    public int getStage(){
+        return phase.getStage();
+    }
+
+    @Override
+    public String toString() {
+        return "MoonPhase " + phase + "was set to " + phase.getAction();
+    }
 }
