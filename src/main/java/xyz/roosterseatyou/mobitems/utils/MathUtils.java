@@ -9,6 +9,11 @@ public class MathUtils {
         return rInt <= n;
     }
 
+    public static boolean complexRngHelper(int n, int inA){
+        int rInt = randomIntegerFromRange(1, inA);
+        return rInt <= n;
+    }
+
     /**
      * This generates a Random Integer from a range you specify
      * @param min minimum value in the range

@@ -1,5 +1,6 @@
 package xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep;
 
+import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -13,13 +14,14 @@ import org.bukkit.event.player.PlayerInteractAtEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.FarmAnimalArmorUtils;
 
 import java.util.HashMap;
 
 public class SheepListeners implements Listener {
     public static HashMap<Player, Long> cooldown = new HashMap<>();
+    public static HashMap<Player, Boolean> woolState = new HashMap<>();
     //is used in FarmAnimalEvents
-    public static boolean canBeSheared;
 
     @EventHandler
     public static void onPlayerRightClick(PlayerInteractAtEntityEvent e){
@@ -34,10 +36,19 @@ public class SheepListeners implements Listener {
                     Location loc = clicked.getLocation();
                     loc.getWorld().dropItemNaturally(loc, new ItemStack(Material.WHITE_WOOL, MathUtils.randomIntegerFromRange(1, 4)));
                     cooldown.put(p, (System.currentTimeMillis()/1000));
-                    canBeSheared = false;
                 }else{
                     p.sendActionBar(Component.text("You still have to wait " + cooldown.get(p) + " to shear " + p.getName() + "!"));
                 }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerArmor(PlayerArmorChangeEvent e){
+        Player p = e.getPlayer();
+        if(FarmAnimalArmorUtils.isSheepSet(p)){
+            if(!woolState.get(p)){
+                woolState.put(p, true);
             }
         }
     }

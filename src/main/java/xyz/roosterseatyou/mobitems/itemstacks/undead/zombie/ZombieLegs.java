@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.itemstacks.zombie;
+package xyz.roosterseatyou.mobitems.itemstacks.undead.zombie;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
@@ -12,17 +12,17 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import java.util.ArrayList;
 import java.util.List;
 
-public class ZombieFeet{
-    public static Component NAME = Component.text("Zombie Feet").color(TextColor.fromHexString("#05540d"));
-    public static ItemStack ZOMBIE_FEET;
+public class ZombieLegs{
+    public static Component NAME = Component.text("Zombie Leggings").color(TextColor.fromHexString("#05540d"));
+    public static ItemStack ZOMBIE_LEGS;
 
     public static ItemStack init(){
-        zombieFeet();
+        zombieLegs();
         return null;
     }
 
-    public static void zombieFeet(){
-        ItemStack item = new ItemStack(Material.LEATHER_BOOTS);
+    public static void zombieLegs(){
+        ItemStack item = new ItemStack(Material.LEATHER_LEGGINGS);
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
@@ -34,6 +34,7 @@ public class ZombieFeet{
         lore.add(Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
-        ZOMBIE_FEET = item;
+        ZOMBIE_LEGS = item;
+
     }
 }
