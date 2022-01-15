@@ -26,7 +26,7 @@ public class RabbitChest {
     }
 
     public static void rabbitMask(){
-        ItemStack item = new ItemStack(Material.LEATHER_HELMET);
+        ItemStack item = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);

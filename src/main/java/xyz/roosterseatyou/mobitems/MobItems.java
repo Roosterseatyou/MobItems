@@ -6,8 +6,12 @@ import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.TimeListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
+import xyz.roosterseatyou.mobitems.events.undetermined.KillerRabbitListeners;
+import xyz.roosterseatyou.mobitems.events.undetermined.RabbitListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
@@ -69,5 +73,12 @@ public final class MobItems extends JavaPlugin {
         CowLegs.init();
         CowHooves.init();
         RabbitMask.init();
+        RabbitChest.init();
+        RabbitLegs.init();
+        RabbitFeet.init();
+        KillerRabbitMask.init();
+        KillerRabbitChest.init();
+        KillerRabbitLegs.init();
+        KillerRabbitFeet.init();
     }
 }

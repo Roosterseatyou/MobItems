@@ -1,14 +1,15 @@
 package xyz.roosterseatyou.mobitems.events.undeadevents;
-import org.bukkit.entity.Player;
+
 import org.bukkit.Bukkit;
+import org.bukkit.attribute.Attribute;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
+import org.bukkit.event.Listener;
+import org.bukkit.event.entity.PlayerDeathEvent;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.scheduler.BukkitScheduler;
-import org.bukkit.event.Listener;
-import org.bukkit.attribute.Attribute;
 import org.bukkit.potion.PotionEffectType;
-import org.bukkit.event.entity.PlayerDeathEvent;
+import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UndeadArmorUtils;
 

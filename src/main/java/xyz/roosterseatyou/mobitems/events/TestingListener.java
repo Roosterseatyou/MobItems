@@ -15,6 +15,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 
 public class TestingListener implements Listener {
     @EventHandler
@@ -31,5 +35,9 @@ public class TestingListener implements Listener {
         e.getPlayer().getInventory().addItem(CowChest.COW_CHEST);
         e.getPlayer().getInventory().addItem(CowLegs.COW_LEGS);
         e.getPlayer().getInventory().addItem(CowHooves.COW_HOOVES);
+        e.getPlayer().getInventory().addItem(RabbitMask.RABBIT_MASK);
+        e.getPlayer().getInventory().addItem(RabbitChest.RABBIT_CHEST);
+        e.getPlayer().getInventory().addItem(RabbitLegs.RABBIT_LEGS);
+        e.getPlayer().getInventory().addItem(RabbitFeet.RABBIT_FEET);
     }
 }
