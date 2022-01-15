@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep;
+package xyz.roosterseatyou.mobitems.events.farmanimalevents;
 
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
@@ -6,6 +6,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
 import org.bukkit.event.player.PlayerInteractEvent;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.FarmAnimalArmorUtils;
 
 public class FarmAnimalEvents implements Listener {
@@ -17,7 +18,7 @@ public class FarmAnimalEvents implements Listener {
             e.getClickedBlock().setType(Material.DIRT);
             p.setFoodLevel(p.getFoodLevel() + 6);
             if(FarmAnimalArmorUtils.isSheepSet(p)){
-                SheepListeners.canBeSheared = true;
+                SheepListeners.woolState.put(p, true);
             }
         }
     }
