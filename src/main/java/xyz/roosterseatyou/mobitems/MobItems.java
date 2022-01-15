@@ -6,6 +6,7 @@ import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
@@ -34,6 +35,8 @@ public final class MobItems extends JavaPlugin {
         new UndeadEvents(this);
         new CowListeners(this);
         UndeadEvents.playerBurn();
+        new MoonStarter(this);
+        MoonStarter.moonStarter();
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new TestingListener(), this);

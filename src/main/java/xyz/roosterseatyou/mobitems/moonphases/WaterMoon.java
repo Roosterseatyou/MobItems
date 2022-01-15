@@ -8,6 +8,9 @@ public class WaterMoon extends MoonPhase{
 
     public WaterMoon(Plugin plugin, int stage, boolean stopping){
         super(plugin, stage, stopping);
+        if(stopping){
+            setServerActive(false);
+        }
     }
 
     public WaterMoon(Plugin plugin, int stage) {

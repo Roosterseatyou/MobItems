@@ -8,6 +8,9 @@ public class GoldenMoon extends MoonPhase{
 
     public GoldenMoon(Plugin plugin, int stage, boolean stopping) {
         super(plugin, stage, stopping);
+        if(stopping){
+            setServerActive(false);
+        }
     }
 
     public GoldenMoon(Plugin plugin, int stage){

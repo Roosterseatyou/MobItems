@@ -9,6 +9,7 @@ import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 
 public class MoonPhaseChangeEvent extends WorldEvent implements Cancellable {
     private MoonPhase phase;
+    private boolean isCanceled;
 
     public MoonPhaseChangeEvent(@NotNull World world, MoonPhase phase) {
         super(world);
@@ -35,7 +36,7 @@ public class MoonPhaseChangeEvent extends WorldEvent implements Cancellable {
 
     @Override
     public void setCancelled(boolean b) {
-        
+        phase.setStopping(true);
     }
 
     public int getStage(){

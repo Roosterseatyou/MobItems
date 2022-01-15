@@ -8,6 +8,13 @@ public class BlueMoon extends MoonPhase{
 
     public BlueMoon(Plugin plugin, int stage, boolean stopping) {
         super(plugin, stage, stopping);
+        if(stopping){
+            setServerActive(false);
+        }
+    }
+
+    public BlueMoon(Plugin plugin, int stage){
+        super(plugin, stage);
     }
 
     public static int getServerChance() {

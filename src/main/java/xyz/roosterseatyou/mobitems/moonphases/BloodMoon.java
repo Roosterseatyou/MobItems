@@ -10,6 +10,9 @@ public class BloodMoon extends MoonPhase{
 
     public BloodMoon(Plugin plugin, int stage, boolean stopping) {
         super(plugin, stage, stopping);
+        if(stopping){
+            setServerActive(false);
+        }
     }
 
     public BloodMoon(Plugin plugin, int stage){
