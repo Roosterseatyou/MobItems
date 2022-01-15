@@ -15,19 +15,19 @@ public class WaterMoon extends MoonPhase{
     }
 
 
-    public static boolean isActive() {
+    public static boolean isServerActive() {
         return active;
     }
 
-    public static void setActive(boolean active) {
+    public static void setServerActive(boolean active) {
         WaterMoon.active = active;
     }
 
-    public static int getChance() {
+    public static int getServerChance() {
         return chance;
     }
 
-    public static void setChance(int chance) {
+    public static void setServerChance(int chance) {
         WaterMoon.chance = chance;
     }
 }
