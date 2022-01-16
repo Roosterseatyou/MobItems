@@ -54,12 +54,13 @@ public class MoonStarter {
             } else if (Bukkit.getWorld("world") != null && 23000 < Bukkit.getWorld("world").getTime() && Bukkit.getWorld("world").getTime() < 23100) {
                 if (isSpecial){
                     Bukkit.broadcast(Component.text("The moon has set. You may go back to your pathetic lives.."));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new MoonPhase(plugin, stage, true)));
                 }
                 BloodMoon.setServerActive(false);
                 BlueMoon.setServerActive(false);
                 GoldenMoon.setServerActive(false);
                 WaterMoon.setServerActive(false);
-                Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new GoldenMoon(plugin, stage, true)));
+
             }
         }, 0L, 99L);
     }
