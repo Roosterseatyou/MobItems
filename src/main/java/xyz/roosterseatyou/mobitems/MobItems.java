@@ -2,6 +2,8 @@ package xyz.roosterseatyou.mobitems;
 
 import org.bukkit.Bukkit;
 import org.bukkit.plugin.java.JavaPlugin;
+import xyz.roosterseatyou.mobitems.commands.MoonStatus;
+import xyz.roosterseatyou.mobitems.commands.SetMoon;
 import xyz.roosterseatyou.mobitems.events.TestingListener;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
@@ -41,10 +43,13 @@ public final class MobItems extends JavaPlugin {
         new MoonStarter(this);
         MoonStarter.moonStarter();
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
+        getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
+        getServer().getPluginManager().registerEvents(new CowListeners(this), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new TestingListener(), this);
-        Bukkit.getConsoleSender().sendMessage("Good Job!");
+        this.getCommand("moonstatus").setExecutor(new MoonStatus());
+        this.getCommand("setmoon").setExecutor(new SetMoon());
     }
 
     @Override

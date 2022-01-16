@@ -95,18 +95,13 @@ public class BloodMoonListeners implements Listener {
 
     @EventHandler
     public void onMoonChange(MoonPhaseChangeEvent e){
-        Bukkit.broadcast(Component.text("EEEEEE"));
-        Bukkit.broadcast(Component.text(e.toString()));
         ItemStack[] killerArmor = {KillerRabbitFeet.RABBIT_FEET, KillerRabbitLegs.RABBIT_LEGS,
                 KillerRabbitChest.RABBIT_CHEST, KillerRabbitMask.RABBIT_MASK};
         if(e.getPhase() instanceof BloodMoon){
-            Bukkit.broadcast(Component.text(BloodMoon.isServerActive()));
             BloodMoon phase = (BloodMoon) e.getPhase();
             if(BloodMoon.isServerActive()){
                 for (Player p : Bukkit.getOnlinePlayers()) {
-                    p.sendMessage(Component.text("no armor"));
                     if (PlayerInventoryUtils.hasRabbitSet(p)) {
-                        p.sendMessage("armor?");
                         p.getInventory().setArmorContents(killerArmor);
                     }
                 }

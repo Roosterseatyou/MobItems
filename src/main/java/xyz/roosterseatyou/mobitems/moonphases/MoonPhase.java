@@ -11,21 +11,18 @@ import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
 public class MoonPhase {
     //Stuff not related to the object...
-    private static Plugin plugin;
     private static boolean activeMoonPhase = false;
     private int stage;
     private boolean starting;
     private boolean stopping;
 
 
-    public MoonPhase(Plugin plugin, int stage, boolean stopping){
-        MoonPhase.plugin = plugin;
+    public MoonPhase(int stage, boolean stopping){
         this.stage = stage;
         this.stopping = stopping;
     }
 
-    public MoonPhase(Plugin plugin, int stage){
-        MoonPhase.plugin = plugin;
+    public MoonPhase(int stage){
         this.stage = stage;
         starting = true;
         stopping = false;

@@ -15,6 +15,7 @@ public class MoonPhaseChangeEvent extends Event implements Cancellable {
 
     public MoonPhaseChangeEvent(MoonPhase phase) {
         this.phase = phase;
+
     }
 
     public static HandlerList getHandlerList() {
