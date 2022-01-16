@@ -30,7 +30,6 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
-import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 
 public final class MobItems extends JavaPlugin {
 
