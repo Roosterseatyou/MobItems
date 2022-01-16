@@ -2,23 +2,23 @@ package xyz.roosterseatyou.mobitems.events.custom;
 
 import org.bukkit.World;
 import org.bukkit.event.Cancellable;
+import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
 import org.bukkit.event.world.WorldEvent;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 
-public class MoonPhaseChangeEvent extends WorldEvent implements Cancellable {
+public class MoonPhaseChangeEvent extends Event implements Cancellable {
+    private static final HandlerList handlers = new HandlerList();
     private MoonPhase phase;
     private boolean isCanceled;
 
-    public MoonPhaseChangeEvent(@NotNull World world, MoonPhase phase) {
-        super(world);
+    public MoonPhaseChangeEvent(MoonPhase phase) {
         this.phase = phase;
     }
 
-    @Override
-    public @NotNull HandlerList getHandlers() {
-        return null;
+    public static HandlerList getHandlerList() {
+        return handlers;
     }
 
     public MoonPhase getPhase() {
@@ -46,5 +46,10 @@ public class MoonPhaseChangeEvent extends WorldEvent implements Cancellable {
     @Override
     public String toString() {
         return "MoonPhase " + phase + "was set to " + phase.getAction();
+    }
+
+    @Override
+    public @NotNull HandlerList getHandlers() {
+        return handlers;
     }
 }

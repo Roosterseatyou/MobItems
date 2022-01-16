@@ -1,8 +1,11 @@
 package xyz.roosterseatyou.mobitems.events.moonphases;
 
+import net.kyori.adventure.text.Component;
+import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
@@ -11,11 +14,18 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitScheduler;
+import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
 import xyz.roosterseatyou.mobitems.moonphases.BloodMoon;
 import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
+import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -78,6 +88,27 @@ public class BloodMoonListeners implements Listener {
                     ItemStack item = ItemUtils.randomItemStackFromList(StrayMask.itemsList);
                     entity.getLocation().getWorld().dropItemNaturally(entity.getLocation(), item);
                      */
+                }
+            }
+        }
+    }
+
+    @EventHandler
+    public void onMoonChange(MoonPhaseChangeEvent e){
+        Bukkit.broadcast(Component.text("EEEEEE"));
+        Bukkit.broadcast(Component.text(e.toString()));
+        ItemStack[] killerArmor = {KillerRabbitFeet.RABBIT_FEET, KillerRabbitLegs.RABBIT_LEGS,
+                KillerRabbitChest.RABBIT_CHEST, KillerRabbitMask.RABBIT_MASK};
+        if(e.getPhase() instanceof BloodMoon){
+            Bukkit.broadcast(Component.text(BloodMoon.isServerActive()));
+            BloodMoon phase = (BloodMoon) e.getPhase();
+            if(BloodMoon.isServerActive()){
+                for (Player p : Bukkit.getOnlinePlayers()) {
+                    p.sendMessage(Component.text("no armor"));
+                    if (PlayerInventoryUtils.hasRabbitSet(p)) {
+                        p.sendMessage("armor?");
+                        p.getInventory().setArmorContents(killerArmor);
+                    }
                 }
             }
         }

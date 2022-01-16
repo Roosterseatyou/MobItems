@@ -5,7 +5,7 @@ import org.bukkit.plugin.Plugin;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 
 public class BloodMoon extends MoonPhase{
-    private static int chance = 0;
+    private static int chance = 1;
     private static boolean active = false;
 
     public BloodMoon(Plugin plugin, int stage, boolean stopping) {
