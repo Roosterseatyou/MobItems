@@ -8,6 +8,6 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class NetherArmorUtils {
     public static boolean isNetherArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: NETHER").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: NETHER").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
 }

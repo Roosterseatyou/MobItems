@@ -16,7 +16,7 @@ public class FarmAnimalArmorUtils {
     }
 
     public static boolean isSheepArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: SHEEP").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: SHEEP").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
 
     public static boolean hasFullSet(Player p) {

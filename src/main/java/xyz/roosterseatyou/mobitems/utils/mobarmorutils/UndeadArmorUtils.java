@@ -11,7 +11,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class UndeadArmorUtils {
     public static boolean isUndeadArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
 
     public static boolean hasFullSet(Player p) {

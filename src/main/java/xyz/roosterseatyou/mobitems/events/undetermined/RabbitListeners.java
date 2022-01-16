@@ -8,10 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
+import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class RabbitListeners implements Listener {
 
@@ -22,9 +20,9 @@ public class RabbitListeners implements Listener {
         ItemStack newItem = e.getNewItem();
         ItemStack oldItem = e.getOldItem();
         PotionEffect jump = new PotionEffect(PotionEffectType.JUMP, Integer.MAX_VALUE, 1);
-        if(newItem != null && !newItem.getType().equals(Material.AIR) && (newItem.equals(RabbitFeet.RABBIT_FEET) || newItem.equals(KillerRabbitFeet.RABBIT_FEET))){
+        if(newItem != null && !newItem.getType().equals(Material.AIR) && e.getSlotType() == PlayerArmorChangeEvent.SlotType.FEET && (PlayerInventoryUtils.hasID(newItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(newItem, KillerRabbitMask.ENTITY_ID))){
             p.addPotionEffect(jump);
-        } else if(oldItem != null && (oldItem.equals(RabbitFeet.RABBIT_FEET) || oldItem.equals(KillerRabbitFeet.RABBIT_FEET))){
+        } else if(oldItem != null && e.getSlotType() == PlayerArmorChangeEvent.SlotType.FEET && (PlayerInventoryUtils.hasID(oldItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(oldItem, KillerRabbitMask.ENTITY_ID))){
             p.removePotionEffect(PotionEffectType.JUMP);
         }
     }
@@ -35,9 +33,9 @@ public class RabbitListeners implements Listener {
         ItemStack newItem = e.getNewItem();
         ItemStack oldItem = e.getOldItem();
         PotionEffect luck = new PotionEffect(PotionEffectType.LUCK, Integer.MAX_VALUE, 1);
-        if(newItem != null && !newItem.getType().equals(Material.AIR) && (newItem.equals(RabbitFeet.RABBIT_FEET) || newItem.equals(KillerRabbitFeet.RABBIT_FEET))){
+        if(newItem != null && !newItem.getType().equals(Material.AIR) && e.getSlotType() == PlayerArmorChangeEvent.SlotType.FEET && (PlayerInventoryUtils.hasID(newItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(newItem, KillerRabbitMask.ENTITY_ID))){
             p.addPotionEffect(luck);
-        } else if(oldItem != null && (oldItem.equals(RabbitFeet.RABBIT_FEET) || oldItem.equals(KillerRabbitFeet.RABBIT_FEET))){
+        } else if(oldItem != null && e.getSlotType() == PlayerArmorChangeEvent.SlotType.FEET && (PlayerInventoryUtils.hasID(oldItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(oldItem, KillerRabbitMask.ENTITY_ID))){
             p.removePotionEffect(PotionEffectType.LUCK);
         }
     }
@@ -48,9 +46,9 @@ public class RabbitListeners implements Listener {
         ItemStack newItem = e.getNewItem();
         ItemStack oldItem = e.getOldItem();
         PotionEffect speed = new PotionEffect(PotionEffectType.SPEED, Integer.MAX_VALUE, 1);
-        if(newItem != null && !newItem.getType().equals(Material.AIR) && (newItem.equals(RabbitLegs.RABBIT_LEGS) || newItem.equals(KillerRabbitLegs.RABBIT_LEGS))){
+        if(newItem != null && !newItem.getType().equals(Material.AIR) && e.getSlotType() == PlayerArmorChangeEvent.SlotType.LEGS && (PlayerInventoryUtils.hasID(newItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(newItem, KillerRabbitMask.ENTITY_ID))){
             p.addPotionEffect(speed);
-        } else if(oldItem != null && (oldItem.equals(RabbitLegs.RABBIT_LEGS) || oldItem.equals(KillerRabbitLegs.RABBIT_LEGS))){
+        } else if(oldItem != null && e.getSlotType() == PlayerArmorChangeEvent.SlotType.LEGS && (PlayerInventoryUtils.hasID(oldItem, RabbitMask.ENTITY_ID) || PlayerInventoryUtils.hasID(oldItem, KillerRabbitMask.ENTITY_ID))){
             p.removePotionEffect(PotionEffectType.SPEED);
         }
     }

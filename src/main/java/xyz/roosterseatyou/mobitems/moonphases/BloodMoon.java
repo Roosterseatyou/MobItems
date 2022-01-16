@@ -8,15 +8,15 @@ public class BloodMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public BloodMoon(Plugin plugin, int stage, boolean stopping) {
-        super(plugin, stage, stopping);
+    public BloodMoon(int stage, boolean stopping) {
+        super(stage, stopping);
         if(stopping){
             setServerActive(false);
         }
     }
 
-    public BloodMoon(Plugin plugin, int stage){
-        super(plugin, stage);
+    public BloodMoon(int stage){
+        super(stage);
     }
 
     public static int getServerChance() {

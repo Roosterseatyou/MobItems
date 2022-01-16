@@ -21,7 +21,7 @@ public class CowListeners implements Listener {
     public void onEntityPotion(EntityPotionEffectEvent e){
         if(e.getEntity() instanceof Player){
             Player p = (Player) e.getEntity();
-            if(FarmAnimalArmorUtils.isCowSet(p)){
+            if(FarmAnimalArmorUtils.isCowSet(p) && e.getAction() == EntityPotionEffectEvent.Action.ADDED){
                 e.setCancelled(true);
             }
         }
