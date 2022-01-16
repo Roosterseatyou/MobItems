@@ -4,3 +4,13 @@ main: xyz.roosterseatyou.mobitems.MobItems
 api-version: 1.18
 authors: [ Roosterseatyou ]
 description: Adds Tools and Armor based off of the mobs in Minecraft, each with their own unique ability.
+commands:
+  setmoon:
+    permission: mobitems.setmoon
+    permission-message: no permission
+    description: sets the moon phase
+    usage: /setmoon <moon_phase> <stage> <boolean starting>
+
+  moonstatus:
+    description: gets the status of any moon
+    usage: /moonstatus

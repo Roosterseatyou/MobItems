@@ -14,7 +14,7 @@ import java.util.List;
 
 public class DrownedMask {
     public static Component NAME = Component.text("Drowned Mask").color(TextColor.fromHexString("#89E2C7"));
-    public static List<ItemStack> list;
+    public static List<ItemStack> list = new ArrayList<>();
     public static ItemStack DROWNED_MASK;
 
     public static ItemStack init(){
