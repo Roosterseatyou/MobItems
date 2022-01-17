@@ -10,38 +10,33 @@ import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class ChickenBeak {
-    public static Component NAME = Component.text("Chicken Beak");
-    public static Component ENTITY_ID = Component.text("ENTITY ID: CHICKEN").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
-    public static Component CLASS_ID = Component.text("CLASS ID: FARM").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
-    public static ItemStack CHICKEN_BEAK;
+public class ChickenWings {
+    public static Component NAME = Component.text("Chicken Wings");
+    public static ItemStack CHICKEN_WINGS;
 
     public static ItemStack init(){
-        chickenBeak();
+        chickenWings();
         return null;
     }
 
-    public static void chickenBeak(){
-        ItemStack item = new ItemStack(Material.LEATHER_HELMET);
+    public static void chickenWings(){
+        ItemStack item = new ItemStack(Material.LEATHER_CHESTPLATE);
         LeatherArmorMeta meta = (LeatherArmorMeta) item.getItemMeta();
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
-        meta.setColor(Color.YELLOW);
+        meta.setColor(Color.WHITE);
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "gen_armor", 2, AttributeModifier.Operation.ADD_NUMBER));
+        meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
         //see FarmAnimalArmorUtils
-        lore.add(ENTITY_ID);
-        lore.add(CLASS_ID);
+        lore.add(ChickenBeak.ENTITY_ID);
+        lore.add(ChickenBeak.CLASS_ID);
         meta.lore(lore);
         item.setItemMeta(meta);
-        CHICKEN_BEAK = item;
+        CHICKEN_WINGS = item;
     }
 }

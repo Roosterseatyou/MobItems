@@ -30,10 +30,13 @@ public class MoonStarter {
                 if(MathUtils.rngHelper(bloodMoonChance) && !isSpecial){
                     BloodMoon.setServerActive(true);
                     BloodMoon.setServerChance(0);
+                    Bukkit.broadcast(Component.text("You feel a gust of cool air hit your face as a Blood Moon rises.").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#dea821")));
                     Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BloodMoon(stage)));
                 } else if(MathUtils.rngHelper(blueMoonChance) && !isSpecial){
                     BlueMoon.setServerActive(true);
                     BlueMoon.setServerChance(0);
+                    Bukkit.broadcast(Component.text("You feel a sense of overwhelming confidence as a BlueMoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#dea821")));
+
                     Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BlueMoon(stage)));
                 } else if(MathUtils.rngHelper(goldenMoonChance) && !isSpecial){
                     GoldenMoon.setServerActive(true);
