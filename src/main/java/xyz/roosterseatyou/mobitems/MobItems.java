@@ -9,6 +9,7 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.MoonAnnouncer;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
 import xyz.roosterseatyou.mobitems.events.undetermined.KillerRabbitListeners;
@@ -42,6 +43,7 @@ public final class MobItems extends JavaPlugin {
         new MoonStarter(this);
         MoonStarter.moonStarter();
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
+        getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(this), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);

@@ -46,7 +46,7 @@ public class MoonPhaseChangeEvent extends Event implements Cancellable {
 
     @Override
     public String toString() {
-        return "MoonPhase " + phase + "was set to " + phase.getAction();
+        return phase + " was set to " + phase.getAction();
     }
 
     @Override

@@ -16,6 +16,9 @@ import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
 import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFeet;
@@ -26,6 +29,7 @@ import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -59,9 +63,9 @@ public class BloodMoonListeners implements Listener {
     public void onEntityDeath(EntityDeathEvent e) {
         LivingEntity entity = e.getEntity();
         if(hostiles.contains(entity.getType()) && BloodMoon.isServerActive()){
-            if(MathUtils.rngHelper(3)){
+            if(MathUtils.rngHelper(5)){
                 if(e.getEntityType() == EntityType.ZOMBIE){
-                    ItemStack item = ItemUtils.randomItemStackFromList(ZombieMask.itemsList);
+                    ItemStack item = ListContainers.getRandZombieArmor();
                     entity.getLocation().getWorld().dropItemNaturally(entity.getLocation(), item);
                 } else if(e.getEntityType() == EntityType.SKELETON){
                     /*

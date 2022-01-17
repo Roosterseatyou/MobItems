@@ -9,7 +9,7 @@ import java.util.List;
 public class ItemUtils{
 
     public static ItemStack randomItemStackFromList(List<ItemStack> list){
-        int rIndex = MathUtils.randomIntegerFromRange(0, list.size());
+        int rIndex = MathUtils.randomIntegerFromRange(0, list.size()-1);
         return list.get(rIndex);
     }
 
