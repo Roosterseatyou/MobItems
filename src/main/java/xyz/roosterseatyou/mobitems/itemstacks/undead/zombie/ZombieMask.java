@@ -19,7 +19,7 @@ public class ZombieMask {
 
     public static ItemStack init(){
         zombieMask();
-        itemsList.add(ZOMBIE_MASK);
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
         itemsList.add(ZombieChest.ZOMBIE_CHEST);
         itemsList.add(ZombieLegs.ZOMBIE_LEGS);
         itemsList.add(ZombieFeet.ZOMBIE_FEET);

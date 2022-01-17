@@ -52,7 +52,7 @@ public class PlayerInventoryUtils {
     }
 
     public static boolean isRabbitArmor(ItemStack i){
-        return hasID(i, RabbitMask.ENTITY_ID);
+        return i != null && hasID(i, RabbitMask.ENTITY_ID);
     }
     public static boolean isKillerRabbitArmor(ItemStack i){
         return i != null && hasID(i, KillerRabbitMask.ENTITY_ID);
