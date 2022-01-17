@@ -1,9 +1,5 @@
 package xyz.roosterseatyou.mobitems.moonphases;
 
-import org.bukkit.Bukkit;
-import org.bukkit.plugin.Plugin;
-import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
-
 public class BloodMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
