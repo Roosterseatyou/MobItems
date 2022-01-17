@@ -1,6 +1,5 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
-import org.bukkit.entity.Item;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;

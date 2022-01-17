@@ -1,10 +1,8 @@
 package xyz.roosterseatyou.mobitems.events.custom;
 
-import org.bukkit.World;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.world.WorldEvent;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 

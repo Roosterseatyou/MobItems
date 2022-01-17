@@ -7,13 +7,8 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
 
 import java.util.ArrayList;
 import java.util.List;

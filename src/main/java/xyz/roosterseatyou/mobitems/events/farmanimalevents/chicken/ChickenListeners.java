@@ -17,9 +17,9 @@ public class ChickenListeners implements Listener {
         Player p = e.getPlayer();
         ItemStack newItem = e.getNewItem();
         ItemStack oldItem = e.getOldItem();
-        if(FarmAnimalArmorUtils.isChickenArmor(newItem)){
+        if(e.getSlotType() == PlayerArmorChangeEvent.SlotType.CHEST && FarmAnimalArmorUtils.isChickenArmor(newItem)){
             p.addPotionEffect(new PotionEffect(PotionEffectType.SLOW_FALLING, Integer.MAX_VALUE, 0));
-        } else if(FarmAnimalArmorUtils.isChickenArmor(oldItem)){
+        } else if(e.getSlotType() == PlayerArmorChangeEvent.SlotType.CHEST && FarmAnimalArmorUtils.isChickenArmor(oldItem)){
             p.removePotionEffect(PotionEffectType.SLOW_FALLING);
         }
     }

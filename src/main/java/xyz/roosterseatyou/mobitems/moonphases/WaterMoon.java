@@ -1,7 +1,5 @@
 package xyz.roosterseatyou.mobitems.moonphases;
 
-import org.bukkit.plugin.Plugin;
-
 public class WaterMoon extends MoonPhase{
     private static int chance = 0;
     private static boolean active = false;

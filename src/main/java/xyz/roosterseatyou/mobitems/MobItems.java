@@ -45,7 +45,7 @@ public final class MobItems extends JavaPlugin {
         UndeadEvents.playerBurn();
         new MoonStarter(this);
         MoonStarter.moonStarter();
-        getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
+        getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(this), this);

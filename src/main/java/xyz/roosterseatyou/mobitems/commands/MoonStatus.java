@@ -16,7 +16,7 @@ public class MoonStatus implements CommandExecutor {
         commandSender.sendMessage(Component.text(
                 "Moon Status ========\n" +
                         "Blood Moon: Status: " + BloodMoon.isServerActive() + ", Current Chance: " + BloodMoon.getServerChance() + "\n" +
-                        "Blue Moon: Status: " + BlueMoon.isServerActive() + ", Current Chance: " + BlueMoon.getServerChance() + "\n" +
+                        "Blue Moon: Status: " + BlueMoon.isServerActive() + ", Current Chance: " + (double) BlueMoon.getServerChance()/2 + "\n" +
                         "Golden Moon: Status: " + GoldenMoon.isServerActive() + ", Current Chance: " + GoldenMoon.getServerChance() + "\n" +
                         "Water Moon: Status: " + WaterMoon.isServerActive() + ", Current Chance: " + WaterMoon.getServerChance() + "\n"));
         return false;
