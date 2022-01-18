@@ -75,6 +75,7 @@ public class DrownedEvents implements Listener{
         }, 0L, 100L);
     }
 
+    @EventHandler
     public void onRightClick(EntityInteractEvent e){
         Entity ent = e.getEntity();
         if (ent instanceof Player && e.getBlock().getType().equals(Material.WATER)){
@@ -87,10 +88,12 @@ public class DrownedEvents implements Listener{
                 BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
                 scheduler.scheduleSyncDelayedTask(plugin, () -> {
                     for (int i = 1; i < 28; i++) {
-                            if (inv.getItem(i) != null && inv.getItem(i).equals(DrownedTrident.drownedTrident(UnderWaterArmorUtils.waterLevel(e.getBlock())))) {
+                        if (inv.getItem(i) != null ) {
+                            if (inv.getItem(i).equals(DrownedTrident.drownedTrident(UnderWaterArmorUtils.waterLevel(e.getBlock())))) {
                                 inv.setItem(i, new ItemStack(Material.AIR));
                                 p.updateInventory();
                             }
+                        }
                     }
                 }, 100);
             }
