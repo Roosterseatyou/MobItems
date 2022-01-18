@@ -8,7 +8,8 @@ import org.bukkit.event.Listener;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class RabbitListeners implements Listener {

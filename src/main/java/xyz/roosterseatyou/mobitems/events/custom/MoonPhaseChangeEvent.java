@@ -1,10 +1,8 @@
 package xyz.roosterseatyou.mobitems.events.custom;
 
-import org.bukkit.World;
 import org.bukkit.event.Cancellable;
 import org.bukkit.event.Event;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.world.WorldEvent;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 
@@ -46,7 +44,7 @@ public class MoonPhaseChangeEvent extends Event implements Cancellable {
 
     @Override
     public String toString() {
-        return "MoonPhase " + phase + "was set to " + phase.getAction();
+        return phase + " was set to " + phase.getAction();
     }
 
     @Override
