@@ -100,7 +100,7 @@ public class DrownedEvents implements Listener{
                             }
                         }
                     }
-                }, 100);
+                }, 3000);
             }
         }
     }

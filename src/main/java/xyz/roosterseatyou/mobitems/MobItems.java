@@ -8,11 +8,14 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.ChickenListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
+import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.DrownedEvents;
 import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.GoldenMoonListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonAnnouncer;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
+import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.ZombieEvents;
+import xyz.roosterseatyou.mobitems.events.underwaterevents.UnderWaterEvents;
 import xyz.roosterseatyou.mobitems.events.undetermined.RabbitListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
@@ -42,7 +45,9 @@ public final class MobItems extends JavaPlugin {
     public void onEnable() {
         items();
         new UndeadEvents(this);
+        new UnderWaterEvents(this);
         new CowListeners(this);
+        new DrownedEvents(this);
         UndeadEvents.playerBurn();
         MoonStarter.moonStarter(this);
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
@@ -53,9 +58,15 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new ChickenListeners(), this);
+        getServer().getPluginManager().registerEvents(new UndeadEvents(this), this);
+        getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
+        //getServer().getPluginManager().registerEvents(new UnderWaterEvents(this), this);
+        getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
+        UnderWaterEvents.aquatic();
+        DrownedEvents.waterPowers();
     }
 
     @Override
