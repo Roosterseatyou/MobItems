@@ -1,7 +1,7 @@
 package xyz.roosterseatyou.mobitems.moonphases;
 
 public class WaterMoon extends MoonPhase{
-    private static int chance = 0;
+    private static int chance = 1;
     private static boolean active = false;
 
     public WaterMoon(int stage, boolean stopping){

@@ -1,7 +1,6 @@
 package xyz.roosterseatyou.mobitems.moonphases;
 
 public class MoonPhase {
-    //Stuff not related to the object...
     private static boolean activeMoonPhase = false;
     private int stage;
     private boolean starting;
