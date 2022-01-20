@@ -13,7 +13,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 public class FarmAnimalArmorUtils {
 
     public static boolean isFarmAnimalArmor(ItemStack i) {
-        return PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);
+        return i != null && PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);
     }
 
     public static boolean isSheepArmor(ItemStack i){
