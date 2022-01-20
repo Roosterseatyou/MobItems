@@ -1,6 +1,5 @@
 package xyz.roosterseatyou.mobitems.events.moonphases;
 
-import net.kyori.adventure.text.Component;
 import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
@@ -10,7 +9,6 @@ import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.BlockBreakEvent;
-import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -24,7 +22,6 @@ public class GoldenMoonListeners implements Listener {
     @EventHandler
     public void onMoonChange(MoonPhaseChangeEvent e) {
         if (e.getPhase() instanceof GoldenMoon) {
-            GoldenMoon phase = (GoldenMoon) e.getPhase();
             stage = e.getStage();
             if (e.getStage() > 3) {
                 for (Player p : Bukkit.getOnlinePlayers()) {

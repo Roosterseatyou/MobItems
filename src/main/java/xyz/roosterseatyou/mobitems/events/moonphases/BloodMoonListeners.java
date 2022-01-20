@@ -1,7 +1,6 @@
 package xyz.roosterseatyou.mobitems.events.moonphases;
 
 import org.bukkit.Bukkit;
-import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
