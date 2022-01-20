@@ -1,12 +1,12 @@
 package xyz.roosterseatyou.mobitems.events.underwaterevents;
 
-import org.bukkit.entity.Player;
 import org.bukkit.Bukkit;
+import org.bukkit.entity.Player;
+import org.bukkit.event.Listener;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
-import org.bukkit.scheduler.BukkitScheduler;
-import org.bukkit.event.Listener;
 import org.bukkit.potion.PotionEffectType;
+import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UnderWaterArmorUtils;
 
 public class UnderWaterEvents implements Listener{

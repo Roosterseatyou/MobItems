@@ -9,6 +9,7 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityDeathEvent;
 import org.bukkit.event.entity.EntitySpawnEvent;
+import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
@@ -18,6 +19,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFe
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
 import xyz.roosterseatyou.mobitems.moonphases.BloodMoon;
+import xyz.roosterseatyou.mobitems.moonphases.MoonPhase;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
@@ -97,6 +99,15 @@ public class BloodMoonListeners implements Listener {
                     }
                 }
             }
+        }
+    }
+
+    @EventHandler
+    public void onPlayerSleep(PlayerInteractEvent e){
+        Player p = e.getPlayer();
+        if(e.getClickedBlock() != null && ListContainers.bedsList().contains(e.getClickedBlock().getType()) &&
+                MoonPhase.isActiveMoonPhase()){
+            e.setCancelled(true);
         }
     }
 }

@@ -10,6 +10,7 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.DrownedEvents;
 import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
+import xyz.roosterseatyou.mobitems.events.moonphases.GoldenMoonListeners;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonAnnouncer;
 import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
@@ -48,10 +49,8 @@ public final class MobItems extends JavaPlugin {
         new CowListeners(this);
         new DrownedEvents(this);
         UndeadEvents.playerBurn();
-        UnderWaterEvents.aquatic();
-        DrownedEvents.waterPowers();
-        new MoonStarter(this);
-        MoonStarter.moonStarter();
+        MoonStarter.moonStarter(this);
+        getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
@@ -66,6 +65,8 @@ public final class MobItems extends JavaPlugin {
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
+        UnderWaterEvents.aquatic();
+        DrownedEvents.waterPowers();
     }
 
     @Override
