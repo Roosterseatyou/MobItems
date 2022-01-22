@@ -14,7 +14,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 public class ZombieEvents implements Listener{
 
     public static boolean isZombieArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: ZOMBIE").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
 
     public static boolean hasZombieSet(Player p){

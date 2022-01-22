@@ -30,6 +30,10 @@ public class FarmAnimalArmorUtils {
                 && p.getInventory().getLeggings() != null && PlayerInventoryUtils.hasID(p.getInventory().getLeggings(), SheepMask.ENTITY_ID) && p.getInventory().getBoots() != null && PlayerInventoryUtils.hasID(p.getInventory().getBoots(), SheepMask.ENTITY_ID);
     }
 
+    public static boolean isCowArmor(ItemStack i){
+        return i != null && PlayerInventoryUtils.hasID(i, CowMask.ENTITY_ID);
+    }
+
     public static boolean isCowSet(Player p){
         return p.getInventory().getHelmet() != null && PlayerInventoryUtils.hasID(p.getInventory().getHelmet(), CowMask.ENTITY_ID) && p.getInventory().getChestplate() != null && PlayerInventoryUtils.hasID(p.getInventory().getChestplate(), CowMask.ENTITY_ID)
                 && p.getInventory().getLeggings() != null && PlayerInventoryUtils.hasID(p.getInventory().getLeggings(), CowMask.ENTITY_ID) && p.getInventory().getBoots() != null && PlayerInventoryUtils.hasID(p.getInventory().getBoots(), CowMask.ENTITY_ID);

@@ -26,7 +26,7 @@ public class CowListeners implements Listener {
         Player p = e.getPlayer();
         if(e.getRightClicked() instanceof LivingEntity){
             LivingEntity entity = (LivingEntity) e.getRightClicked();
-            if(p.getInventory().getItemInMainHand().getType() == Material.BUCKET){
+            if(p.getInventory().getItemInMainHand().getType() == Material.BUCKET && FarmAnimalArmorUtils.isCowArmor(entity.getEquipment().getChestplate())){
                 p.getInventory().getItemInMainHand().setType(Material.MILK_BUCKET);
             }
         }

@@ -9,7 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
-public class UnderWaterArmorUtils {
+public class  UnderWaterArmorUtils {
     public static boolean isUnderWaterArmor(ItemStack i){
         return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: UNDERWATER").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }

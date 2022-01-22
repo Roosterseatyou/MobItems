@@ -26,6 +26,8 @@ public final class MobItems extends JavaPlugin {
         items();
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(), this);
@@ -39,6 +41,7 @@ public final class MobItems extends JavaPlugin {
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
+        this.getCommand("simfishrng").setExecutor(new SimFishRNG());
         UnderWaterEvents.aquatic(this);
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
@@ -61,7 +64,6 @@ public final class MobItems extends JavaPlugin {
         DrownedChest.init();
         DrownedLegs.init();
         DrownedFeet.init();
-
         //Passives, Neutrals
         SheepMask.init();
         SheepChest.init();
