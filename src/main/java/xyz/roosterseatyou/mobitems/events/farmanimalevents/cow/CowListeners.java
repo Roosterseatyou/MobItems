@@ -7,7 +7,6 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntityPotionEffectEvent;
 import org.bukkit.event.player.PlayerInteractAtEntityEvent;
-import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.FarmAnimalArmorUtils;
 
 public class CowListeners implements Listener {

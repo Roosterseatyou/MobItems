@@ -2,10 +2,15 @@ package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
-import org.bukkit.inventory.ItemFlag;
 import org.bukkit.inventory.ItemStack;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.*;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
