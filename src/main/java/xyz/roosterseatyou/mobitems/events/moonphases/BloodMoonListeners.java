@@ -53,7 +53,7 @@ public class BloodMoonListeners implements Listener {
     public void onEntityDeath(EntityDeathEvent e) {
         LivingEntity entity = e.getEntity();
         if(hostiles.contains(entity.getType()) && BloodMoon.isServerActive()){
-            if(MathUtils.rngHelper(5)){
+            if(MathUtils.rngHelper(3)){
                 if(e.getEntityType() == EntityType.ZOMBIE){
                     ItemStack item = ListContainers.getRandZombieArmor();
                     entity.getLocation().getWorld().dropItemNaturally(entity.getLocation(), item);

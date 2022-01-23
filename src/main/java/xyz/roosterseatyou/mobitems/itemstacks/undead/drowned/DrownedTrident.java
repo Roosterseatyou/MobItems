@@ -13,7 +13,6 @@ import java.util.List;
 public class DrownedTrident {
     public static Component NAME = Component.text("Three Pronged Thingamajig").color(TextColor.fromHexString("#89E2C7"));
 
-
     public static ItemStack drownedTrident(int level) {
         ItemStack item = new ItemStack(Material.TRIDENT);
         ItemMeta meta = item.getItemMeta();
@@ -26,6 +25,7 @@ public class DrownedTrident {
             meta.addEnchant(Enchantment.IMPALING, level-1, true);
             meta.addEnchant(Enchantment.DAMAGE_ALL, level-1, true);
         }
+        meta.addEnchant(Enchantment.VANISHING_CURSE, 1, true);
         lore.add(Component.text("Your newfound aquatic affinity coalesces into something more physical..."));
         meta.lore(lore);
         item.setItemMeta(meta);

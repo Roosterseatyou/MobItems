@@ -7,6 +7,7 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 
@@ -57,6 +58,9 @@ public class PlayerInventoryUtils {
     public static boolean isKillerRabbitArmor(ItemStack i){
         return i != null && hasID(i, KillerRabbitMask.ENTITY_ID);
     }
+    public static boolean isFoxArmor(ItemStack i){
+        return i != null && hasID(i, FoxMask.ENTITY_ID);
+    }
 
     public static boolean hasRabbitSet(Player p){
         return isRabbitArmor(p.getInventory().getHelmet()) && isRabbitArmor(p.getInventory().getChestplate())
@@ -65,5 +69,9 @@ public class PlayerInventoryUtils {
     public static boolean hasKillerRabbitSet(Player p){
         return isKillerRabbitArmor(p.getInventory().getHelmet()) && isKillerRabbitArmor(p.getInventory().getChestplate())
                 && isKillerRabbitArmor(p.getInventory().getLeggings()) && isKillerRabbitArmor(p.getInventory().getBoots());
+    }
+    public static boolean hasFoxSet(Player p){
+        return isFoxArmor(p.getInventory().getHelmet()) && isFoxArmor(p.getInventory().getChestplate())
+                && isFoxArmor(p.getInventory().getLeggings()) && isFoxArmor(p.getInventory().getBoots());
     }
 }

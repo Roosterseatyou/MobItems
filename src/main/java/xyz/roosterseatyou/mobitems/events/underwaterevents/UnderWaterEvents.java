@@ -10,13 +10,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UnderWaterArmorUtils;
 
 public class UnderWaterEvents implements Listener{
-    private static Plugin plugin;
-
-    public UnderWaterEvents(Plugin plugin){
-        UnderWaterEvents.plugin = plugin;
-    }
-
-    public static void aquatic(){
+    public static void aquatic(Plugin plugin){
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
             for (Player p : Bukkit.getOnlinePlayers()){
@@ -24,7 +18,6 @@ public class UnderWaterEvents implements Listener{
                     p.addPotionEffect(new PotionEffect(PotionEffectType.CONDUIT_POWER , 125, 2));
                 }
             }
-
         }, 0L, 100L);
     }
 }

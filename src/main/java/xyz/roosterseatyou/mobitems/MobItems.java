@@ -3,17 +3,18 @@ package xyz.roosterseatyou.mobitems;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.commands.MoonStatus;
 import xyz.roosterseatyou.mobitems.commands.SetMoon;
+import xyz.roosterseatyou.mobitems.commands.SimFishRNG;
 import xyz.roosterseatyou.mobitems.commands.TestMode;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.ChickenListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
-import xyz.roosterseatyou.mobitems.events.moonphases.BloodMoonListeners;
-import xyz.roosterseatyou.mobitems.events.moonphases.GoldenMoonListeners;
-import xyz.roosterseatyou.mobitems.events.moonphases.MoonAnnouncer;
-import xyz.roosterseatyou.mobitems.events.moonphases.MoonStarter;
+import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.DrownedEvents;
+import xyz.roosterseatyou.mobitems.events.moonphases.*;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
-import xyz.roosterseatyou.mobitems.events.undetermined.RabbitListeners;
+import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.ZombieEvents;
+import xyz.roosterseatyou.mobitems.events.underwaterevents.UnderWaterEvents;
+import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.RabbitListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
@@ -41,21 +42,29 @@ public final class MobItems extends JavaPlugin {
     @Override
     public void onEnable() {
         items();
-        new UndeadEvents(this);
-        new CowListeners(this);
-        UndeadEvents.playerBurn();
-        MoonStarter.moonStarter(this);
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
-        getServer().getPluginManager().registerEvents(new CowListeners(this), this);
+        getServer().getPluginManager().registerEvents(new CowListeners(), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
         getServer().getPluginManager().registerEvents(new FarmAnimalEvents(), this);
         getServer().getPluginManager().registerEvents(new ChickenListeners(), this);
+        getServer().getPluginManager().registerEvents(new UndeadEvents(), this);
+        getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
+        //getServer().getPluginManager().registerEvents(new UnderWaterEvents(this), this);
+        getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
+        this.getCommand("simfishrng").setExecutor(new SimFishRNG());
+        UnderWaterEvents.aquatic(this);
+        new DrownedEvents(this);
+        DrownedEvents.waterPowers();
+        UndeadEvents.playerBurn(this);
+        MoonStarter.moonStarter(this);
     }
 
     @Override
@@ -73,7 +82,6 @@ public final class MobItems extends JavaPlugin {
         DrownedChest.init();
         DrownedLegs.init();
         DrownedFeet.init();
-
         //Passives, Neutrals
         SheepMask.init();
         SheepChest.init();

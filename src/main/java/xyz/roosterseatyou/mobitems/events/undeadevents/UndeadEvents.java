@@ -15,14 +15,7 @@ import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UndeadArmorUtils;
 
 
 public class UndeadEvents implements Listener{
-
-    private static Plugin plugin;
-
-    public UndeadEvents(Plugin plugin){
-        UndeadEvents.plugin = plugin;
-    }
-
-    public static void playerBurn(){
+    public static void playerBurn(Plugin plugin){
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
             for (Player p : Bukkit.getOnlinePlayers()){

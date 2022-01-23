@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.events.undetermined;
+package xyz.roosterseatyou.mobitems.events.undetermined.rabbit;
 
 import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import org.bukkit.Material;

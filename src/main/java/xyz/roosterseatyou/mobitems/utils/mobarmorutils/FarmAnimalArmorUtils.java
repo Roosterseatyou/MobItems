@@ -13,7 +13,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 public class FarmAnimalArmorUtils {
 
     public static boolean isFarmAnimalArmor(ItemStack i) {
-        return PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);
+        return i != null && PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);
     }
 
     public static boolean isSheepArmor(ItemStack i){
@@ -28,6 +28,10 @@ public class FarmAnimalArmorUtils {
     public static boolean isSheepSet(Player p){
         return p.getInventory().getHelmet() != null && PlayerInventoryUtils.hasID(p.getInventory().getHelmet(), SheepMask.ENTITY_ID) && p.getInventory().getChestplate() != null && PlayerInventoryUtils.hasID(p.getInventory().getChestplate(), SheepMask.ENTITY_ID)
                 && p.getInventory().getLeggings() != null && PlayerInventoryUtils.hasID(p.getInventory().getLeggings(), SheepMask.ENTITY_ID) && p.getInventory().getBoots() != null && PlayerInventoryUtils.hasID(p.getInventory().getBoots(), SheepMask.ENTITY_ID);
+    }
+
+    public static boolean isCowArmor(ItemStack i){
+        return i != null && PlayerInventoryUtils.hasID(i, CowMask.ENTITY_ID);
     }
 
     public static boolean isCowSet(Player p){
