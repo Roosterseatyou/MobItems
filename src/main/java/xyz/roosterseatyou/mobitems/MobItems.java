@@ -5,6 +5,7 @@ import xyz.roosterseatyou.mobitems.commands.MoonStatus;
 import xyz.roosterseatyou.mobitems.commands.SetMoon;
 import xyz.roosterseatyou.mobitems.commands.SimFishRNG;
 import xyz.roosterseatyou.mobitems.commands.TestMode;
+import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.ChickenListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
@@ -56,6 +57,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
         //getServer().getPluginManager().registerEvents(new UnderWaterEvents(this), this);
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
+        getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
