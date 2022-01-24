@@ -56,6 +56,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
         //getServer().getPluginManager().registerEvents(new UnderWaterEvents(this), this);
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
+        getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
