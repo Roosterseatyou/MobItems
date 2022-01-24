@@ -27,6 +27,37 @@ public class ListContainers {
         itemsList.add(ZombieFeet.ZOMBIE_FEET);
         return ItemUtils.randomItemStackFromList(itemsList);
     }
+    
+    public static ItemStack genDungeonArmor(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
+
+    public static ItemStack genUndead(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
+
+    public static ItemStack genVillager(){
+        return null;
+    }
+
+    public static ItemStack genMineshaft(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
 
     public static ItemStack genDungeonArmor(){
         List<ItemStack> itemsList = new ArrayList<>();
