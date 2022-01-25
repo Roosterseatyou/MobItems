@@ -6,6 +6,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.entity.Snowball;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
+import org.bukkit.event.block.Action;
 import org.bukkit.event.entity.EntityDamageByEntityEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
 import org.bukkit.plugin.Plugin;
@@ -30,7 +31,7 @@ public class SnowGolemListeners implements Listener {
     @EventHandler
     public void onClick(PlayerInteractEvent e){
         Player p = e.getPlayer();
-        if(p.getInventory().getItemInMainHand().getType().equals(Material.AIR) && PlayerInventoryUtils.isSnowGolemArmor(p.getInventory().getChestplate())){
+        if(p.getInventory().getItemInMainHand().getType().equals(Material.AIR) && PlayerInventoryUtils.isSnowGolemArmor(p.getInventory().getChestplate()) && e.getAction() == Action.RIGHT_CLICK_AIR){
             p.launchProjectile(Snowball.class);
         }
     }
