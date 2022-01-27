@@ -10,7 +10,6 @@ import org.bukkit.inventory.meta.LeatherArmorMeta;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemMask;
 
 import java.util.List;
 import java.util.Objects;
@@ -75,13 +74,4 @@ public class PlayerInventoryUtils {
         return isFoxArmor(p.getInventory().getHelmet()) && isFoxArmor(p.getInventory().getChestplate())
                 && isFoxArmor(p.getInventory().getLeggings()) && isFoxArmor(p.getInventory().getBoots());
     }
-    public static boolean isSnowGolemArmor(ItemStack i){
-        return i != null && hasID(i, SnowGolemMask.ENTITY_ID);
-    }
-
-    public static boolean hasSnowSet(Player p){
-        return isSnowGolemArmor(p.getInventory().getHelmet()) && isSnowGolemArmor(p.getInventory().getChestplate())
-                && isSnowGolemArmor(p.getInventory().getLeggings()) && isSnowGolemArmor(p.getInventory().getBoots());
-    }
-
 }

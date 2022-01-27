@@ -4,11 +4,15 @@ public class BloodMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public BloodMoon(boolean stopping) {
-        super(stopping);
+    public BloodMoon(int stage, boolean stopping) {
+        super(stage, stopping);
         if(stopping){
             setServerActive(false);
         }
+    }
+
+    public BloodMoon(int stage){
+        super(stage);
     }
 
     public static int getServerChance() {
@@ -25,5 +29,10 @@ public class BloodMoon extends MoonPhase{
 
     public static void setServerActive(boolean active) {
         BloodMoon.active = active;
+    }
+
+    @Override
+    public String toString() {
+        return "Stage " + getStage() + " Blood Moon.";
     }
 }

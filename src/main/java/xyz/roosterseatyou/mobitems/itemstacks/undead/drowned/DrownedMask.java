@@ -34,10 +34,10 @@ public class DrownedMask {
         meta.setColor(Color.fromRGB(54, 89, 78));
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
         lore.add(Component.text("Ironically, you now know how to swim..."));
-        //see UndeadArmorUtils & AquaticUtils
+        //see UndeadArmorUtils & UnderwaterArmorUtils
         lore.add(Component.text("ENTITY ID: Drowned").color(TextColor.fromHexString("#89E2C7")).decorate(TextDecoration.ITALIC));
         lore.add(Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
-        lore.add(Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#92D2E2")).decorate(TextDecoration.ITALIC));
+        lore.add(Component.text("CLASS ID: UNDERWATER").color(TextColor.fromHexString("#92D2E2")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
         DROWNED_MASK = item;
