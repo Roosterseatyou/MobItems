@@ -7,16 +7,25 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
-public class  UnderWaterArmorUtils {
-    public static boolean isUnderWaterArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: UNDERWATER").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+public class AquaticUtils {
+    public static boolean isAquaticArmor(ItemStack i){
+        return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
     public static boolean hasFullSet(Player p) {
-        return p.getInventory().getHelmet() != null &&  p.getInventory().getChestplate() != null &&
-                p.getInventory().getLeggings() != null &&  p.getInventory().getBoots() != null && isUnderWaterArmor(p.getInventory().getHelmet()) && isUnderWaterArmor(p.getInventory().getChestplate())
-                && isUnderWaterArmor(p.getInventory().getLeggings()) && isUnderWaterArmor(p.getInventory().getBoots());
+        return  isAquaticArmor(p.getInventory().getHelmet()) && isAquaticArmor(p.getInventory().getChestplate())
+                && isAquaticArmor(p.getInventory().getLeggings()) && isAquaticArmor(p.getInventory().getBoots());
+    }
+
+    public static boolean isSalmonArmor(ItemStack i){
+        return PlayerInventoryUtils.hasID(i, SalmonMask.ENTITY_ID);
+    }
+
+    public static boolean hasSalmonSet(Player p) {
+        return  isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getChestplate())
+                && isSalmonArmor(p.getInventory().getLeggings()) && isSalmonArmor(p.getInventory().getBoots());
     }
 
     public static int waterLevel(Block b){

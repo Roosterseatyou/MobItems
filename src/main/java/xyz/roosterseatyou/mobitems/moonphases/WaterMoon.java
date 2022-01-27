@@ -4,17 +4,12 @@ public class WaterMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public WaterMoon(int stage, boolean stopping){
-        super(stage, stopping);
+    public WaterMoon(boolean stopping){
+        super(stopping);
         if(stopping){
             setServerActive(false);
         }
     }
-
-    public WaterMoon(int stage) {
-        super(stage);
-    }
-
 
     public static boolean isServerActive() {
         return active;

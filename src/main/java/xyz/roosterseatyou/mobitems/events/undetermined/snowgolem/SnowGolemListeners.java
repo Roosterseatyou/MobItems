@@ -22,7 +22,7 @@ public class SnowGolemListeners implements Listener {
         if(e.getDamager() instanceof Player && e.getEntity() instanceof Player) {
             Player damaged = (Player) e.getEntity();
             Player damager = (Player) e.getDamager();
-            if(PlayerInventoryUtils.hasSnowSet(damager) && !damaged.isFrozen()){
+            if(PlayerInventoryUtils.hasSnowSet(damager) && !damaged.isVisualFire()){
                 damaged.setFreezeTicks(200);
             }
         }
