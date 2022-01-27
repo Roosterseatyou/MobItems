@@ -16,13 +16,6 @@ public class WaterMoonListeners implements Listener {
     private static int stage;
 
     @EventHandler
-    public void onMoonChange(MoonPhaseChangeEvent e){
-        if(e.getPhase() instanceof WaterMoon){
-            stage = e.getStage();
-        }
-    }
-
-    @EventHandler
     public void onFish(PlayerFishEvent e){
         if(WaterMoon.isServerActive() && MathUtils.rngHelper(stage)){
             if(e.getState().equals(PlayerFishEvent.State.CAUGHT_FISH)) {
