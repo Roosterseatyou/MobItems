@@ -18,21 +18,13 @@ import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 public class GoldenMoonListeners implements Listener {
-    private static int stage;
     @EventHandler
     public void onMoonChange(MoonPhaseChangeEvent e) {
         if (e.getPhase() instanceof GoldenMoon) {
-            stage = e.getStage();
-            if (e.getStage() > 3) {
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 12000, 1));
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 12000, 0));
-                }
-            } else {
-                for (Player p : Bukkit.getOnlinePlayers()) {
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 12000, 0));
-                    p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 12000, 0));
-                }
+
+            for (Player p : Bukkit.getOnlinePlayers()) {
+                p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 12000, 0));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 12000, 0));
             }
         }
     }
@@ -40,7 +32,7 @@ public class GoldenMoonListeners implements Listener {
     @EventHandler
     public void onBlockBreak(BlockBreakEvent e) {
         Player p = e.getPlayer();
-        if (GoldenMoon.isServerActive() && MathUtils.rngHelper(stage*2)) {
+        if (GoldenMoon.isServerActive() && MathUtils.rngHelper(2)) {
             Location pLoc = p.getLocation();
             LivingEntity spawned = (LivingEntity) pLoc.getWorld().spawnEntity(pLoc, ListContainers.getRandEntity());
             spawned.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(60);
