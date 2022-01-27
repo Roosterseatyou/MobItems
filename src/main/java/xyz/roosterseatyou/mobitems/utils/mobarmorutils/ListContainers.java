@@ -11,6 +11,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemMask;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
@@ -19,6 +23,46 @@ import java.util.List;
 
 public class ListContainers {
     public static ItemStack getRandZombieArmor(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
+
+    public static ItemStack genSnow(){
+        List<ItemStack> items = new ArrayList<>();
+        items.add(SnowGolemMask.SNOW_MASK);
+        items.add(SnowGolemChest.SNOW_CHEST);
+        items.add(SnowGolemLegs.SNOW_LEGS);
+        items.add(SnowGolemFeet.SNOW_FEET);
+        return ItemUtils.randomItemStackFromList(items);
+    }
+
+    public static ItemStack genUndead(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
+
+    public static ItemStack genVillager(){
+        return null;
+    }
+
+    public static ItemStack genMineshaft(){
+        List<ItemStack> itemsList = new ArrayList<>();
+        itemsList.add(ZombieMask.ZOMBIE_MASK);
+        itemsList.add(ZombieChest.ZOMBIE_CHEST);
+        itemsList.add(ZombieLegs.ZOMBIE_LEGS);
+        itemsList.add(ZombieFeet.ZOMBIE_FEET);
+        return ItemUtils.randomItemStackFromList(itemsList);
+    }
+
+    public static ItemStack genDungeonArmor(){
         List<ItemStack> itemsList = new ArrayList<>();
         itemsList.add(ZombieMask.ZOMBIE_MASK);
         itemsList.add(ZombieChest.ZOMBIE_CHEST);
