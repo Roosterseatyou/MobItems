@@ -2,15 +2,18 @@ package xyz.roosterseatyou.mobitems.moonphases;
 
 public class MoonPhase {
     private static boolean activeMoonPhase = false;
+    private int stage;
     private boolean starting;
     private boolean stopping;
 
 
-    public MoonPhase(boolean stopping){
+    public MoonPhase(int stage, boolean stopping){
+        this.stage = stage;
         this.stopping = stopping;
     }
 
-    public MoonPhase(){
+    public MoonPhase(int stage){
+        this.stage = stage;
         starting = true;
         stopping = false;
     }
@@ -21,6 +24,14 @@ public class MoonPhase {
 
     public static void setActiveMoonPhase(boolean activeMoonPhase) {
         MoonPhase.activeMoonPhase = activeMoonPhase;
+    }
+
+    public int getStage() {
+        return stage;
+    }
+
+    public void setStage(int stage) {
+        this.stage = stage;
     }
 
     public boolean isStarting() {
@@ -41,5 +52,10 @@ public class MoonPhase {
 
     public boolean getAction(){
         return isStarting();
+    }
+
+    @Override
+    public String toString() {
+        return "Stage " + stage + " Moon Phase";
     }
 }

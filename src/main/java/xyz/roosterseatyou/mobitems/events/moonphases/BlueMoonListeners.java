@@ -11,15 +11,22 @@ import xyz.roosterseatyou.mobitems.moonphases.BlueMoon;
 
 public class BlueMoonListeners implements Listener {
     @EventHandler
-    public void onMoonChange(MoonPhaseChangeEvent e) {
-        if (e.getPhase() instanceof BlueMoon) {
-
-            for (Player p : Bukkit.getOnlinePlayers()) {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 12000, 1));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 2));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, 0));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 12000, 0));
-
+    public void onMoonChange(MoonPhaseChangeEvent e){
+        if(e.getPhase() instanceof BlueMoon){
+            BlueMoon moon = (BlueMoon) e.getPhase();
+            int stage = moon.getStage();
+            if(stage <= 2){
+                for(Player p: Bukkit.getOnlinePlayers()){
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 12000, 0));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 1));
+                }
+            }else if(stage <= 3){
+                for(Player p : Bukkit.getOnlinePlayers()){
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 12000, 1));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, 2));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, 0));
+                    p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 12000, 0));
+                }
             }
         }
     }

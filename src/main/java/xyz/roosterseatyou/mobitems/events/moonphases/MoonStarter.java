@@ -26,24 +26,24 @@ public class MoonStarter {
                     BloodMoon.setServerChance(0);
                     MoonPhase.setActiveMoonPhase(true);
                     Bukkit.broadcast(Component.text("You feel a gust of cool air hit your face as a Blood Moon rises.").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#470a0a")));
-                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BloodMoon(false), MoonPhaseChangeEvent.Activator.TIME));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BloodMoon(stage)));
                 } else if(MathUtils.complexRngHelper(blueMoonChance, 200) && !isSpecial){
                     BlueMoon.setServerActive(true);
                     BlueMoon.setServerChance(0);
                     MoonPhase.setActiveMoonPhase(true);
                     Bukkit.broadcast(Component.text("You feel a sense of overwhelming confidence as a BlueMoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#1761bd")));
-                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BlueMoon(false), MoonPhaseChangeEvent.Activator.TIME));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BlueMoon(stage)));
                 } else if(MathUtils.rngHelper(goldenMoonChance) && !isSpecial){
                     GoldenMoon.setServerActive(true);
                     GoldenMoon.setServerChance(0);
                     MoonPhase.setActiveMoonPhase(true);
-                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new GoldenMoon(false), MoonPhaseChangeEvent.Activator.TIME));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new GoldenMoon(stage)));
                     Bukkit.broadcast(Component.text("You see the moon shine brighter than it ever has as a Goldmoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#dea821")));
                 } else if(MathUtils.rngHelper(waterMoonChance) && !isSpecial){
                     WaterMoon.setServerActive(true);
                     WaterMoon.setServerChance(0);
                     MoonPhase.setActiveMoonPhase(true);
-                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new WaterMoon(false), MoonPhaseChangeEvent.Activator.TIME));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new WaterMoon(stage)));
                     Bukkit.broadcast(Component.text("You feel a sprinkle of salt water hit your face as a Watermoon rises").decorate(TextDecoration.ITALIC).color(TextColor.fromHexString("#315fb5")));
                 } else if(!isSpecial){
                     BloodMoon.setServerChance(bloodMoonChance + 1);
@@ -55,7 +55,7 @@ public class MoonStarter {
                 if (isSpecial){
                     MoonPhase.setActiveMoonPhase(false);
                     Bukkit.broadcast(Component.text("The moon has set. You may go back to your pathetic lives.."));
-                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new MoonPhase(true), MoonPhaseChangeEvent.Activator.TIME));
+                    Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new MoonPhase(stage, true)));
                 }
                 BloodMoon.setServerActive(false);
                 BlueMoon.setServerActive(false);

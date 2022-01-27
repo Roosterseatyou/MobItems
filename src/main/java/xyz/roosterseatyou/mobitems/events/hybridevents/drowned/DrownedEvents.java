@@ -30,7 +30,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.ZombieEvents;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
-import xyz.roosterseatyou.mobitems.utils.mobarmorutils.AquaticUtils;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.UnderWaterArmorUtils;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -117,7 +117,7 @@ public class DrownedEvents implements Listener{
 
                         if (canClaim.get(p)) {
                             cooldown.put(p, System.currentTimeMillis());
-                            ItemStack trident = drownedTrident(AquaticUtils.waterLevel(block));
+                            ItemStack trident = drownedTrident(UnderWaterArmorUtils.waterLevel(block));
                             inv.setItemInMainHand(trident);
                             playerStackMap.put(p, trident);
                             canClaim.put(p, false);

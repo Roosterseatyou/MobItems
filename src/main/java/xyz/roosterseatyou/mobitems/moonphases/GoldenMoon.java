@@ -4,11 +4,15 @@ public class GoldenMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public GoldenMoon(boolean stopping) {
-        super(stopping);
+    public GoldenMoon(int stage, boolean stopping) {
+        super(stage, stopping);
         if(stopping){
             setServerActive(false);
         }
+    }
+
+    public GoldenMoon(int stage){
+        super(stage);
     }
 
     public static int getServerChance() {
