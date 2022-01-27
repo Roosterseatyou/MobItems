@@ -4,15 +4,11 @@ public class BlueMoon extends MoonPhase{
     private static int chance = 1;
     private static boolean active = false;
 
-    public BlueMoon(int stage, boolean stopping) {
-        super(stage, stopping);
+    public BlueMoon(boolean stopping) {
+        super(stopping);
         if(stopping){
             setServerActive(false);
         }
-    }
-
-    public BlueMoon(int stage){
-        super(stage);
     }
 
     public static int getServerChance() {

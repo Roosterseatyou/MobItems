@@ -4,11 +4,13 @@ import net.kyori.adventure.text.Component;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
+import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.moonphases.BloodMoon;
 import xyz.roosterseatyou.mobitems.moonphases.BlueMoon;
 import xyz.roosterseatyou.mobitems.moonphases.GoldenMoon;
 import xyz.roosterseatyou.mobitems.moonphases.WaterMoon;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 public class MoonStatus implements CommandExecutor {
     @Override
@@ -19,6 +21,8 @@ public class MoonStatus implements CommandExecutor {
                         "Blue Moon: Status: " + BlueMoon.isServerActive() + ", Current Chance: " + (double) BlueMoon.getServerChance()/2 + "\n" +
                         "Golden Moon: Status: " + GoldenMoon.isServerActive() + ", Current Chance: " + GoldenMoon.getServerChance() + "\n" +
                         "Water Moon: Status: " + WaterMoon.isServerActive() + ", Current Chance: " + WaterMoon.getServerChance() + "\n"));
+        Player p = (Player) commandSender;
+        p.getInventory().addItem(ListContainers.getRandAquatic());
         return false;
     }
 }

@@ -17,24 +17,19 @@ public class SetMoon implements CommandExecutor {
         String type = args[0];
         int stage = 1;
         boolean starting = true;
-        try {
-            stage = Integer.parseInt(args[1]);
-            starting = Boolean.parseBoolean(args[2]);
-        } catch (NumberFormatException e){
-            commandSender.sendMessage("Not a valid stage!");
-        }
+        starting = Boolean.parseBoolean(args[1]);
         if(type.equals("blood_moon")){
             BloodMoon.setServerActive(starting);
-            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BloodMoon(stage, !starting)));
+            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BloodMoon(!starting), MoonPhaseChangeEvent.Activator.COMMAND));
         } else if(type.equals("blue_moon")){
             BlueMoon.setServerActive(starting);
-            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BlueMoon(stage, !starting)));
+            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new BlueMoon(!starting), MoonPhaseChangeEvent.Activator.COMMAND));
         } else if (type.equals("golden_moon")) {
             GoldenMoon.setServerActive(starting);
-            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new GoldenMoon(stage, !starting)));
+            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new GoldenMoon(!starting), MoonPhaseChangeEvent.Activator.COMMAND));
         } else if (type.equals("water_moon")){
             WaterMoon.setServerActive(starting);
-            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new WaterMoon(stage, !starting)));
+            Bukkit.getPluginManager().callEvent(new MoonPhaseChangeEvent(new WaterMoon(!starting), MoonPhaseChangeEvent.Activator.COMMAND));
         } else {
             commandSender.sendMessage("Not a valid moon type!");
         }
