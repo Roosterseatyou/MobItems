@@ -10,10 +10,16 @@ public class MoonPhaseChangeEvent extends Event implements Cancellable {
     private static final HandlerList handlers = new HandlerList();
     private MoonPhase phase;
     private boolean isCanceled;
+    private Activator activator;
+    public enum Activator{
+        COMMAND,
+        ITEM,
+        TIME
+    }
 
-    public MoonPhaseChangeEvent(MoonPhase phase) {
+    public MoonPhaseChangeEvent(MoonPhase phase, Activator activator) {
         this.phase = phase;
-
+        this.activator = activator;
     }
 
     public static HandlerList getHandlerList() {
@@ -36,10 +42,6 @@ public class MoonPhaseChangeEvent extends Event implements Cancellable {
     @Override
     public void setCancelled(boolean b) {
         phase.setStopping(true);
-    }
-
-    public int getStage(){
-        return phase.getStage();
     }
 
     @Override
