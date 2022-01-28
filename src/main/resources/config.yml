@@ -25,10 +25,10 @@ mobs-drop-items-chance-blood: 3
 #Sets the increment of blue moons
 blue-moon-increment: 1
 #set what potion effects Blue Moons should give. put -1 to disable the potion effect.
-strength-level: 1
-speed-level: 1
-luck-level: 2
-resistance-level: 1
+strength-level-blue: 1
+speed-level-blue: 1
+luck-level-blue: 2
+resistance-level-blue: 1
 #Set if mobs should have a chance to drop their items, if so, what chance?
 mobs-drop-items-blue: true
 mobs-drop-items-chance-blue: 3
