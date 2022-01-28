@@ -14,7 +14,6 @@ public class MoonStarter {
     public static void moonStarter(Plugin plugin) {
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(plugin, () -> {
-            int stage = MathUtils.randomIntegerFromRange(1, 5);
             boolean isSpecial = MoonPhase.isActiveMoonPhase();
             int bloodMoonChance = BloodMoon.getServerChance();
             int blueMoonChance = BlueMoon.getServerChance();

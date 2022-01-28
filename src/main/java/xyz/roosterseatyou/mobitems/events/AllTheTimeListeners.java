@@ -35,6 +35,10 @@ public class AllTheTimeListeners implements Listener {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genSnow());
                 }
+            } else if (e.getLootTable().key().equals(LootTables.VILLAGE_TAIGA_HOUSE.key())){
+                if(MathUtils.rngHelper(2)){
+                    e.getInventoryHolder().getInventory().addItem(ListContainers.genTaiga());
+                }
             }
         }
     }

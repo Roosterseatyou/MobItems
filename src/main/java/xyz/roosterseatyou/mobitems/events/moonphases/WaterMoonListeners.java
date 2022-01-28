@@ -7,29 +7,22 @@ import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.entity.EntitySpawnEvent;
 import org.bukkit.event.player.PlayerFishEvent;
-import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 import xyz.roosterseatyou.mobitems.moonphases.WaterMoon;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 public class WaterMoonListeners implements Listener {
-    private static int stage;
-
-    @EventHandler
-    public void onMoonChange(MoonPhaseChangeEvent e){
-        if(e.getPhase() instanceof WaterMoon){
-            stage = e.getStage();
-        }
-    }
 
     @EventHandler
     public void onFish(PlayerFishEvent e){
-        if(WaterMoon.isServerActive() && MathUtils.rngHelper(stage)){
+        if(WaterMoon.isServerActive() && MathUtils.rngHelper(1)){
             if(e.getState().equals(PlayerFishEvent.State.CAUGHT_FISH)) {
-                e.getPlayer().getInventory().addItem(ListContainers.getRandAquatic());
+                if(MathUtils.rngHelper(80)) {
+                    e.getPlayer().getInventory().addItem(ListContainers.getRandAquatic());
+                } else {
+                    e.getPlayer().getWorld().spawnEntity(e.getPlayer().getLocation(), EntityType.DROWNED);
+                }
             }
-        } else if(WaterMoon.isServerActive() && MathUtils.rngHelper(10)){
-            e.getPlayer().getWorld().spawnEntity(e.getPlayer().getLocation(), EntityType.DROWNED);
         }
     }
 
