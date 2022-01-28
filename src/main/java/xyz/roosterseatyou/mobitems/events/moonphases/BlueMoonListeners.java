@@ -22,10 +22,10 @@ public class BlueMoonListeners implements Listener {
         FileConfiguration config = plugin.getConfig();
         if (e.getPhase() instanceof BlueMoon) {
             for (Player p : Bukkit.getOnlinePlayers()) {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 12000, config.getInt("speed-level")-1));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, config.getInt("luck-level")-1));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, config.getInt("strength-level")-1));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 12000, config.getInt("resistance-level")-1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.SPEED, 12000, config.getInt("speed-level-blue")-1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.LUCK, 12000, config.getInt("luck-level-blue")-1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, config.getInt("strength-level-blue")-1));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.DAMAGE_RESISTANCE, 12000, config.getInt("resistance-level-blue")-1));
 
             }
         }
