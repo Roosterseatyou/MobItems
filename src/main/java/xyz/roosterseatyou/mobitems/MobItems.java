@@ -1,5 +1,6 @@
 package xyz.roosterseatyou.mobitems;
 
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.commands.*;
 import xyz.roosterseatyou.mobitems.events.*;
@@ -23,9 +24,11 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
 
 public final class MobItems extends JavaPlugin {
+    private static Plugin instance;
 
     @Override
     public void onEnable() {
+        instance = this;
         items();
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
@@ -95,5 +98,9 @@ public final class MobItems extends JavaPlugin {
         SnowGolemChest.init();
         SnowGolemLegs.init();
         SnowGolemFeet.init();
+    }
+
+    public static Plugin getInstance(){
+        return instance;
     }
 }
