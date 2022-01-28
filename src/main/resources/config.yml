@@ -1,4 +1,13 @@
 # Config files for changing up the plugin!
+
+#----------Loot----------
+loot-spawn-in-dungeons: true
+loot-spawn-in-shipwreck: true
+loot-spawn-in-villages: true
+loot-spawn-in-mineshaft: true
+loot-spawn-in-buried-treasure: true
+loot-spawn-in-igloo: true
+
 #----------Blood Moons-----------------
 #Sets the increment of blood moons (how much per night the chance will increase)
 blood-moon-increment: 1
