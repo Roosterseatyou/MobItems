@@ -1,0 +1,22 @@
+# Config files for changing up the chances for different events!
+
+#----------Blue Moons------------------
+#Sets the increment of blue moons (how much per night the chance will increase)
+blue-moon-increment: 2
+
+#-----------Golden Moons---------------
+#Sets the chance of mobs dropping gold on death
+mob-drop-gold-chance: 5
+#Sets the chance of a mob spawning when you break a block
+mob-spawn-on-block-break: 2
+#Sets chance of mobs dropping items
+mob-drop-items: 2
+
+#-----------Water Moons----------------
+#Sets the chance of something special happening after a player catches a fish during Water Moon
+fish-event-chance: 2
+#Sets the chance of a drowned spawning if a special event occurs from the aforementioned event.
+#An item will be given to a player if a drowned is not spawned, so choose this carefully...
+fish-drowned-chance: 20
+
+
