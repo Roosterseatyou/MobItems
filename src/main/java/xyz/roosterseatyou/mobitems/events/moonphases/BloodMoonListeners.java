@@ -49,8 +49,8 @@ public class BloodMoonListeners implements Listener {
         FileConfiguration config = plugin.getConfig();
         if(BloodMoon.isServerActive() && hostiles.contains(e.getEntityType()) && config.getBoolean("mobs-spawn-powerful-blood")){
             LivingEntity entity = (LivingEntity) e.getEntity();
-            entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, config.getInt("strength-level-blood")));
-            entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 12000, config.getInt("regen-level-blood")));
+            entity.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE, 12000, config.getInt("strength-level-blood")-1));
+            entity.addPotionEffect(new PotionEffect(PotionEffectType.REGENERATION, 12000, config.getInt("regen-level-blood")-1));
             entity.getAttribute(Attribute.GENERIC_MAX_HEALTH).setBaseValue(config.getInt("health-level-blood"));
         }
     }
