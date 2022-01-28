@@ -1,11 +1,16 @@
-# Config files for changing up the chances for different events!
+# Config files for changing up the plugin!
 #----------Blood Moons-----------------
 #Sets the increment of blood moons (how much per night the chance will increase)
 blood-moon-increment: 1
+#Should mobs spawn with some potion effects (Strength, regen)?
+mobs-spawn-powerful-blood: true
+strength-level-blood: 2
+regen-level-blood: 1
+#in half-hearts
+health-level-blood: 20
 #set if mobs should drop items, if so, what chance.
 mobs-drop-items-blood: false
 mobs-drop-items-chance-blood: 3
-
 
 #----------Blue Moons------------------
 #Sets the increment of blue moons
@@ -37,7 +42,7 @@ water-moon-increment: 1
 fish-event-chance: 2
 mob-drop-items-water: true
 #Sets the chance of a drowned spawning if a special event occurs from the aforementioned event.
-#An item will be given to a player if a drowned is not spawned, so choose this carefully...
+#An item will be given to a player if a Drowned is not spawned, so choose this carefully...
 fish-drowned-chance: 20
 
 
