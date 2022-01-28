@@ -43,6 +43,9 @@ mob-spawn-on-block-break: 2
 #Sets if mobs should drop items, if so, what chance?
 mob-drop-items-blood: true
 mob-drop-items-chance-gold: 2
+#Sets if mobs are allowed to drop gold on death, if so what chance?
+mobs-drop-gold: true
+mobs-drop-gold-chance: 20
 
 #-----------Water Moons----------------
 #Sets the increment for water moons
