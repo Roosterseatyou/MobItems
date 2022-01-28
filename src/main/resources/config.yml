@@ -1,20 +1,41 @@
 # Config files for changing up the chances for different events!
+#----------Blood Moons-----------------
+#Sets the increment of blood moons (how much per night the chance will increase)
+blood-moon-increment: 1
+#set if mobs should drop items, if so, what chance.
+mobs-drop-items-blood: false
+mobs-drop-items-chance-blood: 3
+
 
 #----------Blue Moons------------------
-#Sets the increment of blue moons (how much per night the chance will increase)
-blue-moon-increment: 2
+#Sets the increment of blue moons
+blue-moon-increment: 1
+#set what potion effects Blue Moons should give. put -1 to disable the potion effect.
+strength-level: 1
+speed-level: 1
+luck-level: 2
+resistance-level: 1
+#Set if mobs should have a chance to drop their items, if so, what chance?
+mobs-drop-items-blue: true
+mobs-drop-items-chance-blue: 3
 
 #-----------Golden Moons---------------
+#Sets the increment of golden moons
+gold-moon-increment: 1
 #Sets the chance of mobs dropping gold on death
 mob-drop-gold-chance: 5
 #Sets the chance of a mob spawning when you break a block
 mob-spawn-on-block-break: 2
-#Sets chance of mobs dropping items
-mob-drop-items: 2
+#Sets if mobs should drop items, if so, what chance?
+mob-drop-items-blood: true
+mob-drop-items-chance-gold: 2
 
 #-----------Water Moons----------------
+#Sets the increment for water moons
+water-moon-increment: 1
 #Sets the chance of something special happening after a player catches a fish during Water Moon
 fish-event-chance: 2
+mob-drop-items-water: true
 #Sets the chance of a drowned spawning if a special event occurs from the aforementioned event.
 #An item will be given to a player if a drowned is not spawned, so choose this carefully...
 fish-drowned-chance: 20
