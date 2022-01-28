@@ -29,9 +29,9 @@ public final class MobItems extends JavaPlugin {
         items();
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
         getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new BlueMoonListeners(this), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
