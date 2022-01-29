@@ -20,6 +20,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxPaws;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
 
@@ -98,6 +102,10 @@ public final class MobItems extends JavaPlugin {
         SnowGolemChest.init();
         SnowGolemLegs.init();
         SnowGolemFeet.init();
+        FoxMask.init();
+        FoxLegs.init();
+        FoxChest.init();
+        FoxPaws.init();
     }
 
     public static Plugin getInstance(){
