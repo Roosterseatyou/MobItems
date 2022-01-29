@@ -1,58 +1,40 @@
 package xyz.roosterseatyou.mobitems;
 
+import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.roosterseatyou.mobitems.commands.MoonStatus;
-import xyz.roosterseatyou.mobitems.commands.SetMoon;
-import xyz.roosterseatyou.mobitems.commands.SimFishRNG;
-import xyz.roosterseatyou.mobitems.commands.TestMode;
-import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
-import xyz.roosterseatyou.mobitems.events.aquatic.UnderWaterEvents;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.FarmAnimalEvents;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.ChickenListeners;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
-import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
-import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.DrownedEvents;
+import xyz.roosterseatyou.mobitems.commands.*;
+import xyz.roosterseatyou.mobitems.events.*;
+import xyz.roosterseatyou.mobitems.events.aquatic.*;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.*;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.*;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.*;
+import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.*;
+import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.*;
 import xyz.roosterseatyou.mobitems.events.moonphases.*;
-import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
-import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.ZombieEvents;
-import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.RabbitListeners;
-import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.SnowGolemListeners;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenWings;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedMask;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieChest;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.ZombieMask;
+import xyz.roosterseatyou.mobitems.events.undeadevents.*;
+import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.*;
+import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
+import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.*;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.*;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemChest;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
 
 public final class MobItems extends JavaPlugin {
+    private static Plugin instance;
 
     @Override
     public void onEnable() {
+        instance = this;
         items();
+        saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
+        getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
         getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new MoonAnnouncer(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
@@ -72,7 +54,7 @@ public final class MobItems extends JavaPlugin {
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
         UndeadEvents.playerBurn(this);
-        MoonStarter.moonStarter(this);
+        MoonStarter.moonStarter();
         SnowGolemListeners.snowGolemBurn(this);
     }
 
@@ -116,5 +98,9 @@ public final class MobItems extends JavaPlugin {
         SnowGolemChest.init();
         SnowGolemLegs.init();
         SnowGolemFeet.init();
+    }
+
+    public static Plugin getInstance(){
+        return instance;
     }
 }

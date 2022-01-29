@@ -12,7 +12,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class AquaticUtils {
     public static boolean isAquaticArmor(ItemStack i){
-        return PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }
     public static boolean hasFullSet(Player p) {
         return  isAquaticArmor(p.getInventory().getHelmet()) && isAquaticArmor(p.getInventory().getChestplate())

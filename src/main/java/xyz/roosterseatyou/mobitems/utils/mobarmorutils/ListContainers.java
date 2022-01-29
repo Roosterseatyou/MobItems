@@ -5,6 +5,18 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenWings;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowChest;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowHooves;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.CowMask;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
@@ -17,6 +29,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxPaws;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemLegs;
@@ -120,5 +136,66 @@ public class ListContainers {
         list.add(Material.PURPLE_BED);
         list.add(Material.MAGENTA_BED);
         return list;
+    }
+
+    public static ItemStack genRandItemFromEntity(EntityType type){
+        if(type == EntityType.ZOMBIE){
+            return getRandZombieArmor();
+        } else if(type == EntityType.DROWNED){
+            List<ItemStack> itemStacks = new ArrayList<>();
+            itemStacks.add(DrownedMask.DROWNED_MASK);
+            itemStacks.add(DrownedChest.DROWNED_CHEST);
+            itemStacks.add(DrownedLegs.DROWNED_LEGS);
+            itemStacks.add(DrownedFeet.DROWNED_FEET);
+            return ItemUtils.randomItemStackFromList(itemStacks);
+        } else if (type == EntityType.COW) {
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(CowMask.COW_MASK);
+            stacks.add(CowChest.COW_CHEST);
+            stacks.add(CowLegs.COW_LEGS);
+            stacks.add(CowHooves.COW_HOOVES);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.SHEEP){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(SheepMask.SHEEP_MASK);
+            stacks.add(SheepChest.SHEEP_CHEST);
+            stacks.add(SheepLegs.SHEEP_LEGS);
+            stacks.add(SheepHooves.SHEEP_HOOVES);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.SALMON){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(SalmonMask.SALMON_LIPS);
+            stacks.add(SalmonFins.SALMON_FINS);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.FOX){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(FoxMask.FOX_MASK);
+            stacks.add(FoxChest.FOX_CHEST);
+            stacks.add(FoxLegs.FOX_LEGS);
+            stacks.add(FoxPaws.FOX_PAWS);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.CHICKEN){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(ChickenBeak.CHICKEN_BEAK);
+            stacks.add(ChickenWings.CHICKEN_WINGS);
+            stacks.add(ChickenThighs.CHICKEN_THIGHS);
+            stacks.add(ChickenFeet.CHICKEN_FEET);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.RABBIT){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(RabbitMask.RABBIT_MASK);
+            stacks.add(RabbitChest.RABBIT_CHEST);
+            stacks.add(RabbitLegs.RABBIT_LEGS);
+            stacks.add(RabbitFeet.RABBIT_FEET);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.SNOWMAN){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(SnowGolemMask.SNOW_MASK);
+            stacks.add(SnowGolemChest.SNOW_CHEST);
+            stacks.add(SnowGolemLegs.SNOW_LEGS);
+            stacks.add(SnowGolemFeet.SNOW_FEET);
+            return ItemUtils.randomItemStackFromList(stacks);
+        }
+        return null;
     }
 }

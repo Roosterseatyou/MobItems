@@ -4,22 +4,26 @@ import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
+import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 import xyz.roosterseatyou.mobitems.moonphases.*;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
 public class MoonStarter {
-    public static void moonStarter(Plugin plugin) {
+    public static void moonStarter() {
+        FileConfiguration config = MobItems.getInstance().getConfig();
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
-        scheduler.scheduleSyncRepeatingTask(plugin, () -> {
+        scheduler.scheduleSyncRepeatingTask(MobItems.getInstance(), () -> {
             boolean isSpecial = MoonPhase.isActiveMoonPhase();
             int bloodMoonChance = BloodMoon.getServerChance();
             int blueMoonChance = BlueMoon.getServerChance();
             int goldenMoonChance = GoldenMoon.getServerChance();
             int waterMoonChance = WaterMoon.getServerChance();
-            if(12000 < Bukkit.getWorld("world").getTime() && Bukkit.getWorld("world").getTime() < 12100){
+            long time = Bukkit.getWorld(config.getString("world-names")).getTime();
+            if(12000 < time && time < 12100){
                 if(MathUtils.rngHelper(bloodMoonChance) && !isSpecial){
                     BloodMoon.setServerActive(true);
                     BloodMoon.setServerChance(0);
@@ -50,7 +54,7 @@ public class MoonStarter {
                     GoldenMoon.setServerChance(goldenMoonChance + 1);
                     WaterMoon.setServerChance(waterMoonChance + 1);
                 }
-            } else if (Bukkit.getWorld("world") != null && 23000 < Bukkit.getWorld("world").getTime() && Bukkit.getWorld("world").getTime() < 23100) {
+            } else if (23000 < time && time < 23100) {
                 if (isSpecial){
                     MoonPhase.setActiveMoonPhase(false);
                     Bukkit.broadcast(Component.text("The moon has set. You may go back to your pathetic lives.."));
