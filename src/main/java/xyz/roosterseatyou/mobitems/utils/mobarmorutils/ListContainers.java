@@ -3,6 +3,8 @@ package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
@@ -107,6 +109,8 @@ public class ListContainers {
         itemStacks.add(DrownedFeet.DROWNED_FEET);
         itemStacks.add(SalmonMask.SALMON_LIPS);
         itemStacks.add(SalmonFins.SALMON_FINS);
+        itemStacks.add(GlowSquidMask.GLOW_LIPS);
+        itemStacks.add(GlowSquidTentacles.GLOW_TENTACLES);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 
@@ -194,6 +198,11 @@ public class ListContainers {
             stacks.add(SnowGolemChest.SNOW_CHEST);
             stacks.add(SnowGolemLegs.SNOW_LEGS);
             stacks.add(SnowGolemFeet.SNOW_FEET);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.GLOW_SQUID){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(GlowSquidMask.GLOW_LIPS);
+            stacks.add(GlowSquidTentacles.GLOW_TENTACLES);
             return ItemUtils.randomItemStackFromList(stacks);
         }
         return null;

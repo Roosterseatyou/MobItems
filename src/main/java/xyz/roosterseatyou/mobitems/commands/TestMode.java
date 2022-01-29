@@ -5,6 +5,8 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
@@ -59,6 +61,8 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(DrownedChest.DROWNED_CHEST);
             commandSender1.getInventory().addItem(DrownedLegs.DROWNED_LEGS);
             commandSender1.getInventory().addItem(DrownedFeet.DROWNED_FEET);
+            commandSender1.getInventory().addItem(GlowSquidMask.GLOW_LIPS);
+            commandSender1.getInventory().addItem(GlowSquidTentacles.GLOW_TENTACLES);
         }
         return false;
     }

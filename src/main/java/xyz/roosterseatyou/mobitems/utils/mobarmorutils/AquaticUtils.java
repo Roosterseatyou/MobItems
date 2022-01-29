@@ -7,6 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
@@ -24,8 +25,15 @@ public class AquaticUtils {
     }
 
     public static boolean hasSalmonSet(Player p) {
-        return  isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getChestplate())
-                && isSalmonArmor(p.getInventory().getLeggings()) && isSalmonArmor(p.getInventory().getBoots());
+        return  isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getBoots());
+    }
+
+    public static boolean isGlowArmor(ItemStack i){
+        return i != null && PlayerInventoryUtils.hasID(i, GlowSquidMask.ENTITY_ID);
+    }
+
+    public static boolean hasGlowSet(Player p){
+        return  isGlowArmor(p.getInventory().getHelmet()) && isGlowArmor(p.getInventory().getBoots());
     }
 
     public static int waterLevel(Block b){

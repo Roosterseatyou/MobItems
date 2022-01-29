@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.commands.*;
 import xyz.roosterseatyou.mobitems.events.*;
 import xyz.roosterseatyou.mobitems.events.aquatic.*;
+import xyz.roosterseatyou.mobitems.events.aquatic.glowsquid.GlowSquidListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.*;
@@ -15,6 +16,8 @@ import xyz.roosterseatyou.mobitems.events.undeadevents.*;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.*;
@@ -50,6 +53,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new SnowGolemListeners(), this);
+        getServer().getPluginManager().registerEvents(new GlowSquidListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
@@ -106,6 +110,8 @@ public final class MobItems extends JavaPlugin {
         FoxLegs.init();
         FoxChest.init();
         FoxPaws.init();
+        GlowSquidMask.init();
+        GlowSquidTentacles.init();
     }
 
     public static Plugin getInstance(){
