@@ -13,13 +13,16 @@ import xyz.roosterseatyou.mobitems.moonphases.WaterMoon;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
-public class WaterMoonListeners implements Listener {
-    @EventHandler
+public class WaterMoonListeners implements Listener {    @EventHandler
     public void onFish(PlayerFishEvent e){
         FileConfiguration config = MobItems.getInstance().getConfig();
         if(WaterMoon.isServerActive() && MathUtils.rngHelper(config.getInt("fish-special-chance"))){
             if(e.getState().equals(PlayerFishEvent.State.CAUGHT_FISH)) {
-                e.getPlayer().getInventory().addItem(ListContainers.getRandAquatic());
+                if(MathUtils.rngHelper(80)) {
+                    e.getPlayer().getInventory().addItem(ListContainers.getRandAquatic());
+                } else {
+                    e.getPlayer().getWorld().spawnEntity(e.getPlayer().getLocation(), EntityType.DROWNED);
+                }
             }
         } else if(WaterMoon.isServerActive() && MathUtils.rngHelper(config.getInt("fish-drowned-chance"))){
             e.getPlayer().getWorld().spawnEntity(e.getPlayer().getLocation(), EntityType.DROWNED);

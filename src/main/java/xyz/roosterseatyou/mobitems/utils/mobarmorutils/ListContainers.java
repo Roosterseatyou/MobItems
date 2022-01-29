@@ -105,7 +105,18 @@ public class ListContainers {
         itemStacks.add(DrownedChest.DROWNED_CHEST);
         itemStacks.add(DrownedLegs.DROWNED_LEGS);
         itemStacks.add(DrownedFeet.DROWNED_FEET);
+        itemStacks.add(SalmonMask.SALMON_LIPS);
+        itemStacks.add(SalmonFins.SALMON_FINS);
         return ItemUtils.randomItemStackFromList(itemStacks);
+    }
+
+    public static ItemStack genTaiga(){
+        List<ItemStack> list = new ArrayList<>();
+        list.add(FoxMask.FOX_MASK);
+        list.add(FoxChest.FOX_CHEST);
+        list.add(FoxLegs.FOX_LEGS);
+        list.add(FoxPaws.FOX_PAWS);
+        return ItemUtils.randomItemStackFromList(list);
     }
 
     public static List<Material> bedsList(){
