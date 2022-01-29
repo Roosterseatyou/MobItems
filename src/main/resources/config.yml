@@ -1,5 +1,8 @@
 # Config files for changing up the plugin!
 
+#sets the name of the worlds
+world-names: world
+
 #----------Loot----------
 loot-spawn-in-dungeons: true
 loot-spawn-in-shipwreck: true
@@ -24,7 +27,7 @@ mobs-drop-items-chance-blood: 3
 #----------Blue Moons------------------
 #Sets the increment of blue moons
 blue-moon-increment: 1
-#set what potion effects Blue Moons should give. put -1 to disable the potion effect.
+#set what potion effects Blue Moons should give. put 0 to disable the potion effect.
 strength-level-blue: 1
 speed-level-blue: 1
 luck-level-blue: 2
@@ -46,15 +49,23 @@ mob-drop-items-chance-gold: 2
 #Sets if mobs are allowed to drop gold on death, if so what chance?
 mobs-drop-gold: true
 mobs-drop-gold-chance: 20
+#Should players get mining effects? If so how strong? (Haste, night vision)
+players-get-effects-gold: true
+haste-level-gold: 1
+night-vision-level-gold: 1
 
 #-----------Water Moons----------------
 #Sets the increment for water moons
 water-moon-increment: 1
 #Sets the chance of something special happening after a player catches a fish during Water Moon
-fish-event-chance: 2
+fish-special-chance: 2
 mob-drop-items-water: true
 #Sets the chance of a drowned spawning if a special event occurs from the aforementioned event.
 #An item will be given to a player if a Drowned is not spawned, so choose this carefully...
 fish-drowned-chance: 20
+#Should drowned get extra health? If so how much?
+drowned-extra-health: true
+#in half hearts
+drowned-extra-health-value: 20
 
 
