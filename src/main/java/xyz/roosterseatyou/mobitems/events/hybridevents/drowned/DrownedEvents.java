@@ -35,14 +35,15 @@ import xyz.roosterseatyou.mobitems.utils.mobarmorutils.AquaticUtils;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
+import java.util.UUID;
 
 public class DrownedEvents implements Listener{
     private EntityDamageEvent.DamageCause damageCause;
     private Block block;
-    private static final HashMap<Player, ItemStack> playerStackMap = new HashMap<>();
-    private static final HashMap<Player, Long> cooldown = new HashMap<>();
-    private static final HashMap<Player, Boolean> canClaim = new HashMap<>();
-    private static final HashMap<Player, Boolean> needsTaking = new HashMap<>();
+    private static final HashMap<UUID, ItemStack> playerStackMap = new HashMap<>();
+    private static final HashMap<UUID, Long> cooldown = new HashMap<>();
+    private static final HashMap<UUID, Boolean> canClaim = new HashMap<>();
+    private static final HashMap<UUID, Boolean> needsTaking = new HashMap<>();
 
     private static Plugin plugin;
     public DrownedEvents(Plugin plugin){
@@ -50,7 +51,7 @@ public class DrownedEvents implements Listener{
     }
 
     public static boolean isDrownedArmor(ItemStack i){
-        return i != null && PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: Drowned").color(TextColor.fromHexString("#89E2C7")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, Component.text("ENTITY ID: DROWNED").color(TextColor.fromHexString("#89E2C7")).decorate(TextDecoration.ITALIC));
     }
 
     public static boolean hasDrownedSet(Player p) {
@@ -93,9 +94,9 @@ public class DrownedEvents implements Listener{
         ItemStack newItem = e.getNewItem();
         ItemStack oldItem = e.getOldItem();
         if(isDrownedArmor(newItem) && hasDrownedSet(e.getPlayer())){
-            canClaim.put(e.getPlayer(), true);
+            canClaim.put(e.getPlayer().getUniqueId(), true);
         } else if(isDrownedArmor(oldItem)){
-            canClaim.put(e.getPlayer(), false);
+            canClaim.put(e.getPlayer().getUniqueId(), false);
         }
     }
 
@@ -107,7 +108,7 @@ public class DrownedEvents implements Listener{
         if (block.getType().equals(Material.WATER) && hasDrownedSet(p)) {
             PlayerInventory inv = p.getInventory();
             if (cooldown.containsKey(p)) {
-                long timeLeft = ((cooldown.get(p)/1000) + cooldownTime) - System.currentTimeMillis() / 1000;
+                long timeLeft = ((cooldown.get(p.getUniqueId())/1000) + cooldownTime) - System.currentTimeMillis() / 1000;
                 if(timeLeft > 0) {
                     p.sendActionBar(Component.text("You still have to wait " + timeLeft + " seconds to use your trident again!").color(TextColor.color(4, 85, 110)));
                 }
@@ -116,12 +117,12 @@ public class DrownedEvents implements Listener{
                     try {
 
                         if (canClaim.get(p)) {
-                            cooldown.put(p, System.currentTimeMillis());
+                            cooldown.put(p.getUniqueId(), System.currentTimeMillis());
                             ItemStack trident = drownedTrident(AquaticUtils.waterLevel(block));
                             inv.setItemInMainHand(trident);
-                            playerStackMap.put(p, trident);
-                            canClaim.put(p, false);
-                            needsTaking.put(p, true);
+                            playerStackMap.put(p.getUniqueId(), trident);
+                            canClaim.put(p.getUniqueId(), false);
+                            needsTaking.put(p.getUniqueId(), true);
                             p.updateInventory();
                             BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
                             scheduler.scheduleSyncDelayedTask(plugin, () -> {
@@ -130,8 +131,8 @@ public class DrownedEvents implements Listener{
                                         if (inv.getItem(i) != null) {
                                             if (inv.getItem(i).equals(playerStackMap.get(p))) {
                                                 inv.setItem(i, new ItemStack(Material.AIR));
-                                                canClaim.put(p, true);
-                                                needsTaking.put(p, false);
+                                                canClaim.put(p.getUniqueId(), true);
+                                                needsTaking.put(p.getUniqueId(), false);
                                                 p.updateInventory();
                                             }
                                         }
@@ -150,7 +151,7 @@ public class DrownedEvents implements Listener{
     @EventHandler
     public void onItemDrop(PlayerDropItemEvent e){
         if (block != null) {
-            if (playerStackMap.get(e.getPlayer()) != null && e.getItemDrop().getItemStack().equals(playerStackMap.get(e.getPlayer()))) {
+            if (playerStackMap.get(e.getPlayer().getUniqueId()) != null && e.getItemDrop().getItemStack().equals(playerStackMap.get(e.getPlayer().getUniqueId()))) {
                 e.setCancelled(true);
             }
         }
@@ -159,7 +160,7 @@ public class DrownedEvents implements Listener{
     public void onInventoryClick(InventoryClickEvent e){
         PlayerInventory inv = e.getWhoClicked().getInventory();
         if (inv.getItem(e.getSlot()) != null && block != null) {
-            if (e.getAction().equals(InventoryAction.MOVE_TO_OTHER_INVENTORY) && inv.getItem(e.getSlot()).equals(playerStackMap.get((Player) e.getWhoClicked()))) {
+            if (e.getAction().equals(InventoryAction.MOVE_TO_OTHER_INVENTORY) && inv.getItem(e.getSlot()).equals(playerStackMap.get(e.getWhoClicked().getUniqueId()))) {
                 e.setCancelled(true);
             }
         }
@@ -167,8 +168,8 @@ public class DrownedEvents implements Listener{
 
     @EventHandler
     public void onPlayerLeave(PlayerQuitEvent e){
-        if(needsTaking.get(e.getPlayer())){
-            e.getPlayer().getInventory().remove(playerStackMap.get(e.getPlayer()));
+        if(needsTaking.get(e.getPlayer().getUniqueId()) != null && needsTaking.get(e.getPlayer().getUniqueId())){
+            e.getPlayer().getInventory().remove(playerStackMap.get(e.getPlayer().getUniqueId()));
         }
     }
 

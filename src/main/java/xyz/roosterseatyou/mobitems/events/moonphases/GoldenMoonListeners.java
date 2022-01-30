@@ -4,7 +4,9 @@ import org.bukkit.Bukkit;
 import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
+import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.LivingEntity;
+import org.bukkit.entity.Mob;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -12,6 +14,7 @@ import org.bukkit.event.block.BlockBreakEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 import xyz.roosterseatyou.mobitems.moonphases.GoldenMoon;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
@@ -20,11 +23,12 @@ import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 public class GoldenMoonListeners implements Listener {
     @EventHandler
     public void onMoonChange(MoonPhaseChangeEvent e) {
-        if (e.getPhase() instanceof GoldenMoon) {
 
+        FileConfiguration config = MobItems.getInstance().getConfig();
+        if (e.getPhase() instanceof GoldenMoon && config.getBoolean("players-get-effects-gold")) {
             for (Player p : Bukkit.getOnlinePlayers()) {
-                p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 12000, 0));
-                p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 12000, 0));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.FAST_DIGGING, 12000, config.getInt("haste-level-gold")));
+                p.addPotionEffect(new PotionEffect(PotionEffectType.NIGHT_VISION, 12000, config.getInt("night-vision-level-gold")));
             }
         }
     }
