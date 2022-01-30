@@ -9,6 +9,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class AquaticUtils {
@@ -34,6 +35,15 @@ public class AquaticUtils {
 
     public static boolean hasGlowSet(Player p){
         return  isGlowArmor(p.getInventory().getHelmet()) && isGlowArmor(p.getInventory().getBoots());
+    }
+
+    public static boolean isTurtArmor(ItemStack i){
+        return i != null && PlayerInventoryUtils.hasID(i, TurtleHead.ENTITY_ID);
+    }
+
+    public static boolean hasTurtSet(Player p){
+        return  isTurtArmor(p.getInventory().getHelmet()) && isTurtArmor(p.getInventory().getChestplate()) &&
+                isTurtArmor(p.getInventory().getLeggings()) && isTurtArmor(p.getInventory().getBoots());
     }
 
     public static int waterLevel(Block b){

@@ -42,6 +42,18 @@ public class AllTheTimeListeners implements Listener {
                 if(MathUtils.rngHelper(2)){
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genTaiga());
                 }
+            } else if(e.getLootTable().key().equals(LootTables.RUINED_PORTAL.key())){
+                if(MathUtils.rngHelper(2)){
+                    e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
+                }
+            } else if (e.getLootTable().key().equals(LootTables.BASTION_TREASURE.key())){
+                if(MathUtils.rngHelper(2)){
+                    e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
+                }
+            } else if(e.getLootTable().key().equals(LootTables.NETHER_BRIDGE.key())){
+                if(MathUtils.rngHelper(2)){
+                    e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
+                }
             }
         }
     }

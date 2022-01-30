@@ -7,6 +7,10 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
@@ -67,6 +71,10 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(GlowSquidTentacles.GLOW_TENTACLES);
             commandSender1.getInventory().addItem(StriderFace.STRIDER_FACE);
             commandSender1.getInventory().addItem(StriderFeet.STRIDER_FEET);
+            commandSender1.getInventory().addItem(TurtleHead.TURTLE_HEAD);
+            commandSender1.getInventory().addItem(TurtleChest.TURTLE_CHEST);
+            commandSender1.getInventory().addItem(TurtleLegs.TURTLE_LEGS);
+            commandSender1.getInventory().addItem(TurtleFeet.TURTLE_FEET);
         }
         return false;
     }

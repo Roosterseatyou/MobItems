@@ -1,6 +1,5 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
-import com.destroystokyo.paper.event.player.PlayerArmorChangeEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;

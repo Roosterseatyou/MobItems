@@ -6,6 +6,7 @@ import xyz.roosterseatyou.mobitems.commands.*;
 import xyz.roosterseatyou.mobitems.events.*;
 import xyz.roosterseatyou.mobitems.events.aquatic.*;
 import xyz.roosterseatyou.mobitems.events.aquatic.glowsquid.GlowSquidListeners;
+import xyz.roosterseatyou.mobitems.events.aquatic.turtle.TurtleListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.*;
@@ -19,6 +20,10 @@ import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.*;
@@ -52,12 +57,13 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChickenListeners(), this);
         getServer().getPluginManager().registerEvents(new UndeadEvents(), this);
         getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
-        //getServer().getPluginManager().registerEvents(new UnderWaterEvents(this), this);
+        getServer().getPluginManager().registerEvents(new UnderWaterEvents(), this);
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new SnowGolemListeners(), this);
         getServer().getPluginManager().registerEvents(new GlowSquidListeners(), this);
         getServer().getPluginManager().registerEvents(new StriderListeners(), this);
+        getServer().getPluginManager().registerEvents(new TurtleListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
@@ -118,6 +124,10 @@ public final class MobItems extends JavaPlugin {
         GlowSquidTentacles.init();
         StriderFeet.init();
         StriderFace.striderFace();
+        TurtleHead.init();
+        TurtleChest.init();
+        TurtleLegs.init();
+        TurtleFeet.init();
     }
 
     public static Plugin getInstance(){

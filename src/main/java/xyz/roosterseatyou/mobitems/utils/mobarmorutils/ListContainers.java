@@ -7,6 +7,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenBeak;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.ChickenThighs;
@@ -19,6 +23,8 @@ import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFace;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
@@ -43,6 +49,7 @@ import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 
 public class ListContainers {
@@ -111,6 +118,10 @@ public class ListContainers {
         itemStacks.add(SalmonFins.SALMON_FINS);
         itemStacks.add(GlowSquidMask.GLOW_LIPS);
         itemStacks.add(GlowSquidTentacles.GLOW_TENTACLES);
+        itemStacks.add(TurtleHead.TURTLE_HEAD);
+        itemStacks.add(TurtleChest.TURTLE_CHEST);
+        itemStacks.add(TurtleLegs.TURTLE_LEGS);
+        itemStacks.add(TurtleFeet.TURTLE_FEET);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 
@@ -121,6 +132,13 @@ public class ListContainers {
         list.add(FoxLegs.FOX_LEGS);
         list.add(FoxPaws.FOX_PAWS);
         return ItemUtils.randomItemStackFromList(list);
+    }
+
+    public static ItemStack genNether(){
+        List<ItemStack> stacks = new ArrayList<>();
+        stacks.add(StriderFace.STRIDER_FACE);
+        stacks.add(StriderFeet.STRIDER_FEET);
+        return ItemUtils.randomItemStackFromList(stacks);
     }
 
     public static List<Material> bedsList(){
@@ -203,6 +221,18 @@ public class ListContainers {
             List<ItemStack> stacks = new ArrayList<>();
             stacks.add(GlowSquidMask.GLOW_LIPS);
             stacks.add(GlowSquidTentacles.GLOW_TENTACLES);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.TURTLE){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(TurtleHead.TURTLE_HEAD);
+            stacks.add(TurtleChest.TURTLE_CHEST);
+            stacks.add(TurtleLegs.TURTLE_LEGS);
+            stacks.add(TurtleFeet.TURTLE_FEET);
+            return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.STRIDER){
+            List<ItemStack> stacks = new ArrayList<>();
+            stacks.add(StriderFace.STRIDER_FACE);
+            stacks.add(StriderFeet.STRIDER_FEET);
             return ItemUtils.randomItemStackFromList(stacks);
         }
         return null;
