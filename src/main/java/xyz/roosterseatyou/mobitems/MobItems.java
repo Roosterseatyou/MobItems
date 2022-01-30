@@ -12,6 +12,7 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.*;
 import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.*;
 import xyz.roosterseatyou.mobitems.events.moonphases.*;
+import xyz.roosterseatyou.mobitems.events.nether.strider.StriderListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.*;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
@@ -21,6 +22,8 @@ import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacl
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.chicken.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.cow.*;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.*;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFace;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.zombie.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxChest;
@@ -54,6 +57,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new SnowGolemListeners(), this);
         getServer().getPluginManager().registerEvents(new GlowSquidListeners(), this);
+        getServer().getPluginManager().registerEvents(new StriderListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
@@ -112,6 +116,8 @@ public final class MobItems extends JavaPlugin {
         FoxPaws.init();
         GlowSquidMask.init();
         GlowSquidTentacles.init();
+        StriderFeet.init();
+        StriderFace.striderFace();
     }
 
     public static Plugin getInstance(){

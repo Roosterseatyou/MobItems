@@ -19,6 +19,8 @@ import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepChest;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepHooves;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFace;
+import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedLegs;
@@ -63,6 +65,8 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(DrownedFeet.DROWNED_FEET);
             commandSender1.getInventory().addItem(GlowSquidMask.GLOW_LIPS);
             commandSender1.getInventory().addItem(GlowSquidTentacles.GLOW_TENTACLES);
+            commandSender1.getInventory().addItem(StriderFace.STRIDER_FACE);
+            commandSender1.getInventory().addItem(StriderFeet.STRIDER_FEET);
         }
         return false;
     }
