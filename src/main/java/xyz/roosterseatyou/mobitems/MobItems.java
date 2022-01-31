@@ -38,14 +38,19 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxPaws;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
 
+import java.util.logging.Logger;
+
 public final class MobItems extends JavaPlugin {
     private static Plugin instance;
+    public static Logger log;
 
     @Override
     public void onEnable() {
         instance = this;
+        log = getLogger();
         items();
         saveDefaultConfig();
+        saveResource("death-counts.yml", false);
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
         getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
@@ -64,6 +69,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new GlowSquidListeners(), this);
         getServer().getPluginManager().registerEvents(new StriderListeners(), this);
         getServer().getPluginManager().registerEvents(new TurtleListeners(), this);
+        getServer().getPluginManager().registerEvents(new DeathCountListener(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());

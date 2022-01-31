@@ -107,7 +107,7 @@ public class DrownedEvents implements Listener{
         block = p.getLocation().getBlock();
         if (block.getType().equals(Material.WATER) && hasDrownedSet(p)) {
             PlayerInventory inv = p.getInventory();
-            if (cooldown.containsKey(p)) {
+            if (cooldown.containsKey(p.getUniqueId())) {
                 long timeLeft = ((cooldown.get(p.getUniqueId())/1000) + cooldownTime) - System.currentTimeMillis() / 1000;
                 if(timeLeft > 0) {
                     p.sendActionBar(Component.text("You still have to wait " + timeLeft + " seconds to use your trident again!").color(TextColor.color(4, 85, 110)));

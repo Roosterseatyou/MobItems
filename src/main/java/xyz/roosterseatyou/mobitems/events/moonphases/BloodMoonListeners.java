@@ -3,6 +3,7 @@ package xyz.roosterseatyou.mobitems.events.moonphases;
 import org.bukkit.Bukkit;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.configuration.file.FileConfiguration;
+import org.bukkit.configuration.file.YamlConfiguration;
 import org.bukkit.entity.EntityType;
 import org.bukkit.entity.LivingEntity;
 import org.bukkit.entity.Player;
@@ -15,6 +16,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.KillerRabbitFeet;
@@ -32,10 +34,11 @@ import java.util.List;
 
 public class BloodMoonListeners implements Listener {
     public static List<EntityType> hostiles = new ArrayList<>();
-    private static Plugin plugin;
+    private static final Plugin plugin = MobItems.getInstance();
+    FileConfiguration deathData = YamlConfiguration.loadConfiguration(new File(MobItems.getInstance().getDataFolder()+"/"+"death-counts.yml"));
 
-    public BloodMoonListeners(Plugin plugin){
-        BloodMoonListeners.plugin = plugin;
+
+    public BloodMoonListeners(){
         hostiles.add(EntityType.ZOMBIE);
         hostiles.add(EntityType.SKELETON);
         hostiles.add(EntityType.SPIDER);
@@ -59,8 +62,10 @@ public class BloodMoonListeners implements Listener {
     public void onEntityDeath(EntityDeathEvent e) {
         FileConfiguration config = plugin.getConfig();
         LivingEntity entity = e.getEntity();
-        if(hostiles.contains(entity.getType()) && BloodMoon.isServerActive() && config.getBoolean("mobs-drop-items-blood")){
-            if(MathUtils.rngHelper(config.getInt("mobs-drop-items-chance-blood"))){
+        if(hostiles.contains(entity.getType()) && BloodMoon.isServerActive() && config.getBoolean("mobs-drop-items-blood") && e.getEntity().getKiller() != null){
+            Player killer = e.getEntity().getKiller();
+            if(MathUtils.doubleRngHelper((double) config.getInt("mobs-drop-items-chance-blood") + (config.getInt("mobs-drop-items-chance-blood") +
+                    (config.getDouble("death-count-increment") * (double) deathData.getInt(String.valueOf(killer.getUniqueId())))))){
                 if(e.getEntityType() == EntityType.ZOMBIE){
                     ItemStack item = ListContainers.getRandZombieArmor();
                     entity.getLocation().getWorld().dropItemNaturally(entity.getLocation(), item);
