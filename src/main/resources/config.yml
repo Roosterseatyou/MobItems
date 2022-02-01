@@ -3,6 +3,13 @@
 #sets the name of the worlds
 world-names: world
 
+#Sets if chances should of getting undead armor should go up the more someone dies
+death-count-affects-undead-chance: true
+#Sets the increment of said chance above
+death-count-increment: 0.2
+#sets the cooldown for deaths to avoid abuse (in seconds)
+death-count-cooldown: 60
+
 #----------Loot----------
 loot-spawn-in-dungeons: true
 loot-spawn-in-shipwreck: true
