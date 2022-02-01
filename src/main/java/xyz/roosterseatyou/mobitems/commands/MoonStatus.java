@@ -21,8 +21,6 @@ public class MoonStatus implements CommandExecutor {
                         "Blue Moon: Status: " + BlueMoon.isServerActive() + ", Current Chance: " + (double) BlueMoon.getServerChance()/2 + "\n" +
                         "Golden Moon: Status: " + GoldenMoon.isServerActive() + ", Current Chance: " + GoldenMoon.getServerChance() + "\n" +
                         "Water Moon: Status: " + WaterMoon.isServerActive() + ", Current Chance: " + WaterMoon.getServerChance() + "\n"));
-        Player p = (Player) commandSender;
-        p.getInventory().addItem(ListContainers.getRandAquatic());
         return false;
     }
 }
