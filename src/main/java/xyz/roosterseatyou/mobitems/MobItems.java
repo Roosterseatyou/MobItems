@@ -52,7 +52,7 @@ public final class MobItems extends JavaPlugin {
         saveDefaultConfig();
         saveResource("death-counts.yml", false);
         getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BloodMoonListeners(this), this);
+        getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
