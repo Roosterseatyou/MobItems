@@ -12,6 +12,8 @@ import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
+import java.util.Arrays;
+
 public class AquaticUtils {
     public static boolean isAquaticArmor(ItemStack i){
         return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
@@ -44,6 +46,16 @@ public class AquaticUtils {
     public static boolean hasTurtSet(Player p){
         return  isTurtArmor(p.getInventory().getHelmet()) && isTurtArmor(p.getInventory().getChestplate()) &&
                 isTurtArmor(p.getInventory().getLeggings()) && isTurtArmor(p.getInventory().getBoots());
+    }
+
+    public static int getTurtArmorCount(Player p){
+        int amt = 0;
+        for(ItemStack i : p.getInventory().getArmorContents()){
+            if(isTurtArmor(i)){
+                amt++;
+            }
+        }
+        return amt;
     }
 
     public static int waterLevel(Block b){
