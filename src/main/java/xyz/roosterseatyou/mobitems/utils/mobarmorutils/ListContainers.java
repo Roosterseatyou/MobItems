@@ -1,5 +1,7 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
@@ -45,6 +47,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemCh
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerNose;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
@@ -81,7 +87,12 @@ public class ListContainers {
     }
 
     public static ItemStack genVillager(){
-        return null;
+        List<ItemStack> list = new ArrayList<>();
+        list.add(VillagerNose.VILLAGER_NOSE);
+        list.add(VillagerChest.VILLAGER_CHEST);
+        list.add(VillagerLegs.VILLAGER_LEGS);
+        list.add(VillagerFeet.VILLAGER_FEET);
+        return ItemUtils.randomItemStackFromList(list);
     }
 
     public static ItemStack genMineshaft(){
@@ -234,7 +245,18 @@ public class ListContainers {
             stacks.add(StriderFace.STRIDER_FACE);
             stacks.add(StriderFeet.STRIDER_FEET);
             return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.VILLAGER){
+            return genVillager();
         }
         return null;
+    }
+
+    public static Component genVillagerProffesion(){
+        List<Component> list = new ArrayList<>();
+        list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Wandering").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
+        return list.get(MathUtils.randomIntegerFromRange(0, list.size()-1));
     }
 }

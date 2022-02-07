@@ -37,6 +37,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxPaws;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerNose;
 
 import java.util.logging.Logger;
 
@@ -134,6 +138,10 @@ public final class MobItems extends JavaPlugin {
         TurtleChest.init();
         TurtleLegs.init();
         TurtleFeet.init();
+        VillagerNose.init();
+        VillagerChest.init();
+        VillagerLegs.init();
+        VillagerFeet.init();
     }
 
     public static Plugin getInstance(){
