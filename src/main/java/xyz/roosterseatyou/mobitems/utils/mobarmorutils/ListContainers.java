@@ -251,7 +251,7 @@ public class ListContainers {
         return null;
     }
 
-    public static Component genVillagerProffesion(){
+    public static Component genVillagerProfession(){
         List<Component> list = new ArrayList<>();
         list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
         list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));

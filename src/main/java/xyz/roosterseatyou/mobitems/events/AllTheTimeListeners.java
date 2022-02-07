@@ -14,19 +14,19 @@ public class AllTheTimeListeners implements Listener {
     public void onLootPopulate(LootGenerateEvent e) {
         FileConfiguration config = MobItems.getInstance().getConfig();
         if (e.getInventoryHolder() != null) {
-            if (e.getLootTable().getKey().equals(LootTables.SIMPLE_DUNGEON.getKey()) && config.getBoolean("loot-spawn-in-dungeons")) {
+            if (e.getLootTable().getKey().equals(LootTables.SIMPLE_DUNGEON.getKey()) && config.getBoolean("loot-spawns.loot-spawn-in-dungeons")) {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genDungeonArmor());
                 }
-            } else if (e.getLootTable().getKey().equals(LootTables.ABANDONED_MINESHAFT.getKey()) && config.getBoolean("loot-spawn-in-mineshaft")) {
+            } else if (e.getLootTable().getKey().equals(LootTables.ABANDONED_MINESHAFT.getKey()) && config.getBoolean("loot-spawns.loot-spawn-in-mineshaft")) {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genMineshaft());
                 }
-            } else if (e.getLootTable().getKey().equals(LootTables.BURIED_TREASURE.getKey()) && config.getBoolean("loot-spawn-in-buried-treasure")) {
+            } else if (e.getLootTable().getKey().equals(LootTables.BURIED_TREASURE.getKey()) && config.getBoolean("loot-spawns.loot-spawn-in-buried-treasure")) {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.getRandAquatic());
                 }
-            } else if (e.getLootTable().getKey().equals(LootTables.SHIPWRECK_TREASURE.getKey()) && config.getBoolean("loot-spawn-in-shipwreck")) {
+            } else if (e.getLootTable().getKey().equals(LootTables.SHIPWRECK_TREASURE.getKey()) && config.getBoolean("loot-spawns.loot-spawn-in-shipwreck")) {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.getRandAquatic());
                 }
@@ -34,23 +34,23 @@ public class AllTheTimeListeners implements Listener {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genVillager());
                 }
-            } else if (e.getLootTable().key().equals(LootTables.IGLOO_CHEST.getKey()) && config.getBoolean("loot-spawn-in-igloo")) {
+            } else if (e.getLootTable().key().equals(LootTables.IGLOO_CHEST.getKey()) && config.getBoolean("loot-spawns.loot-spawn-in-igloo")) {
                 if (MathUtils.rngHelper(2)) {
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genSnow());
                 }
-            } else if (e.getLootTable().key().equals(LootTables.VILLAGE_TAIGA_HOUSE.key())){
+            } else if (e.getLootTable().key().equals(LootTables.VILLAGE_TAIGA_HOUSE.key()) && config.getBoolean("loot-spawns.loot-spawn-in-villages")){
                 if(MathUtils.rngHelper(2)){
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genTaiga());
                 }
-            } else if(e.getLootTable().key().equals(LootTables.RUINED_PORTAL.key())){
+            } else if(e.getLootTable().key().equals(LootTables.RUINED_PORTAL.key()) && config.getBoolean("loot-spawns.loot-spawn-in-ruined-portal")){
                 if(MathUtils.rngHelper(2)){
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
                 }
-            } else if (e.getLootTable().key().equals(LootTables.BASTION_TREASURE.key())){
+            } else if (e.getLootTable().key().equals(LootTables.BASTION_TREASURE.key()) && config.getBoolean("loot-spawns.loot-spawn-in-nether")){
                 if(MathUtils.rngHelper(2)){
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
                 }
-            } else if(e.getLootTable().key().equals(LootTables.NETHER_BRIDGE.key())){
+            } else if(e.getLootTable().key().equals(LootTables.NETHER_BRIDGE.key()) && config.getBoolean("loot-spawns.loot-spawn-in-nether")){
                 if(MathUtils.rngHelper(2)){
                     e.getInventoryHolder().getInventory().addItem(ListContainers.genNether());
                 }

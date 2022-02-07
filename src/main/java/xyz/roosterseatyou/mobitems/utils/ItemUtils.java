@@ -9,6 +9,8 @@ import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.jetbrains.annotations.NotNull;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -17,18 +19,18 @@ import java.util.UUID;
 
 public class ItemUtils{
 
-    public static ItemStack randomItemStackFromList(List<ItemStack> list){
+    public static ItemStack randomItemStackFromList(@NotNull List<ItemStack> list){
         int rIndex = MathUtils.randomIntegerFromRange(0, list.size()-1);
         return list.get(rIndex);
     }
 
-    public static void ApplyDamage(ItemStack tool, int damageDealt){
+    public static void ApplyDamage(@NotNull ItemStack tool, int damageDealt){
         Damageable item = (Damageable) tool.getItemMeta();
 
         item.setDamage(item.getDamage() + damageDealt);
     }
 
-    public static ItemStack genMobArmor(Material mat, Component name, Component entityID, Component classID, int strength, EquipmentSlot slotType, int unbreakingVal){
+    public static @NotNull ItemStack genMobArmor(Material mat, Component name, Component entityID, Component classID, int strength, EquipmentSlot slotType, int unbreakingVal){
         ItemStack i = new ItemStack(mat);
         LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
         meta.displayName(name);
@@ -42,4 +44,12 @@ public class ItemUtils{
         return i;
     }
 
+    public static void addRandProfession(@NotNull ItemStack i){
+        LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
+        List<Component> lore = meta.lore();
+        assert lore != null;
+        lore.add(ListContainers.genVillagerProfession());
+        meta.lore(lore);
+        i.setItemMeta(meta);
+    }
 }

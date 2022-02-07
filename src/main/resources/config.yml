@@ -11,12 +11,16 @@ death-count-increment: 0.2
 death-count-cooldown: 60
 
 #----------Loot----------
-loot-spawn-in-dungeons: true
-loot-spawn-in-shipwreck: true
-loot-spawn-in-villages: true
-loot-spawn-in-mineshaft: true
-loot-spawn-in-buried-treasure: true
-loot-spawn-in-igloo: true
+loot-spawns:
+  loot-spawn-in-dungeons: true
+  loot-spawn-in-shipwreck: true
+  loot-spawn-in-villages: true
+  loot-spawn-in-mineshaft: true
+  loot-spawn-in-buried-treasure: true
+  loot-spawn-in-igloo: true
+  loot-spawn-in-nether: true
+  loot-spawn-in-ruined-portal: true
+
 
 #----------Blood Moons-----------------
 #Sets the increment of blood moons (how much per night the chance will increase)
