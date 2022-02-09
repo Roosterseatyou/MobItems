@@ -2,9 +2,14 @@ package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
+import org.apache.commons.lang.math.RandomUtils;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.checkerframework.checker.units.qual.C;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
@@ -137,6 +142,8 @@ public class ListContainers {
         itemStacks.add(TurtleFeet.TURTLE_FEET);
         itemStacks.add(PufferfishLips.PUFFER_LIPS);
         itemStacks.add(PufferfishChest.PUFFER_FINS);
+        itemStacks.add(AxolotlLips.AXOLOTL_LIPS);
+        itemStacks.add(AxolotlFins.AXOLOTL_FINS);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 
@@ -253,6 +260,18 @@ public class ListContainers {
             return genVillager();
         }
         return null;
+    }
+
+    public static Color getRandAxolotlColor(){
+        List<Color> colors = new ArrayList<>();
+        colors.add(Color.YELLOW);
+        colors.add(Color.fromRGB(235, 110, 216));
+        colors.add(Color.WHITE);
+        colors.add(Color.fromRGB(122, 68, 47));
+        if (MathUtils.doubleRngHelper(0.1)){
+            return Color.PURPLE;
+        }
+        return colors.get(MathUtils.randomIntegerFromRange(0, colors.size()-1));
     }
 
     public static Component genVillagerProfession(){
