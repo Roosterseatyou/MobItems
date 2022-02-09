@@ -1,8 +1,5 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
-import net.kyori.adventure.text.Component;
-import net.kyori.adventure.text.format.TextColor;
-import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
@@ -29,7 +26,7 @@ public class AquaticUtils {
     }
 
     public static boolean hasSalmonSet(Player p) {
-        return  isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getBoots());
+        return isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getBoots());
     }
 
     public static boolean isGlowArmor(ItemStack i){
