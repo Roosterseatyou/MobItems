@@ -79,7 +79,6 @@ public final class MobItems extends JavaPlugin {
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
-        this.getCommand("simfishrng").setExecutor(new SimFishRNG());
         AquaticEvents.aquatic();
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
