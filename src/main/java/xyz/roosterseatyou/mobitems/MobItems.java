@@ -20,6 +20,7 @@ import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
@@ -66,7 +67,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChickenListeners(), this);
         getServer().getPluginManager().registerEvents(new UndeadEvents(), this);
         getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
-        getServer().getPluginManager().registerEvents(new UnderWaterEvents(), this);
+        getServer().getPluginManager().registerEvents(new AquaticEvents(), this);
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new SnowGolemListeners(), this);
@@ -78,7 +79,7 @@ public final class MobItems extends JavaPlugin {
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
         this.getCommand("simfishrng").setExecutor(new SimFishRNG());
-        UnderWaterEvents.aquatic();
+        AquaticEvents.aquatic();
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
         UndeadEvents.playerBurn(this);
@@ -142,6 +143,8 @@ public final class MobItems extends JavaPlugin {
         VillagerChest.init();
         VillagerLegs.init();
         VillagerFeet.init();
+        PufferfishLips.init();
+
     }
 
     public static Plugin getInstance(){

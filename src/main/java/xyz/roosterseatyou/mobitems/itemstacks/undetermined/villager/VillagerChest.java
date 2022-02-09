@@ -3,7 +3,9 @@ package xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Color;
 import org.bukkit.Material;
+import org.bukkit.entity.Horse;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
@@ -20,6 +22,6 @@ public class VillagerChest {
     }
 
     public static void villagerChest(){
-        VILLAGER_CHEST = ItemUtils.genMobArmor(Material.LEATHER_CHESTPLATE, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.CHEST, 5);
+        VILLAGER_CHEST = ItemUtils.genMobArmor(Material.LEATHER_CHESTPLATE, Color.MAROON, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.CHEST, 5);
     }
 }

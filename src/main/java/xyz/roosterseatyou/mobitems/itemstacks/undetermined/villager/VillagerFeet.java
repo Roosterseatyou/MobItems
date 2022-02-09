@@ -3,6 +3,7 @@ package xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -20,6 +21,6 @@ public class VillagerFeet {
     }
 
     public static void villagerFeet(){
-        VILLAGER_FEET = ItemUtils.genMobArmor(Material.LEATHER_BOOTS, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.FEET, 5);
+        VILLAGER_FEET = ItemUtils.genMobArmor(Material.LEATHER_BOOTS, Color.MAROON, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.FEET, 5);
     }
 }

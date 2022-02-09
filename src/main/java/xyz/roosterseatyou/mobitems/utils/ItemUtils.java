@@ -1,6 +1,7 @@
 package xyz.roosterseatyou.mobitems.utils;
 
 import net.kyori.adventure.text.Component;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
@@ -30,13 +31,14 @@ public class ItemUtils{
         item.setDamage(item.getDamage() + damageDealt);
     }
 
-    public static @NotNull ItemStack genMobArmor(Material mat, Component name, Component entityID, Component classID, int strength, EquipmentSlot slotType, int unbreakingVal){
+    public static @NotNull ItemStack genMobArmor(Material mat, Color color , Component name, Component entityID, Component classID, int strength, EquipmentSlot slotType, int unbreakingVal){
         ItemStack i = new ItemStack(mat);
         LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
         meta.displayName(name);
         List<Component> lore = new ArrayList<>();
         lore.add(entityID);
         lore.add(classID);
+        meta.setColor(color);
         meta.addEnchant(Enchantment.DURABILITY, unbreakingVal, true);
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "gen_armor", strength, AttributeModifier.Operation.ADD_NUMBER, slotType));
         meta.lore(lore);

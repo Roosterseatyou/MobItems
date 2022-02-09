@@ -10,13 +10,14 @@ import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
+import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 import java.util.Arrays;
 
 public class AquaticUtils {
     public static boolean isAquaticArmor(ItemStack i){
-        return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: AQUATIC").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        return i != null && PlayerInventoryUtils.hasID(i, DrownedFeet.CLASS_ID);
     }
     public static boolean hasFullSet(Player p) {
         return  isAquaticArmor(p.getInventory().getHelmet()) && isAquaticArmor(p.getInventory().getChestplate())

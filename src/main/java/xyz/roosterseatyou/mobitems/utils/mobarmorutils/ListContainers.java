@@ -7,6 +7,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
@@ -133,6 +134,7 @@ public class ListContainers {
         itemStacks.add(TurtleChest.TURTLE_CHEST);
         itemStacks.add(TurtleLegs.TURTLE_LEGS);
         itemStacks.add(TurtleFeet.TURTLE_FEET);
+        itemStacks.add(PufferfishLips.PUFFER_LIPS);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 

@@ -9,7 +9,7 @@ import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.AquaticUtils;
 
-public class UnderWaterEvents implements Listener{
+public class AquaticEvents implements Listener{
     public static void aquatic(){
         BukkitScheduler scheduler = Bukkit.getServer().getScheduler();
         scheduler.scheduleSyncRepeatingTask(MobItems.getInstance(), () -> {

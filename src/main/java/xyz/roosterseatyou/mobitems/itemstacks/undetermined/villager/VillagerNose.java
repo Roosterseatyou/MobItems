@@ -3,6 +3,7 @@ package xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
@@ -20,6 +21,6 @@ public class VillagerNose {
     }
 
     public static void villagerNose(){
-        VILLAGER_NOSE = ItemUtils.genMobArmor(Material.LEATHER_HELMET, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.HEAD, 5);
+        VILLAGER_NOSE = ItemUtils.genMobArmor(Material.LEATHER_HELMET, Color.MAROON, NAME, ENTITY_ID, CLASS_ID, 5, EquipmentSlot.HEAD, 5);
     }
 }
