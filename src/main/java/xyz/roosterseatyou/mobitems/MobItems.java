@@ -18,6 +18,7 @@ import xyz.roosterseatyou.mobitems.events.undeadevents.*;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.events.undetermined.villager.VillagerListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
@@ -78,6 +79,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new StriderListeners(), this);
         getServer().getPluginManager().registerEvents(new TurtleListeners(), this);
         getServer().getPluginManager().registerEvents(new DeathCountListener(), this);
+        getServer().getPluginManager().registerEvents(new VillagerListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());

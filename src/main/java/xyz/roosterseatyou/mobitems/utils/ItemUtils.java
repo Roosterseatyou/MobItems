@@ -1,20 +1,25 @@
 package xyz.roosterseatyou.mobitems.utils;
 
 import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.attribute.Attribute;
 import org.bukkit.attribute.AttributeModifier;
 import org.bukkit.enchantments.Enchantment;
+import org.bukkit.entity.Villager;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
+import org.checkerframework.checker.units.qual.C;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
 import java.util.UUID;
 
 
@@ -53,5 +58,36 @@ public class ItemUtils{
         lore.add(ListContainers.genVillagerProfession());
         meta.lore(lore);
         i.setItemMeta(meta);
+    }
+
+    /*Fun fact, I spent over 4 hours staring at this code, wondering why it was adding more than one profession tag,
+        only to realize there were no break statements ANYWHERE IN THERE.
+    */
+
+    public static void addProfessionFromVill(ItemStack i, Villager v){
+        LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
+        List<Component> lore = meta.lore();
+        switch (v.getProfession()){
+            case WEAPONSMITH:
+                assert lore != null;
+                lore.add(0, Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
+                meta.setColor(Color.GRAY);
+                meta.lore(lore);
+                i.setItemMeta(meta);
+                break;
+            case LIBRARIAN:
+                assert lore != null;
+                lore.add(0, Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
+                meta.setColor(Color.WHITE);
+                meta.lore(lore);
+                i.setItemMeta(meta);
+                break;
+            case FARMER:
+                assert lore != null;
+                lore.add(0, Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
+                meta.lore(lore);
+                i.setItemMeta(meta);
+                break;
+        }
     }
 }

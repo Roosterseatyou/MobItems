@@ -7,6 +7,7 @@ import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.MerchantRecipe;
 import org.checkerframework.checker.units.qual.C;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
@@ -278,8 +279,44 @@ public class ListContainers {
         List<Component> list = new ArrayList<>();
         list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
         list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
-        list.add(Component.text("Profession: Wandering").color(TextColor.color(255, 255, 255)));
         list.add(Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
         return list.get(MathUtils.randomIntegerFromRange(0, list.size()-1));
+    }
+
+    public static List<Component> getVillProffesions(){
+        List<Component> list = new ArrayList<>();
+        list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
+        return list;
+    }
+
+    public static MerchantRecipe genMerchantRecipe(){
+        List<MerchantRecipe> recipes = new ArrayList<>();
+        MerchantRecipe helmRecipe = new MerchantRecipe(VillagerNose.VILLAGER_NOSE, 1);
+        List<ItemStack> helmIngredients = new ArrayList<>();
+        helmIngredients.add(new ItemStack(Material.EMERALD, 32));
+        helmIngredients.add(new ItemStack(Material.LEATHER_HELMET));
+        helmRecipe.setIngredients(helmIngredients);
+        recipes.add(helmRecipe);
+        MerchantRecipe chestRecipe = new MerchantRecipe(VillagerChest.VILLAGER_CHEST, 1);
+        List<ItemStack> chestIngredients = new ArrayList<>();
+        chestIngredients.add(new ItemStack(Material.EMERALD, 32));
+        chestIngredients.add(new ItemStack(Material.LEATHER_CHESTPLATE));
+        chestRecipe.setIngredients(chestIngredients);
+        recipes.add(chestRecipe);
+        MerchantRecipe legsRecipe = new MerchantRecipe(VillagerLegs.VILLAGER_LEGS, 1);
+        List<ItemStack> legsIngredients = new ArrayList<>();
+        legsIngredients.add(new ItemStack(Material.EMERALD, 32));
+        legsIngredients.add(new ItemStack(Material.LEATHER_LEGGINGS));
+        chestRecipe.setIngredients(legsIngredients);
+        recipes.add(legsRecipe);
+        MerchantRecipe feetRecipe = new MerchantRecipe(VillagerFeet.VILLAGER_FEET, 1);
+        List<ItemStack> feetIngredients = new ArrayList<>();
+        feetIngredients.add(new ItemStack(Material.EMERALD, 32));
+        feetIngredients.add(new ItemStack(Material.LEATHER_BOOTS));
+        feetRecipe.setIngredients(feetIngredients);
+        recipes.add(feetRecipe);
+        return recipes.get(MathUtils.randomIntegerFromRange(0, recipes.size()-1));
     }
 }

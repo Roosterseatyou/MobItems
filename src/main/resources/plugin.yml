@@ -20,9 +20,3 @@ commands:
     usage: /testmode
     permission: mobitems.testmode
     permission-message: You do not have that permission!
-
-  simfishrng:
-    description: simulates fish rng
-    usage: /simfishrng
-    permission: mobitems.simfishrng
-    permission-message: You do not have that permission!
