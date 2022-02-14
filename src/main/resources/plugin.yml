@@ -20,3 +20,9 @@ commands:
     usage: /testmode
     permission: mobitems.testmode
     permission-message: You do not have that permission!
+
+  villagertestmode:
+    description: gives all items
+    usage: /villagertestmode
+    permission: mobitems.testmode
+    permission-message: You do not have that permission!

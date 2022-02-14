@@ -80,10 +80,6 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(TurtleChest.TURTLE_CHEST);
             commandSender1.getInventory().addItem(TurtleLegs.TURTLE_LEGS);
             commandSender1.getInventory().addItem(TurtleFeet.TURTLE_FEET);
-            commandSender1.getInventory().addItem(VillagerNose.VILLAGER_NOSE);
-            commandSender1.getInventory().addItem(VillagerChest.VILLAGER_CHEST);
-            commandSender1.getInventory().addItem(VillagerLegs.VILLAGER_LEGS);
-            commandSender1.getInventory().addItem(VillagerFeet.VILLAGER_FEET);
         }
         return false;
     }

@@ -30,7 +30,6 @@ public class FarmingUtils {
                 }
             }
         }
-
         if(seedIndexLocation != -1){
             ItemStack seedItemStack = pInv.getItem(seedIndexLocation);
             if(seedItemStack != null){
@@ -56,13 +55,13 @@ public class FarmingUtils {
     }
     public static Material getSeeds(Material mat) {
         if (mat == Material.WHEAT) {
-            return Material.WHEAT_SEEDS;
+            return Material.WHEAT;
         } else if (mat == Material.POTATOES) {
-            return Material.POTATO;
+            return Material.POTATOES;
         } else if (mat == Material.CARROTS) {
-            return Material.CARROT;
+            return Material.CARROTS;
         } else if (mat == Material.BEETROOTS) {
-            return Material.BEETROOT;
+            return Material.BEETROOTS;
         } else if (mat == Material.NETHER_WART) {
             return Material.NETHER_WART;
         }
@@ -74,5 +73,8 @@ public class FarmingUtils {
 
         return ageable.getAge() == maxAge;
 
+    }
+    public static boolean isCrop(Block b){
+        return b.getType() == Material.WHEAT || b.getType() == Material.CARROTS || b.getType() == Material.BEETROOTS || b.getType() == Material.POTATOES;
     }
 }

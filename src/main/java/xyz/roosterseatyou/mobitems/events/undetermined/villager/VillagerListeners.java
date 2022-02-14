@@ -6,9 +6,9 @@ import org.bukkit.event.Listener;
 import org.bukkit.event.entity.VillagerAcquireTradeEvent;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
-import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 import xyz.roosterseatyou.mobitems.utils.mobarmorutils.ListContainers;
+import xyz.roosterseatyou.mobitems.utils.mobarmorutils.VillagerUtils;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +23,7 @@ public class VillagerListeners implements Listener {
                 MerchantRecipe recipe = ListContainers.genMerchantRecipe();
                 ItemStack result = recipe.getResult();
                 System.out.println(result.lore());
-                ItemUtils.addProfessionFromVill(result, vill);
+                VillagerUtils.addProfessionFromVill(result, vill);
                 System.out.println(result.lore());
                 List<MerchantRecipe> newRecipes = new ArrayList<>(recipes);
                 newRecipes.add(recipe);

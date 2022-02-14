@@ -50,44 +50,4 @@ public class ItemUtils{
         i.setItemMeta(meta);
         return i;
     }
-
-    public static void addRandProfession(@NotNull ItemStack i){
-        LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
-        List<Component> lore = meta.lore();
-        assert lore != null;
-        lore.add(ListContainers.genVillagerProfession());
-        meta.lore(lore);
-        i.setItemMeta(meta);
-    }
-
-    /*Fun fact, I spent over 4 hours staring at this code, wondering why it was adding more than one profession tag,
-        only to realize there were no break statements ANYWHERE IN THERE.
-    */
-
-    public static void addProfessionFromVill(ItemStack i, Villager v){
-        LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
-        List<Component> lore = meta.lore();
-        switch (v.getProfession()){
-            case WEAPONSMITH:
-                assert lore != null;
-                lore.add(0, Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
-                meta.setColor(Color.GRAY);
-                meta.lore(lore);
-                i.setItemMeta(meta);
-                break;
-            case LIBRARIAN:
-                assert lore != null;
-                lore.add(0, Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
-                meta.setColor(Color.WHITE);
-                meta.lore(lore);
-                i.setItemMeta(meta);
-                break;
-            case FARMER:
-                assert lore != null;
-                lore.add(0, Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
-                meta.lore(lore);
-                i.setItemMeta(meta);
-                break;
-        }
-    }
 }
