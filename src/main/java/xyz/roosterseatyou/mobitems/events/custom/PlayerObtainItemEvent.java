@@ -2,13 +2,9 @@ package xyz.roosterseatyou.mobitems.events.custom;
 
 import org.bukkit.entity.Player;
 import org.bukkit.event.HandlerList;
-import org.bukkit.event.inventory.InventoryEvent;
 import org.bukkit.event.player.PlayerEvent;
-import org.bukkit.inventory.InventoryView;
 import org.bukkit.inventory.ItemStack;
 import org.jetbrains.annotations.NotNull;
-
-import javax.net.ssl.HandshakeCompletedEvent;
 
 public class PlayerObtainItemEvent extends PlayerEvent {
     private ItemStack item;

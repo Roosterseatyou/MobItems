@@ -5,6 +5,7 @@ import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
@@ -45,6 +46,26 @@ public class AquaticUtils {
         return  isTurtArmor(p.getInventory().getHelmet()) && isTurtArmor(p.getInventory().getChestplate()) &&
                 isTurtArmor(p.getInventory().getLeggings()) && isTurtArmor(p.getInventory().getBoots());
     }
+
+    public static boolean isPufferArmor(ItemStack i){
+        return i != null && PlayerInventoryUtils.hasID(i, PufferfishLips.ENTITY_ID);
+    }
+
+    public static boolean hasPufferSet(Player p){
+        return isPufferArmor(p.getInventory().getHelmet()) && isPufferArmor(p.getInventory().getChestplate()) &&
+                isPufferArmor(p.getInventory().getLeggings()) && isPufferArmor(p.getInventory().getBoots());
+    }
+
+    public static int getPufferArmorCount(Player p){
+        int amt = 0;
+        for(ItemStack i : p.getInventory().getArmorContents()){
+            if(isPufferArmor(i)){
+                amt++;
+            }
+        }
+        return amt;
+    }
+
 
     public static int getTurtArmorCount(Player p){
         int amt = 0;
