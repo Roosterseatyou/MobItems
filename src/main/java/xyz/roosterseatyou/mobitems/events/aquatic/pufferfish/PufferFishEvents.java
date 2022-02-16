@@ -20,9 +20,9 @@ public class PufferFishEvents implements Listener {
                 LivingEntity damager = (LivingEntity) e.getDamager();
                 if (amt != 0) {
                     if (amt == 2) {
-                        damager.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 3, 1));
+                        damager.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5, 1));
                     } else if (amt == 1) {
-                        damager.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 3, 0));
+                        damager.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5, 0));
                     }
                 }
             } else if(e.getDamager() instanceof Arrow){
@@ -30,9 +30,9 @@ public class PufferFishEvents implements Listener {
                 if(arrow.getShooter() instanceof LivingEntity){
                     LivingEntity shooter = (LivingEntity) arrow.getShooter();
                     if (amt == 2) {
-                        shooter.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 3, 1));
+                        shooter.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5, 1));
                     } else if (amt == 1) {
-                        shooter.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 3, 0));
+                        shooter.addPotionEffect(new PotionEffect(PotionEffectType.POISON, 5, 0));
                     }
                 }
             }
