@@ -5,6 +5,7 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.commands.*;
 import xyz.roosterseatyou.mobitems.events.*;
 import xyz.roosterseatyou.mobitems.events.aquatic.*;
+import xyz.roosterseatyou.mobitems.events.aquatic.axolotl.AxolotlListeners;
 import xyz.roosterseatyou.mobitems.events.aquatic.glowsquid.GlowSquidListeners;
 import xyz.roosterseatyou.mobitems.events.aquatic.pufferfish.PufferFishEvents;
 import xyz.roosterseatyou.mobitems.events.aquatic.turtle.TurtleListeners;
@@ -84,6 +85,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new VillagerListeners(), this);
         getServer().getPluginManager().registerEvents(new VillagerProfessionListeners(), this);
         getServer().getPluginManager().registerEvents(new PufferFishEvents(), this);
+        getServer().getPluginManager().registerEvents(new AxolotlListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
