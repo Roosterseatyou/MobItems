@@ -53,7 +53,7 @@ public class AquaticUtils {
     }
 
     public static boolean hasPufferSet(Player p){
-        return isPufferArmor(p.getInventory().getHelmet()) && isPufferArmor(p.getInventory().getBoots());
+        return isPufferArmor(p.getInventory().getHelmet()) && isPufferArmor(p.getInventory().getChestplate());
     }
 
     public static boolean isAxolotlArmor(ItemStack i){
@@ -61,7 +61,7 @@ public class AquaticUtils {
     }
 
     public static boolean hasAxolotlSet(Player p){
-        return isAxolotlArmor(p.getInventory().getHelmet()) && isAxolotlArmor(p.getInventory().getBoots());
+        return isAxolotlArmor(p.getInventory().getHelmet()) && isAxolotlArmor(p.getInventory().getChestplate());
     }
 
     public static int getPufferArmorCount(Player p){

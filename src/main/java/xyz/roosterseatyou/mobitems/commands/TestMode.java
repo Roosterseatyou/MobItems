@@ -6,8 +6,12 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.entity.Villager;
 import org.jetbrains.annotations.NotNull;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
@@ -38,10 +42,6 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitChest;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerChest;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerFeet;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerLegs;
-import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerNose;
 
 public class TestMode implements CommandExecutor {
     @Override
@@ -80,6 +80,10 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(TurtleChest.TURTLE_CHEST);
             commandSender1.getInventory().addItem(TurtleLegs.TURTLE_LEGS);
             commandSender1.getInventory().addItem(TurtleFeet.TURTLE_FEET);
+            commandSender1.getInventory().addItem(AxolotlFins.AXOLOTL_FINS);
+            commandSender1.getInventory().addItem(AxolotlLips.AXOLOTL_LIPS);
+            commandSender1.getInventory().addItem(PufferfishLips.PUFFER_LIPS);
+            commandSender1.getInventory().addItem(PufferfishChest.PUFFER_FINS);
         }
         return false;
     }
