@@ -11,12 +11,16 @@ death-count-increment: 0.2
 death-count-cooldown: 60
 
 #----------Loot----------
-loot-spawn-in-dungeons: true
-loot-spawn-in-shipwreck: true
-loot-spawn-in-villages: true
-loot-spawn-in-mineshaft: true
-loot-spawn-in-buried-treasure: true
-loot-spawn-in-igloo: true
+loot-spawns:
+  loot-spawn-in-dungeons: true
+  loot-spawn-in-shipwreck: true
+  loot-spawn-in-villages: true
+  loot-spawn-in-mineshaft: true
+  loot-spawn-in-buried-treasure: true
+  loot-spawn-in-igloo: true
+  loot-spawn-in-nether: true
+  loot-spawn-in-ruined-portal: true
+
 
 #----------Blood Moons-----------------
 #Sets the increment of blood moons (how much per night the chance will increase)
@@ -67,7 +71,7 @@ water-moon-increment: 1
 #Sets the chance of something special happening after a player catches a fish during Water Moon
 fish-special-chance: 2
 mob-drop-items-water: true
-#Sets the chance of a drowned spawning if a special event occurs from the aforementioned event.
+#Sets the chance of a drowned spawning if a the RNG is good from the aforementioned moon.
 #An item will be given to a player if a Drowned is not spawned, so choose this carefully...
 fish-drowned-chance: 20
 #Should drowned get extra health? If so how much?

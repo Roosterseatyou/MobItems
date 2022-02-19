@@ -1,10 +1,20 @@
 package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import org.apache.commons.lang.math.RandomUtils;
+import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.MerchantRecipe;
+import org.checkerframework.checker.units.qual.C;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
@@ -45,6 +55,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemCh
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemLegs;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.SnowGolemMask;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerNose;
 import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
@@ -81,7 +95,12 @@ public class ListContainers {
     }
 
     public static ItemStack genVillager(){
-        return null;
+        List<ItemStack> list = new ArrayList<>();
+        list.add(VillagerNose.VILLAGER_NOSE);
+        list.add(VillagerChest.VILLAGER_CHEST);
+        list.add(VillagerLegs.VILLAGER_LEGS);
+        list.add(VillagerFeet.VILLAGER_FEET);
+        return ItemUtils.randomItemStackFromList(list);
     }
 
     public static ItemStack genMineshaft(){
@@ -122,6 +141,10 @@ public class ListContainers {
         itemStacks.add(TurtleChest.TURTLE_CHEST);
         itemStacks.add(TurtleLegs.TURTLE_LEGS);
         itemStacks.add(TurtleFeet.TURTLE_FEET);
+        itemStacks.add(PufferfishLips.PUFFER_LIPS);
+        itemStacks.add(PufferfishChest.PUFFER_FINS);
+        itemStacks.add(AxolotlLips.AXOLOTL_LIPS);
+        itemStacks.add(AxolotlFins.AXOLOTL_FINS);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 
@@ -234,7 +257,66 @@ public class ListContainers {
             stacks.add(StriderFace.STRIDER_FACE);
             stacks.add(StriderFeet.STRIDER_FEET);
             return ItemUtils.randomItemStackFromList(stacks);
+        } else if(type == EntityType.VILLAGER){
+            return genVillager();
         }
         return null;
+    }
+
+    public static Color getRandAxolotlColor(){
+        List<Color> colors = new ArrayList<>();
+        colors.add(Color.YELLOW);
+        colors.add(Color.fromRGB(235, 110, 216));
+        colors.add(Color.WHITE);
+        colors.add(Color.fromRGB(122, 68, 47));
+        if (MathUtils.doubleRngHelper(0.1)){
+            return Color.PURPLE;
+        }
+        return colors.get(MathUtils.randomIntegerFromRange(0, colors.size()-1));
+    }
+
+    public static Component genVillagerProfession(){
+        List<Component> list = new ArrayList<>();
+        list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
+        return list.get(MathUtils.randomIntegerFromRange(0, list.size()-1));
+    }
+
+    public static List<Component> getVillProffesions(){
+        List<Component> list = new ArrayList<>();
+        list.add(Component.text("Profession: Librarian").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Weaponsmith").color(TextColor.color(255, 255, 255)));
+        list.add(Component.text("Profession: Farmer").color(TextColor.color(255, 255, 255)));
+        return list;
+    }
+
+    public static MerchantRecipe genMerchantRecipe(){
+        List<MerchantRecipe> recipes = new ArrayList<>();
+        MerchantRecipe helmRecipe = new MerchantRecipe(VillagerNose.VILLAGER_NOSE, 1);
+        List<ItemStack> helmIngredients = new ArrayList<>();
+        helmIngredients.add(new ItemStack(Material.EMERALD, 32));
+        helmIngredients.add(new ItemStack(Material.LEATHER_HELMET));
+        helmRecipe.setIngredients(helmIngredients);
+        recipes.add(helmRecipe);
+        MerchantRecipe chestRecipe = new MerchantRecipe(VillagerChest.VILLAGER_CHEST, 1);
+        List<ItemStack> chestIngredients = new ArrayList<>();
+        chestIngredients.add(new ItemStack(Material.EMERALD, 32));
+        chestIngredients.add(new ItemStack(Material.LEATHER_CHESTPLATE));
+        chestRecipe.setIngredients(chestIngredients);
+        recipes.add(chestRecipe);
+        MerchantRecipe legsRecipe = new MerchantRecipe(VillagerLegs.VILLAGER_LEGS, 1);
+        List<ItemStack> legsIngredients = new ArrayList<>();
+        legsIngredients.add(new ItemStack(Material.EMERALD, 32));
+        legsIngredients.add(new ItemStack(Material.LEATHER_LEGGINGS));
+        chestRecipe.setIngredients(legsIngredients);
+        recipes.add(legsRecipe);
+        MerchantRecipe feetRecipe = new MerchantRecipe(VillagerFeet.VILLAGER_FEET, 1);
+        List<ItemStack> feetIngredients = new ArrayList<>();
+        feetIngredients.add(new ItemStack(Material.EMERALD, 32));
+        feetIngredients.add(new ItemStack(Material.LEATHER_BOOTS));
+        feetRecipe.setIngredients(feetIngredients);
+        recipes.add(feetRecipe);
+        return recipes.get(MathUtils.randomIntegerFromRange(0, recipes.size()-1));
     }
 }

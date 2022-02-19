@@ -5,15 +5,11 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Color;
 import org.bukkit.Material;
-import org.bukkit.attribute.Attribute;
-import org.bukkit.attribute.AttributeModifier;
-import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.UUID;
 
 public class TurtleLegs {
     public static Component NAME = Component.text("Turtle Shell");
@@ -32,8 +28,6 @@ public class TurtleLegs {
         List<Component> lore = new ArrayList<>();
         meta.displayName(NAME);
         meta.setColor(Color.fromRGB(4, 97, 4));
-        meta.addAttributeModifier(Attribute.GENERIC_MOVEMENT_SPEED, new AttributeModifier(UUID.randomUUID(), "gen_move", -0.015, AttributeModifier.Operation.ADD_NUMBER));
-        meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "gen_armor", 10, AttributeModifier.Operation.ADD_NUMBER, EquipmentSlot.LEGS));
         //see AquaticUtils
         lore.add(ENTITY_ID);
         lore.add(CLASS_ID);

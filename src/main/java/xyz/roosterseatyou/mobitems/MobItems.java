@@ -5,7 +5,9 @@ import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.commands.*;
 import xyz.roosterseatyou.mobitems.events.*;
 import xyz.roosterseatyou.mobitems.events.aquatic.*;
+import xyz.roosterseatyou.mobitems.events.aquatic.axolotl.AxolotlListeners;
 import xyz.roosterseatyou.mobitems.events.aquatic.glowsquid.GlowSquidListeners;
+import xyz.roosterseatyou.mobitems.events.aquatic.pufferfish.PufferFishEvents;
 import xyz.roosterseatyou.mobitems.events.aquatic.turtle.TurtleListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.*;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.*;
@@ -18,8 +20,14 @@ import xyz.roosterseatyou.mobitems.events.undeadevents.*;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.events.undetermined.villager.VillagerListeners;
+import xyz.roosterseatyou.mobitems.events.undetermined.villager.VillagerProfessionListeners;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
@@ -37,6 +45,10 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxMask;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.fox.FoxPaws;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.*;
 import xyz.roosterseatyou.mobitems.itemstacks.undetermined.snowgolem.*;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerChest;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerFeet;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerLegs;
+import xyz.roosterseatyou.mobitems.itemstacks.undetermined.villager.VillagerNose;
 
 import java.util.logging.Logger;
 
@@ -62,7 +74,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new ChickenListeners(), this);
         getServer().getPluginManager().registerEvents(new UndeadEvents(), this);
         getServer().getPluginManager().registerEvents(new ZombieEvents(), this);
-        getServer().getPluginManager().registerEvents(new UnderWaterEvents(), this);
+        getServer().getPluginManager().registerEvents(new AquaticEvents(), this);
         getServer().getPluginManager().registerEvents(new DrownedEvents(this), this);
         getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new SnowGolemListeners(), this);
@@ -70,11 +82,15 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new StriderListeners(), this);
         getServer().getPluginManager().registerEvents(new TurtleListeners(), this);
         getServer().getPluginManager().registerEvents(new DeathCountListener(), this);
+        getServer().getPluginManager().registerEvents(new VillagerListeners(), this);
+        getServer().getPluginManager().registerEvents(new VillagerProfessionListeners(), this);
+        getServer().getPluginManager().registerEvents(new PufferFishEvents(), this);
+        getServer().getPluginManager().registerEvents(new AxolotlListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
-        this.getCommand("simfishrng").setExecutor(new SimFishRNG());
-        UnderWaterEvents.aquatic(this);
+        this.getCommand("villagertestmode").setExecutor(new VillagerTestMode());
+        AquaticEvents.aquatic();
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
         UndeadEvents.playerBurn(this);
@@ -134,6 +150,14 @@ public final class MobItems extends JavaPlugin {
         TurtleChest.init();
         TurtleLegs.init();
         TurtleFeet.init();
+        VillagerNose.init();
+        VillagerChest.init();
+        VillagerLegs.init();
+        VillagerFeet.init();
+        PufferfishLips.init();
+        PufferfishChest.init();
+        AxolotlFins.init();
+        AxolotlLips.init();
     }
 
     public static Plugin getInstance(){

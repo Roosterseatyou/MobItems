@@ -115,8 +115,7 @@ public class DrownedEvents implements Listener{
             } else {
                 if (inv.getItemInMainHand().getType().equals(Material.AIR)) {
                     try {
-
-                        if (canClaim.get(p)) {
+                        if (canClaim.get(p.getUniqueId())) {
                             cooldown.put(p.getUniqueId(), System.currentTimeMillis());
                             ItemStack trident = drownedTrident(AquaticUtils.waterLevel(block));
                             inv.setItemInMainHand(trident);
@@ -129,7 +128,7 @@ public class DrownedEvents implements Listener{
                                 if (Bukkit.getOnlinePlayers().contains(p)) {
                                     for (int i = 1; i < 28; i++) {
                                         if (inv.getItem(i) != null) {
-                                            if (inv.getItem(i).equals(playerStackMap.get(p))) {
+                                            if (inv.getItem(i).equals(playerStackMap.get(p.getUniqueId()))) {
                                                 inv.setItem(i, new ItemStack(Material.AIR));
                                                 canClaim.put(p.getUniqueId(), true);
                                                 needsTaking.put(p.getUniqueId(), false);

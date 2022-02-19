@@ -21,8 +21,8 @@ commands:
     permission: mobitems.testmode
     permission-message: You do not have that permission!
 
-  simfishrng:
-    description: simulates fish rng
-    usage: /simfishrng
-    permission: mobitems.simfishrng
+  villagertestmode:
+    description: gives all items
+    usage: /villagertestmode
+    permission: mobitems.testmode
     permission-message: You do not have that permission!
