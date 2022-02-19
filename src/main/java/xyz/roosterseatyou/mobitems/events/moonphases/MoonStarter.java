@@ -5,7 +5,6 @@ import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
 import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.scheduler.BukkitScheduler;
 import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.events.custom.MoonPhaseChangeEvent;

@@ -12,8 +12,6 @@ import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
-import java.util.Arrays;
-
 public class AquaticUtils {
     public static boolean isAquaticArmor(ItemStack i){
         return i != null && PlayerInventoryUtils.hasID(i, DrownedFeet.CLASS_ID);

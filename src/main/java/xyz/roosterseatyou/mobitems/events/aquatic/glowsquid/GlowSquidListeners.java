@@ -1,6 +1,5 @@
 package xyz.roosterseatyou.mobitems.events.aquatic.glowsquid;
 
-import com.destroystokyo.paper.ParticleBuilder;
 import org.bukkit.Particle;
 import org.bukkit.entity.Arrow;
 import org.bukkit.entity.LivingEntity;

@@ -2,13 +2,11 @@ package xyz.roosterseatyou.mobitems.utils.mobarmorutils;
 
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
-import org.apache.commons.lang.math.RandomUtils;
 import org.bukkit.Color;
 import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
-import org.checkerframework.checker.units.qual.C;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
@@ -63,7 +61,6 @@ import xyz.roosterseatyou.mobitems.utils.ItemUtils;
 import xyz.roosterseatyou.mobitems.utils.MathUtils;
 
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 
 public class ListContainers {
