@@ -21,7 +21,6 @@ public class AxolotlListeners implements Listener {
     @EventHandler
     public void onShift(PlayerToggleSneakEvent e) {
         Player p = e.getPlayer();
-        p.sendMessage("L");
         if (!p.isSneaking() && AquaticUtils.hasAxolotlSet(p)) {
             if(isDead.containsKey(p.getUniqueId())) {
                 if (!isDead.get(p.getUniqueId())) {
