@@ -9,6 +9,16 @@ public class MathUtils {
         return rInt <= n;
     }
 
+    public static boolean complexRngHelper(int n, int inA){
+        int rInt = randomIntegerFromRange(1, inA);
+        return rInt <= n;
+    }
+
+    public static boolean doubleRngHelper(double n){
+        double rInt = randomDoubleFromRange(1, 100);
+        return rInt <= n;
+    }
+
     /**
      * This generates a Random Integer from a range you specify
      * @param min minimum value in the range
@@ -18,6 +28,11 @@ public class MathUtils {
     public static int randomIntegerFromRange(int min, int max) {
         int range = (max - min) + 1;
         return (int) Math.floor(Math.random() * range) + min;
+    }
+
+    public static double randomDoubleFromRange(double min, double max) {
+        double range = (max - min) + 1;
+        return (Math.random() * range) + min;
     }
 
     /**

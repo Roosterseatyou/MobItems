@@ -14,7 +14,7 @@
     <description>Adds Tools and Armor based off of the mobs in Minecraft, each with their own unique ability.
     </description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>1.17</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
 
@@ -56,31 +56,16 @@
 
     <repositories>
         <repository>
-            <url>https://github.com/Roosterseatyou/JavaLibrary/blob/repository/JavaHelperLibrary.jar?raw=true</url>
-            <id>JavaHelperLibrary</id>
-        </repository>
-        <repository>
-            <id>PluginLibrary</id>
-            <url>https://github.com/Roosterseatyou/PluginLib/blob/repo/PluginLib.jar?raw=true</url>
-        </repository>
-        <repository>
             <id>papermc-repo</id>
             <url>https://papermc.io/repo/repository/maven-public/</url>
-        </repository>
-        <repository>
-            <id>sonatype</id>
-            <url>https://oss.sonatype.org/content/groups/public/</url>
         </repository>
     </repositories>
 
     <dependencies>
         <dependency>
-        <groupId>net.kyori</groupId> <artifactId>adventure-platform-bukkit</artifactId> <version>4.0.1</version>
-        <scope>compile</scope>
-    </dependency>
-        <dependency>
-            <groupId>net.kyori</groupId> <artifactId>adventure-text-minimessage</artifactId>
-            <version>4.1.0-SNAPSHOT</version>
+            <groupId>net.kyori</groupId>
+            <artifactId>adventure-api</artifactId>
+            <version>4.9.3</version>
             <scope>compile</scope>
         </dependency>
         <dependency>

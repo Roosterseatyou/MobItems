@@ -14,10 +14,16 @@ import java.util.List;
 
 public class CowMask {
     public static Component NAME = Component.text("Cow Mask");
+    public static Component ENTITY_ID = Component.text("ENTITY ID: COW").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC);
+    public static List<ItemStack> list = new ArrayList<>();
     public static ItemStack COW_MASK;
 
     public static ItemStack init(){
         cowMask();
+        list.add(CowMask.COW_MASK);
+        list.add(CowChest.COW_CHEST);
+        list.add(CowLegs.COW_LEGS);
+        list.add(CowHooves.COW_HOOVES);
         return null;
     }
 
@@ -30,7 +36,7 @@ public class CowMask {
         meta.addEnchant(Enchantment.PROTECTION_ENVIRONMENTAL, 5, true);
         lore.add(Component.text("Meow Meow, I'm A Cow..."));
         //see FarmAnimalArmorUtils
-        lore.add(Component.text("ENTITY ID: COW").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
+        lore.add(ENTITY_ID);
         lore.add(Component.text("CLASS ID: FARM").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
         meta.lore(lore);
         item.setItemMeta(meta);
