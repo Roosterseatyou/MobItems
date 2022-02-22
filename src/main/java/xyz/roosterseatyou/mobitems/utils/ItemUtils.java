@@ -9,6 +9,7 @@ import org.bukkit.enchantments.Enchantment;
 import org.bukkit.inventory.EquipmentSlot;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.Damageable;
+import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.inventory.meta.LeatherArmorMeta;
 import org.jetbrains.annotations.NotNull;
 
@@ -40,6 +41,18 @@ public class ItemUtils{
         meta.setColor(color);
         meta.addEnchant(Enchantment.DURABILITY, unbreakingVal, true);
         meta.addAttributeModifier(Attribute.GENERIC_ARMOR, new AttributeModifier(UUID.randomUUID(), "gen_armor", strength, AttributeModifier.Operation.ADD_NUMBER, slotType));
+        meta.lore(lore);
+        i.setItemMeta(meta);
+        return i;
+    }
+
+    public static @NotNull ItemStack genMobCrown(Material mat, Component name, Component entID, Component classID) {
+        ItemStack i = new ItemStack(mat);
+        ItemMeta meta = i.getItemMeta();
+        List<Component> lore = new ArrayList<>();
+        lore.add(entID);
+        lore.add(classID);
+        meta.displayName(name);
         meta.lore(lore);
         i.setItemMeta(meta);
         return i;

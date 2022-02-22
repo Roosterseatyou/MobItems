@@ -5,8 +5,7 @@ import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
@@ -79,8 +78,7 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(TurtleChest.TURTLE_CHEST);
             commandSender1.getInventory().addItem(TurtleLegs.TURTLE_LEGS);
             commandSender1.getInventory().addItem(TurtleFeet.TURTLE_FEET);
-            commandSender1.getInventory().addItem(AxolotlFins.AXOLOTL_FINS);
-            commandSender1.getInventory().addItem(AxolotlLips.AXOLOTL_LIPS);
+            commandSender1.getInventory().addItem(AxolotlCrown.AXOLOTL_CROWN);
             commandSender1.getInventory().addItem(PufferfishLips.PUFFER_LIPS);
             commandSender1.getInventory().addItem(PufferfishChest.PUFFER_FINS);
         }

@@ -4,7 +4,7 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
@@ -54,12 +54,8 @@ public class AquaticUtils {
         return isPufferArmor(p.getInventory().getHelmet()) && isPufferArmor(p.getInventory().getChestplate());
     }
 
-    public static boolean isAxolotlArmor(ItemStack i){
-        return i != null && PlayerInventoryUtils.hasID(i, AxolotlLips.ENTITY_ID);
-    }
-
-    public static boolean hasAxolotlSet(Player p){
-        return isAxolotlArmor(p.getInventory().getHelmet()) && isAxolotlArmor(p.getInventory().getChestplate());
+    public static boolean hasAxolotlCrown(Player p) {
+        return p.getInventory().getHelmet() != null && PlayerInventoryUtils.hasID(p.getInventory().getHelmet(), AxolotlCrown.ENTITY_ID);
     }
 
     public static int getPufferArmorCount(Player p){

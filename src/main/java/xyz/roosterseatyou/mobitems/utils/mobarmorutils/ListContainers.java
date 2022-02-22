@@ -7,8 +7,7 @@ import org.bukkit.Material;
 import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlFins;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
@@ -140,8 +139,7 @@ public class ListContainers {
         itemStacks.add(TurtleFeet.TURTLE_FEET);
         itemStacks.add(PufferfishLips.PUFFER_LIPS);
         itemStacks.add(PufferfishChest.PUFFER_FINS);
-        itemStacks.add(AxolotlLips.AXOLOTL_LIPS);
-        itemStacks.add(AxolotlFins.AXOLOTL_FINS);
+        itemStacks.add(AxolotlCrown.AXOLOTL_CROWN);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
 
@@ -315,5 +313,16 @@ public class ListContainers {
         feetRecipe.setIngredients(feetIngredients);
         recipes.add(feetRecipe);
         return recipes.get(MathUtils.randomIntegerFromRange(0, recipes.size()-1));
+    }
+
+    public static Color genHorseColor(){
+        List<Color> list = new ArrayList<>();
+        list.add(Color.fromRGB(112, 54, 3));
+        list.add(Color.fromRGB(255, 255, 255));
+        list.add(Color.fromRGB(189, 110, 42));
+        list.add(Color.fromRGB(54, 30, 9));
+        list.add(Color.fromRGB(0, 0, 0));
+        list.add(Color.fromRGB(82, 77, 77));
+        return list.get(MathUtils.randomIntegerFromRange(0, list.size()-1));
     }
 }

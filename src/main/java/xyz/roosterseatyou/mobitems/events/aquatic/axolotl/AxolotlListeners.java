@@ -21,7 +21,7 @@ public class AxolotlListeners implements Listener {
     @EventHandler
     public void onShift(PlayerToggleSneakEvent e) {
         Player p = e.getPlayer();
-        if (!p.isSneaking() && AquaticUtils.hasAxolotlSet(p)) {
+        if (!p.isSneaking() && AquaticUtils.hasAxolotlCrown(p)) {
             if(isDead.containsKey(p.getUniqueId())) {
                 if (!isDead.get(p.getUniqueId())) {
                     isDead.put(p.getUniqueId(), true);
@@ -41,7 +41,7 @@ public class AxolotlListeners implements Listener {
     public void onWalk(PlayerMoveEvent e) {
         Player p = e.getPlayer();
         if (isDead.containsKey(p.getUniqueId())) {
-            if (isDead.get(p.getUniqueId()) && AquaticUtils.hasAxolotlSet(p)) {
+            if (isDead.get(p.getUniqueId()) && AquaticUtils.hasAxolotlCrown(p)) {
                 e.setCancelled(true);
             }
         }
@@ -51,7 +51,7 @@ public class AxolotlListeners implements Listener {
     public void onTarget(EntityTargetEvent e){
         if(e.getTarget() instanceof Player p) {
             if (isDead.containsKey(p.getUniqueId())) {
-                if (isDead.get(p.getUniqueId()) && AquaticUtils.hasAxolotlSet(p)) {
+                if (isDead.get(p.getUniqueId()) && AquaticUtils.hasAxolotlCrown(p)) {
                     e.setCancelled(true);
                 }
             }
