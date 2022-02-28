@@ -27,8 +27,7 @@ import xyz.roosterseatyou.mobitems.events.undetermined.snowgolem.SnowGolemListen
 import xyz.roosterseatyou.mobitems.events.undetermined.villager.VillagerListeners;
 import xyz.roosterseatyou.mobitems.events.undetermined.villager.VillagerProfessionListeners;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
@@ -163,8 +162,7 @@ public final class MobItems extends JavaPlugin {
         FoxLegs.init();
         FoxChest.init();
         FoxPaws.init();
-        GlowSquidMask.init();
-        GlowSquidTentacles.init();
+        GlowSquidRing.init();
         StriderFeet.init();
         StriderFace.striderFace();
         TurtleHead.init();
