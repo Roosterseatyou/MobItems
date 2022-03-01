@@ -7,8 +7,7 @@ import org.bukkit.entity.Player;
 import org.jetbrains.annotations.NotNull;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleFeet;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
@@ -43,8 +42,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 public class TestMode implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        if(commandSender instanceof Player){
-            final Player commandSender1 = (Player) commandSender;
+        if(commandSender instanceof final Player commandSender1){
             commandSender1.getInventory().addItem(ZombieMask.ZOMBIE_MASK);
             commandSender1.getInventory().addItem(ZombieChest.ZOMBIE_CHEST);
             commandSender1.getInventory().addItem(ZombieLegs.ZOMBIE_LEGS);
@@ -77,8 +75,7 @@ public class TestMode implements CommandExecutor {
             commandSender1.getInventory().addItem(TurtleLegs.TURTLE_LEGS);
             commandSender1.getInventory().addItem(TurtleFeet.TURTLE_FEET);
             commandSender1.getInventory().addItem(AxolotlCrown.AXOLOTL_CROWN);
-            commandSender1.getInventory().addItem(PufferfishLips.PUFFER_LIPS);
-            commandSender1.getInventory().addItem(PufferfishChest.PUFFER_FINS);
+            commandSender1.getInventory().addItem(PufferCrown.PUFFERFISH_CROWN);
         }
         return false;
     }

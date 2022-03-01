@@ -7,7 +7,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.PlayerInventory;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
@@ -64,27 +64,16 @@ public class AquaticUtils {
     }
 
     public static boolean isPufferArmor(ItemStack i){
-        return i != null && PlayerInventoryUtils.hasID(i, PufferfishLips.ENTITY_ID);
+        return i != null && PlayerInventoryUtils.hasID(i, PufferCrown.ENTITY_ID);
     }
 
-    public static boolean hasPufferSet(Player p){
-        return isPufferArmor(p.getInventory().getHelmet()) && isPufferArmor(p.getInventory().getChestplate());
+    public static boolean hasPufferCrown(Player p){
+        return isPufferArmor(p.getInventory().getHelmet());
     }
 
     public static boolean hasAxolotlCrown(Player p) {
         return p.getInventory().getHelmet() != null && PlayerInventoryUtils.hasID(p.getInventory().getHelmet(), AxolotlCrown.ENTITY_ID);
     }
-
-    public static int getPufferArmorCount(Player p){
-        int amt = 0;
-        for(ItemStack i : p.getInventory().getArmorContents()){
-            if(isPufferArmor(i)){
-                amt++;
-            }
-        }
-        return amt;
-    }
-
 
     public static int getTurtArmorCount(Player p){
         int amt = 0;

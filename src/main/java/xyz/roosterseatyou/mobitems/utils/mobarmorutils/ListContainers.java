@@ -9,8 +9,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferCrown;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleChest;
@@ -135,8 +134,7 @@ public class ListContainers {
         itemStacks.add(TurtleChest.TURTLE_CHEST);
         itemStacks.add(TurtleLegs.TURTLE_LEGS);
         itemStacks.add(TurtleFeet.TURTLE_FEET);
-        itemStacks.add(PufferfishLips.PUFFER_LIPS);
-        itemStacks.add(PufferfishChest.PUFFER_FINS);
+        itemStacks.add(PufferCrown.PUFFERFISH_CROWN);
         itemStacks.add(AxolotlCrown.AXOLOTL_CROWN);
         return ItemUtils.randomItemStackFromList(itemStacks);
     }
