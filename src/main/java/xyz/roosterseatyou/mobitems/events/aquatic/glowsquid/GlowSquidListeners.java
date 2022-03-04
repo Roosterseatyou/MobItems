@@ -15,16 +15,12 @@ import xyz.roosterseatyou.mobitems.utils.mobarmorutils.AquaticUtils;
 public class GlowSquidListeners implements Listener {
     @EventHandler
     public void onHit(EntityDamageByEntityEvent e) {
-        if (e.getEntity() instanceof Player) {
-            Player p = (Player) e.getEntity();
-            if (AquaticUtils.hasGlowSet(p)) {
-                if (e.getDamager() instanceof LivingEntity) {
-                    LivingEntity damager = (LivingEntity) e.getDamager();
+        if (e.getEntity() instanceof Player p) {
+            if (AquaticUtils.hasGlowRing(p)) {
+                if (e.getDamager() instanceof LivingEntity damager) {
                     damager.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 20 * 20, 1));
-                } else if (e.getDamager() instanceof Arrow) {
-                    Arrow arrow = (Arrow) e.getDamager();
-                    if (arrow.getShooter() instanceof LivingEntity) {
-                        LivingEntity shooter = (LivingEntity) arrow.getShooter();
+                } else if (e.getDamager() instanceof Arrow arrow) {
+                    if (arrow.getShooter() instanceof LivingEntity shooter) {
                         shooter.addPotionEffect(new PotionEffect(PotionEffectType.GLOWING, 20 * 20, 1));
                     }
                 }
@@ -34,9 +30,8 @@ public class GlowSquidListeners implements Listener {
     }
     @EventHandler
     public void onDamage(EntityDamageEvent e){
-        if(e.getEntity() instanceof Player && e.getCause() != EntityDamageEvent.DamageCause.ENTITY_ATTACK){
-            Player p = (Player) e.getEntity();
-            if(AquaticUtils.hasGlowSet(p)){
+        if(e.getEntity() instanceof Player p && e.getCause() != EntityDamageEvent.DamageCause.ENTITY_ATTACK){
+            if(AquaticUtils.hasGlowRing(p)){
                 p.getLocation().getWorld().spawnParticle(Particle.GLOW_SQUID_INK, p.getLocation(), 20);
             }
         }

@@ -4,13 +4,17 @@ import org.bukkit.Material;
 import org.bukkit.block.Block;
 import org.bukkit.entity.Player;
 import org.bukkit.inventory.ItemStack;
+import org.bukkit.inventory.PlayerInventory;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonMask;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.turtle.TurtleHead;
 import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class AquaticUtils {
     public static boolean isAquaticArmor(ItemStack i){
@@ -29,12 +33,25 @@ public class AquaticUtils {
         return isSalmonArmor(p.getInventory().getHelmet()) && isSalmonArmor(p.getInventory().getBoots());
     }
 
-    public static boolean isGlowArmor(ItemStack i){
-        return i != null && PlayerInventoryUtils.hasID(i, GlowSquidMask.ENTITY_ID);
-    }
+    public static boolean hasGlowRing(Player p) {
+        PlayerInventory inv = p.getInventory();
+        List<ItemStack> iList = new ArrayList<>();
+        int index = 0;
+        for(ItemStack i : inv){
+            if(index < 9) {
+                index++;
+                iList.add(i);
+            } else {
+                break;
+            }
+        }
+        boolean flag = false;
+        for(ItemStack i : iList) {
+            flag = PlayerInventoryUtils.hasID(i, GlowSquidRing.ENTITY_ID);
+            if(flag) break;
 
-    public static boolean hasGlowSet(Player p){
-        return  isGlowArmor(p.getInventory().getHelmet()) && isGlowArmor(p.getInventory().getBoots());
+        }
+        return flag;
     }
 
     public static boolean isTurtArmor(ItemStack i){

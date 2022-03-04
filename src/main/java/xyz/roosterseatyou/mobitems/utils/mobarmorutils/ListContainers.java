@@ -8,8 +8,7 @@ import org.bukkit.entity.EntityType;
 import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.MerchantRecipe;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.axolotl.AxolotlCrown;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidMask;
-import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidTentacles;
+import xyz.roosterseatyou.mobitems.itemstacks.aquatic.glowsquid.GlowSquidRing;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishChest;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.pufferfish.PufferfishLips;
 import xyz.roosterseatyou.mobitems.itemstacks.aquatic.salmon.SalmonFins;
@@ -131,8 +130,7 @@ public class ListContainers {
         itemStacks.add(DrownedFeet.DROWNED_FEET);
         itemStacks.add(SalmonMask.SALMON_LIPS);
         itemStacks.add(SalmonFins.SALMON_FINS);
-        itemStacks.add(GlowSquidMask.GLOW_LIPS);
-        itemStacks.add(GlowSquidTentacles.GLOW_TENTACLES);
+        itemStacks.add(GlowSquidRing.GLOW_RING);
         itemStacks.add(TurtleHead.TURTLE_HEAD);
         itemStacks.add(TurtleChest.TURTLE_CHEST);
         itemStacks.add(TurtleLegs.TURTLE_LEGS);
@@ -237,8 +235,7 @@ public class ListContainers {
             return ItemUtils.randomItemStackFromList(stacks);
         } else if(type == EntityType.GLOW_SQUID){
             List<ItemStack> stacks = new ArrayList<>();
-            stacks.add(GlowSquidMask.GLOW_LIPS);
-            stacks.add(GlowSquidTentacles.GLOW_TENTACLES);
+            stacks.add(GlowSquidRing.GLOW_RING);
             return ItemUtils.randomItemStackFromList(stacks);
         } else if(type == EntityType.TURTLE){
             List<ItemStack> stacks = new ArrayList<>();
