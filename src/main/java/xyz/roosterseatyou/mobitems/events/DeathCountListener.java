@@ -19,14 +19,14 @@ import java.util.logging.Level;
 
 public class DeathCountListener implements Listener {
     private static final HashMap<UUID, Long> cooldown = new HashMap<>();
-    FileConfiguration deathData = YamlConfiguration.loadConfiguration(new File(MobItems.getInstance().getDataFolder()+"/"+"death-counts.yml"));
+    FileConfiguration deathData = YamlConfiguration.loadConfiguration(new File(MobItems.getInstance().getDataFolder()+"/"+ "death-counts.yml"));
     @EventHandler
     public void onJoin(PlayerJoinEvent e) throws IOException {
         if(!deathData.contains(String.valueOf(e.getPlayer().getUniqueId()))){
             MobItems.log.log(Level.INFO, "Adding new player into death-counts");
             deathData.createSection(String.valueOf(e.getPlayer().getUniqueId()));
             deathData.set(String.valueOf(e.getPlayer().getUniqueId()), 0);
-            deathData.save(new File(MobItems.getInstance().getDataFolder()+"/"+"death-counts.yml"));
+            deathData.save(new File(MobItems.getInstance().getDataFolder()+"/"+ "death-counts.yml"));
             MobItems.log.log(Level.INFO, "Added new player successfully.");
         }
     }

@@ -35,7 +35,7 @@ import java.util.List;
 public class BloodMoonListeners implements Listener {
     public static List<EntityType> hostiles = new ArrayList<>();
     private static final Plugin plugin = MobItems.getInstance();
-    FileConfiguration deathData = YamlConfiguration.loadConfiguration(new File(MobItems.getInstance().getDataFolder()+"/"+"death-counts.yml"));
+    FileConfiguration deathData = YamlConfiguration.loadConfiguration(new File(MobItems.getInstance().getDataFolder()+"/"+ "death-counts.yml"));
 
 
     public BloodMoonListeners(){
