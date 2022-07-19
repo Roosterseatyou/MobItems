@@ -45,8 +45,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undetermined.rabbit.RabbitMask;
 public class TestMode implements CommandExecutor {
     @Override
     public boolean onCommand(@NotNull CommandSender commandSender, @NotNull Command command, @NotNull String s, @NotNull String[] strings) {
-        if(commandSender instanceof Player){
-            final Player commandSender1 = (Player) commandSender;
+        if(commandSender instanceof final Player commandSender1){
             commandSender1.getInventory().addItem(ZombieMask.ZOMBIE_MASK);
             commandSender1.getInventory().addItem(ZombieChest.ZOMBIE_CHEST);
             commandSender1.getInventory().addItem(ZombieLegs.ZOMBIE_LEGS);

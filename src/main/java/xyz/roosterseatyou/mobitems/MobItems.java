@@ -2,8 +2,6 @@ package xyz.roosterseatyou.mobitems;
 
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-import xyz.roosterseatyou.mobitems.commands.MoonStatus;
-import xyz.roosterseatyou.mobitems.commands.SetMoon;
 import xyz.roosterseatyou.mobitems.commands.TestMode;
 import xyz.roosterseatyou.mobitems.commands.VillagerTestMode;
 import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
@@ -19,7 +17,6 @@ import xyz.roosterseatyou.mobitems.events.farmanimalevents.chicken.ChickenListen
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.cow.CowListeners;
 import xyz.roosterseatyou.mobitems.events.farmanimalevents.sheep.SheepListeners;
 import xyz.roosterseatyou.mobitems.events.hybridevents.drowned.DrownedEvents;
-import xyz.roosterseatyou.mobitems.events.moonphases.*;
 import xyz.roosterseatyou.mobitems.events.nether.strider.StriderListeners;
 import xyz.roosterseatyou.mobitems.events.undeadevents.UndeadEvents;
 import xyz.roosterseatyou.mobitems.events.undeadevents.zombie.ZombieEvents;
@@ -86,10 +83,6 @@ public final class MobItems extends JavaPlugin {
         items();
         saveDefaultConfig();
         saveResource("death-counts.yml", false);
-        getServer().getPluginManager().registerEvents(new GoldenMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BloodMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new WaterMoonListeners(), this);
-        getServer().getPluginManager().registerEvents(new BlueMoonListeners(), this);
         getServer().getPluginManager().registerEvents(new RabbitListeners(), this);
         getServer().getPluginManager().registerEvents(new CowListeners(), this);
         getServer().getPluginManager().registerEvents(new SheepListeners(), this);
@@ -110,15 +103,12 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new AxolotlListeners(), this);
         getServer().getPluginManager().registerEvents(new JoinListeners(), this);
         getServer().getPluginManager().registerEvents(new EntityDeathListeners(), this);
-        this.getCommand("moonstatus").setExecutor(new MoonStatus());
-        this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
         this.getCommand("villagertestmode").setExecutor(new VillagerTestMode());
         AquaticEvents.aquatic();
         new DrownedEvents(this);
         DrownedEvents.waterPowers();
         UndeadEvents.playerBurn(this);
-        MoonStarter.moonStarter();
         SnowGolemListeners.snowGolemBurn(this);
     }
 
