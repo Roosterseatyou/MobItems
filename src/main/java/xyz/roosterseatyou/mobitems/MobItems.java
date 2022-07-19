@@ -7,6 +7,7 @@ import xyz.roosterseatyou.mobitems.commands.SetMoon;
 import xyz.roosterseatyou.mobitems.commands.TestMode;
 import xyz.roosterseatyou.mobitems.commands.VillagerTestMode;
 import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
+import xyz.roosterseatyou.mobitems.events.EntityDeathListeners;
 import xyz.roosterseatyou.mobitems.events.JoinListeners;
 import xyz.roosterseatyou.mobitems.events.aquatic.AquaticEvents;
 import xyz.roosterseatyou.mobitems.events.aquatic.axolotl.AxolotlListeners;
@@ -108,6 +109,7 @@ public final class MobItems extends JavaPlugin {
         getServer().getPluginManager().registerEvents(new PufferFishEvents(), this);
         getServer().getPluginManager().registerEvents(new AxolotlListeners(), this);
         getServer().getPluginManager().registerEvents(new JoinListeners(), this);
+        getServer().getPluginManager().registerEvents(new EntityDeathListeners(), this);
         this.getCommand("moonstatus").setExecutor(new MoonStatus());
         this.getCommand("setmoon").setExecutor(new SetMoon());
         this.getCommand("testmode").setExecutor(new TestMode());
