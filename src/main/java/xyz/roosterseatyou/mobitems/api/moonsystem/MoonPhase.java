@@ -1,7 +1,6 @@
 package xyz.roosterseatyou.mobitems.api.moonsystem;
 
 import org.bukkit.Bukkit;
-import org.bukkit.event.Event;
 import org.bukkit.plugin.Plugin;
 import xyz.roosterseatyou.mobitems.EventHelper;
 import xyz.roosterseatyou.mobitems.MobItems;
