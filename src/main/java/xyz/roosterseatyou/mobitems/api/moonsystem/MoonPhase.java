@@ -50,7 +50,7 @@ public abstract class MoonPhase {
         Consumer<DayNightCycleChangeEvent> handler = (e) -> {
             if(e.isNight()) {
                 if(MathUtils.doubleRngHelper(getCurrentChance())) {
-                    MoonPhaseChangeEvent event = new MoonPhaseChangeEvent(moonPhase, MoonPhaseChangeEvent.Action.START);
+                    MoonPhaseChangeEvent event = new MoonPhaseChangeEvent(moonPhase, MoonPhaseChangeEvent.Action.START, e.getWorld());
                     Bukkit.getPluginManager().callEvent(event);
                     moonPhase.setActive(true);
                     moonPhase.setCurrentChance(0);
@@ -61,7 +61,7 @@ public abstract class MoonPhase {
 
             if(e.isDay()) {
                 if(moonPhase.isActive()) {
-                    MoonPhaseChangeEvent event = new MoonPhaseChangeEvent(moonPhase, MoonPhaseChangeEvent.Action.STOP);
+                    MoonPhaseChangeEvent event = new MoonPhaseChangeEvent(moonPhase, MoonPhaseChangeEvent.Action.STOP, e.getWorld());
                     Bukkit.getPluginManager().callEvent(event);
                     moonPhase.setActive(false);
                 }
