@@ -16,6 +16,7 @@ public abstract class MoonPhase {
     private int currentChance;
 
     private Consumer<MoonPhaseChangeEvent> moonStartEventHandler;
+    private Consumer<MoonPhaseChangeEvent> moonStopEventHandler;
 
     private final ArrayList<EventHelper> eventHelpers = new ArrayList<>();
     private boolean isActive;
@@ -43,6 +44,11 @@ public abstract class MoonPhase {
     public void setMoonStartEventHandler(Consumer<MoonPhaseChangeEvent> moonStartEventHandler) {
         this.moonStartEventHandler = moonStartEventHandler;
         eventHelpers.add(new EventHelper<>(plugin, MoonPhaseChangeEvent.class, moonStartEventHandler));
+    }
+
+    public void setMoonStopEventHandler(Consumer<MoonPhaseChangeEvent> moonStopEventHandler) {
+        this.moonStopEventHandler = moonStopEventHandler;
+        eventHelpers.add(new EventHelper<>(plugin, MoonPhaseChangeEvent.class, moonStopEventHandler));
     }
 
     public void eventHandler(MoonPhase moonPhase) {
