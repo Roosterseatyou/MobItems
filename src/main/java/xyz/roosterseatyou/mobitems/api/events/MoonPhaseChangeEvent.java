@@ -11,6 +11,7 @@ public class MoonPhaseChangeEvent extends Event {
     private MoonPhase moonPhase;
     private final World world;
     private Action action;
+
     public enum Action {
         START,
         STOP
