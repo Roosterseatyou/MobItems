@@ -17,6 +17,11 @@ public class JoinListeners implements Listener {
 
     public static File createNewPlayerFile(Player p) {
         File f = new File("plugins/" + MobItems.getInstance().getDataFolder().getName() + "/players/" + p.getUniqueId() + ".yml");
+
+        if(!f.getParentFile().exists()) {
+            f.getParentFile().mkdirs();
+        }
+
         if (!f.exists()) {
             MobItems.log.info("Creating new player file for " + p.getName());
             try {
@@ -24,6 +29,7 @@ public class JoinListeners implements Listener {
                 MobItems.log.info("Created new player file for " + p.getName());
             } catch (Exception e) {
                 MobItems.log.info("Failed to create new player file for " + p.getName());
+                e.printStackTrace();
             }
         }
         return f;
