@@ -10,9 +10,9 @@ public class EventHandler {
             Bukkit.getWorlds().forEach(world -> {
                 if (world.getTime() >=  13000 && world.getTime() <= 13020) {
                     //day is beginning
-                    Bukkit.getPluginManager().callEvent(new DayNightCycleChangeEvent(world, true, false));
-                } else {
                     Bukkit.getPluginManager().callEvent(new DayNightCycleChangeEvent(world, false, true));
+                } else if(world.getTime() >= 23000 && world.getTime() <= 23020) {
+                    Bukkit.getPluginManager().callEvent(new DayNightCycleChangeEvent(world, true, false));
                 }
             });
         }, 0L, 20L);
