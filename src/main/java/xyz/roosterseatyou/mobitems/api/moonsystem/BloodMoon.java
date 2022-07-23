@@ -1,5 +1,6 @@
 package xyz.roosterseatyou.mobitems.api.moonsystem;
 
+import com.destroystokyo.paper.event.entity.EntityAddToWorldEvent;
 import net.kyori.adventure.text.Component;
 import net.kyori.adventure.text.format.TextColor;
 import net.kyori.adventure.text.format.TextDecoration;
@@ -9,6 +10,8 @@ import org.bukkit.entity.Monster;
 import org.bukkit.event.Listener;
 import org.bukkit.potion.PotionEffect;
 import org.bukkit.potion.PotionEffectType;
+import xyz.roosterseatyou.mobitems.EventHelper;
+import xyz.roosterseatyou.mobitems.MobItems;
 
 public class BloodMoon extends MoonPhase implements Listener {
     public static BloodMoon BLOOD_MOON = new BloodMoon();
@@ -27,5 +30,15 @@ public class BloodMoon extends MoonPhase implements Listener {
             }
         });
         register();
+
+        EventHelper<EntityAddToWorldEvent> eventHelper = new EventHelper<>(MobItems.getInstance(), EntityAddToWorldEvent.class, (e) -> {
+            if(isActive()) {
+                if(e.getEntity() instanceof Monster mon){
+                    mon.addPotionEffect(new PotionEffect(PotionEffectType.INCREASE_DAMAGE,
+                            (int) ( 24000 - e.getEntity().getWorld().getTime()), 1));
+                }
+            }
+        });
+        eventHelper.register();
     }
 }
