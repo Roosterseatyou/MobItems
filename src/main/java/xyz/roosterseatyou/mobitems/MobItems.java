@@ -3,6 +3,8 @@ package xyz.roosterseatyou.mobitems;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.api.events.EventHandler;
+import xyz.roosterseatyou.mobitems.api.moonsystem.BloodMoon;
+import xyz.roosterseatyou.mobitems.api.moonsystem.SuperBloodMoon;
 import xyz.roosterseatyou.mobitems.commands.TestMode;
 import xyz.roosterseatyou.mobitems.commands.VillagerTestMode;
 import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
@@ -112,6 +114,8 @@ public final class MobItems extends JavaPlugin {
         UndeadEvents.playerBurn(this);
         SnowGolemListeners.snowGolemBurn(this);
         EventHandler.dayNightCycleChange(this);
+        BloodMoon.BLOOD_MOON.register();
+        SuperBloodMoon.SUPER_BLOOD_MOON.register();
     }
 
     @Override
