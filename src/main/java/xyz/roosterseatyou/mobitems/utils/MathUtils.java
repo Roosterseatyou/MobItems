@@ -86,4 +86,8 @@ public class MathUtils {
         }
         return sum;
     }
+
+    public static double getPlayerLevel(int mobKills) {
+        return Math.sqrt(mobKills)/4;
+    }
 }
