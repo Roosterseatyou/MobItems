@@ -1,5 +1,8 @@
 package xyz.roosterseatyou.mobitems;
 
+import net.kyori.adventure.text.Component;
+import net.kyori.adventure.text.format.TextColor;
+import net.kyori.adventure.text.logger.slf4j.ComponentLogger;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.api.events.EventHandler;
@@ -13,11 +16,13 @@ import java.util.logging.Logger;
 public final class MobItems extends JavaPlugin {
     private static Plugin instance;
     public static Logger log;
+    public static ComponentLogger componentLogger;
 
     @Override
     public void onEnable() {
         instance = this;
         log = getLogger();
+        componentLogger = getComponentLogger();
         saveDefaultConfig();
         getServer().getPluginManager().registerEvents(new JoinListeners(), this);
         getServer().getPluginManager().registerEvents(new EntityDeathListeners(), this);
@@ -29,6 +34,7 @@ public final class MobItems extends JavaPlugin {
     @Override
     public void onDisable() {
         // Plugin shutdown logic
+        componentLogger.info(Component.text("Goodbye and Godspeed!").color(TextColor.color(252, 3, 215)));
     }
 
     public static Plugin getInstance(){
