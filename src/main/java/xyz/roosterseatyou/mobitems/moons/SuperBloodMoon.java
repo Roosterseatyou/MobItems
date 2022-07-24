@@ -1,4 +1,4 @@
-package xyz.roosterseatyou.mobitems.api.moonsystem;
+package xyz.roosterseatyou.mobitems.moons;
 
 import com.destroystokyo.paper.event.entity.EntityAddToWorldEvent;
 import net.kyori.adventure.text.Component;
@@ -11,6 +11,7 @@ import org.bukkit.entity.Mob;
 import xyz.roosterseatyou.mobitems.EventHelper;
 import xyz.roosterseatyou.mobitems.MobItems;
 import xyz.roosterseatyou.mobitems.api.events.MoonPhaseChangeEvent;
+import xyz.roosterseatyou.mobitems.api.moonsystem.MoonPhase;
 import xyz.roosterseatyou.mobitems.mobgoals.Hostile;
 
 public class SuperBloodMoon extends MoonPhase {
