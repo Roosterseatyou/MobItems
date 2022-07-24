@@ -10,6 +10,7 @@ import org.bukkit.inventory.ItemStack;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class UndeadArmorUtils {
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static boolean isUndeadArmor(ItemStack i){
         return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: UNDEAD").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }

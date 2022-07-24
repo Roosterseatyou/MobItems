@@ -53,6 +53,7 @@ public class PlayerInventoryUtils {
         return item;
     }
 
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static boolean isRabbitArmor(ItemStack i){
         return i != null && hasID(i, RabbitMask.ENTITY_ID);
     }

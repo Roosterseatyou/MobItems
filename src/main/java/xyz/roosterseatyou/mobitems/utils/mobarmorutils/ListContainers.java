@@ -64,6 +64,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ListContainers {
+    //WILL BE REMOVED IN THE FUTURE
     public static ItemStack getRandZombieArmor(){
         List<ItemStack> itemsList = new ArrayList<>();
         itemsList.add(ZombieMask.ZOMBIE_MASK);

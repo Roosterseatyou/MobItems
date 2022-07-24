@@ -11,6 +11,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.farmanimal.sheep.SheepMask;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class FarmAnimalArmorUtils {
+    //WILL ALL BE REMOVED IN THE FUTURE
 
     public static boolean isFarmAnimalArmor(ItemStack i) {
         return i != null && PlayerInventoryUtils.hasID(i, SheepMask.CLASS_ID);

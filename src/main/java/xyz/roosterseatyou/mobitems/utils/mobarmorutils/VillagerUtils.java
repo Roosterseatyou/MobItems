@@ -13,6 +13,7 @@ import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 import java.util.List;
 
 public class VillagerUtils {
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static void addRandProfession(@NotNull ItemStack i){
         LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
         List<Component> lore = meta.lore();

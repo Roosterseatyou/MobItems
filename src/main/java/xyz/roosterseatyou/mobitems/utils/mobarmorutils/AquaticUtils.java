@@ -13,6 +13,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.undead.drowned.DrownedFeet;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class AquaticUtils {
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static boolean isAquaticArmor(ItemStack i){
         return i != null && PlayerInventoryUtils.hasID(i, DrownedFeet.CLASS_ID);
     }

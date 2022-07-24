@@ -9,6 +9,7 @@ import xyz.roosterseatyou.mobitems.itemstacks.nether.strider.StriderFace;
 import xyz.roosterseatyou.mobitems.utils.PlayerInventoryUtils;
 
 public class NetherArmorUtils {
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static boolean isNetherArmor(ItemStack i){
         return i != null && PlayerInventoryUtils.hasID(i, Component.text("CLASS ID: NETHER").color(TextColor.fromHexString("#2d3233")).decorate(TextDecoration.ITALIC));
     }

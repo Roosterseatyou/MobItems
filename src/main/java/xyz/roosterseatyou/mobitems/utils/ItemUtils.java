@@ -30,6 +30,7 @@ public class ItemUtils{
         item.setDamage(item.getDamage() + damageDealt);
     }
 
+    //WILL ALL BE REMOVED IN THE FUTURE
     public static @NotNull ItemStack genMobArmor(Material mat, Color color , Component name, Component entityID, Component classID, int strength, EquipmentSlot slotType, int unbreakingVal){
         ItemStack i = new ItemStack(mat);
         LeatherArmorMeta meta = (LeatherArmorMeta) i.getItemMeta();
