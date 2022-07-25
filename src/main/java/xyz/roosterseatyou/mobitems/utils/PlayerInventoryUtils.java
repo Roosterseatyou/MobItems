@@ -52,36 +52,4 @@ public class PlayerInventoryUtils {
         meta.setUnbreakable(unbreakable);
         return item;
     }
-
-    public static boolean isRabbitArmor(ItemStack i){
-        return i != null && hasID(i, RabbitMask.ENTITY_ID);
-    }
-    public static boolean isKillerRabbitArmor(ItemStack i){
-        return i != null && hasID(i, KillerRabbitMask.ENTITY_ID);
-    }
-    public static boolean isFoxArmor(ItemStack i){
-        return i != null && hasID(i, FoxMask.ENTITY_ID);
-    }
-
-    public static boolean hasRabbitSet(Player p){
-        return isRabbitArmor(p.getInventory().getHelmet()) && isRabbitArmor(p.getInventory().getChestplate())
-                && isRabbitArmor(p.getInventory().getLeggings()) && isRabbitArmor(p.getInventory().getBoots());
-    }
-    public static boolean hasKillerRabbitSet(Player p){
-        return isKillerRabbitArmor(p.getInventory().getHelmet()) && isKillerRabbitArmor(p.getInventory().getChestplate())
-                && isKillerRabbitArmor(p.getInventory().getLeggings()) && isKillerRabbitArmor(p.getInventory().getBoots());
-    }
-    public static boolean hasFoxSet(Player p){
-        return isFoxArmor(p.getInventory().getHelmet()) && isFoxArmor(p.getInventory().getChestplate())
-                && isFoxArmor(p.getInventory().getLeggings()) && isFoxArmor(p.getInventory().getBoots());
-    }
-    public static boolean isSnowGolemArmor(ItemStack i){
-        return i != null && hasID(i, SnowGolemMask.ENTITY_ID);
-    }
-
-    public static boolean hasSnowSet(Player p){
-        return isSnowGolemArmor(p.getInventory().getHelmet()) && isSnowGolemArmor(p.getInventory().getChestplate())
-                && isSnowGolemArmor(p.getInventory().getLeggings()) && isSnowGolemArmor(p.getInventory().getBoots());
-    }
-
 }
