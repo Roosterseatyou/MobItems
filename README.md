@@ -1,3 +1,3 @@
-# MobItems
+# MobAbilities
 
-Plugin for the Paper server software that adds unique Armor and Tools based off of the mobs of Minecraft.
+Plugin made for the Paper Server Software that adds abilities based on the mobs of minecraft that players can obtain by killing mobs.
