@@ -3,7 +3,6 @@ package xyz.roosterseatyou.mobitems;
 import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
 import xyz.roosterseatyou.mobitems.api.events.EventHandler;
-import xyz.roosterseatyou.mobitems.events.AllTheTimeListeners;
 import xyz.roosterseatyou.mobitems.events.EntityDeathListeners;
 import xyz.roosterseatyou.mobitems.events.JoinListeners;
 import xyz.roosterseatyou.mobitems.moons.BloodMoon;
@@ -21,7 +20,6 @@ public final class MobItems extends JavaPlugin {
         log = getLogger();
         saveDefaultConfig();
         saveResource("death-counts.yml", false);
-        getServer().getPluginManager().registerEvents(new AllTheTimeListeners(), this);
         getServer().getPluginManager().registerEvents(new JoinListeners(), this);
         getServer().getPluginManager().registerEvents(new EntityDeathListeners(), this);
         EventHandler.dayNightCycleChange(this);
